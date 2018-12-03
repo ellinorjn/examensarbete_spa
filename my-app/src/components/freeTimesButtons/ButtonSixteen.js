@@ -1,8 +1,8 @@
 import React from 'react';
 
-function buttonSixteen (){
+function buttonSixteen(props){
     return(
-        <button>16:00</button>
+        <button id={props.buttonSixteen} className="timeButtons" value='16:00:00' onClick={props.event}>16:00</button>
     )
 }
 

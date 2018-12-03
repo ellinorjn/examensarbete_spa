@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import BookingView from './BookingView';
-import BookingCalendar from './BookingCalendar';
+import BookingCalendar from './Booking/BookingCalendar';
 import '../App.css';
+import Login from './Login/Login';
+import Register from './Register/Register';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
 
+      <h1>Kalender</h1>
       <BookingCalendar/>
-        <header className="App-header">
-          <p>
-            Här ska byggas spa!
-          </p>
-        </header>
-
+      
+      <h1>Inloggning</h1>
+      <Login/>
+      
+      <h1>Registrering</h1>
+      <Register/>
         
 
       </div>
