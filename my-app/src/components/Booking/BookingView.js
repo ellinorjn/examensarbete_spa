@@ -5,14 +5,18 @@ import ButtonEleven from '../freeTimesButtons/ButtonEleven';
 import ButtonTwelve from '../freeTimesButtons/ButtonTwelve';
 import ButtonFourteen from '../freeTimesButtons/ButtonFourteen';
 import ButtonFifteen from '../freeTimesButtons/ButtonFifteen';
-import ButtonSixteen from '../freeTimesButtons/ButtonSixteen'
+import ButtonSixteen from '../freeTimesButtons/ButtonSixteen';
+
 import FaceTreatments from '../Treatments/Face/FaceTreatments';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 //import ButtonGeneric from '../freeTimesButtons/ButtonGeneric';
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 class BookingView extends Component {
+
     render() {
         let ten = '';
         let eleven = '';
@@ -20,11 +24,6 @@ class BookingView extends Component {
         let fourteen = '';
         let fifteen = '';
         let sixteen = '';
-        
-
-        /** GÖR TREATMENTS SNYGGARE!!!!!!!! */
-        let treatments = '';
-        treatments = <FaceTreatments event={this.props.valueTreatmentButton} />
         
 
         if(this.props.buttonTen){
@@ -66,20 +65,18 @@ class BookingView extends Component {
         }
         
         return (
-            <div id="date-picker">
-
+            <div id="booking">
 
                 <div id="treatments">
-                    {treatments}
+                    <FaceTreatments event={this.props.valueTreatmentButton} />
                 </div>
 
-                <DatePicker
-                        dateFormat="dd/MM/yyyy"
-                        selected={this.props.startDate}
-                        onChange={this.props.handleChange}        
-                />
-
-                
+                <div id="date-picker">
+                    <DatePicker dateFormat="dd/MM/yyyy"
+                                selected={this.props.startDate}
+                                onChange={this.props.handleChange}        
+                    />
+                </div>
 
                 <div id="timeButtons">
                     {ten}
@@ -90,7 +87,8 @@ class BookingView extends Component {
                     {sixteen}
                 </div>
 
-                <button onClick={this.props.registerBooking}>KLICK</button>
+                <button onClick={this.props.registerBooking} >KLICK</button>
+        
             </div>
         );
     }

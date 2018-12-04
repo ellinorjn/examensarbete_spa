@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
+import BookingCalendar from '../Booking/BookingCalendar';
 
 class Login extends Component{
 
@@ -8,10 +9,14 @@ class Login extends Component{
         this.state={
             email: '',
             password: '',
-            loggedIn: false
+            loggedIn: false,
+
+            name: '',
+            phone_number:''
         }
         this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.personData = this.personData.bind(this);
     }
    
     preventDefaultBehaviorSubmit(e){
@@ -35,9 +40,9 @@ class Login extends Component{
     /* Fetch person information based on email and password */ 
     fetch('http://localhost/spa/my-app/database-connections/login.php?email=' + email + '&password=' + password)
     .then((response) => response.json())
-    .then((response) => {
-        console.log(response);  
-        if(response.length > 0) {
+    .then((response) => {  
+        if(response.information.length > 0) {
+            this.setPersonInformation(response)
             console.log('inloggning lyckad');
         }
       })
@@ -46,12 +51,34 @@ class Login extends Component{
       })
    }
 
+    setPersonInformation(response){
+        console.log(response.information);
+        this.setState({
+            name: response.information[0].name,
+            phone_number: response.information[0].phone_number,
+            loggedIn: true
+        })
+    }
+
+    personData(){
+        let data = {
+            name: this.state.name,
+            email: this.state.name,
+            phone_number: this.state.phone_number
+        }
+        return(data)
+    }
+
     render(){
         return(
             <div>
                 <LoginForm  preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-                            handleChange={this.handleChange}/>
+                            handleChange={this.handleChange}
+                            event={this.props.showRegister}/>
+    
             </div>
+
+            
         )
     }
 }

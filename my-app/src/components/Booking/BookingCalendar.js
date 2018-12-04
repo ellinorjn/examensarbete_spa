@@ -17,17 +17,11 @@ class BookingCalendar extends Component {
         buttonTwelve: false,
         buttonFourteen: false,
         buttonFifteen: false,
-        buttonSixteen: false
+        buttonSixteen: false,
+
       };
 
     this.handleChange = this.handleChange.bind(this);
-    /*this.valueButtonTen = this.valueButtonTen.bind(this);
-    this.valueButtonEleven = this.valueButtonEleven.bind(this);
-    this.valueButtonTwelve = this.valueButtonTwelve.bind(this);
-    this.valueButtonFourteen = this.valueButtonFourteen.bind(this);
-    this.valueButtonFifteen = this.valueButtonFifteen.bind(this);
-    this.valueButtonSixteen = this.valueButtonSixteen.bind(this);*/
-
     this.registerBooking = this.registerBooking.bind(this);
 
     this.valueTimeButton = this.valueTimeButton.bind(this);
@@ -114,7 +108,8 @@ class BookingCalendar extends Component {
       })
     }
   }
-/**Get the value from all time buttons */
+
+/**Get value from time buttons */
 
 valueTimeButton(button){
   let buttonValue = button.target.value;
@@ -123,6 +118,7 @@ valueTimeButton(button){
   })
 }
 
+/** Get treatment button value */
 valueTreatmentButton(button){
   let buttonValue = button.target.value;
   this.setState({
@@ -131,75 +127,27 @@ valueTreatmentButton(button){
 }
 
 
- /*valueButtonTen(){
-    let buttonValue = document.getElementById('buttonTen').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
+registerBooking(){
+  let bookingInformation = {
+      date: this.state.startDate,
+      time: this.state.time,
+      treatment: this.state.treatment
   }
 
-  valueButtonEleven(){
-    let buttonValue = document.getElementById('buttonEleven').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
-  }
+  console.log(bookingInformation);
 
-  valueButtonTwelve(){
-    let buttonValue = document.getElementById('buttonTwelve').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
-  }
-
-  valueButtonFourteen(){
-    let buttonValue = document.getElementById('buttonFourteen').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
-  }
-
-  valueButtonFifteen(){
-    let buttonValue = document.getElementById('buttonFifteen').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
-  }
-
-  valueButtonSixteen(){
-    let buttonValue = document.getElementById('buttonSixteen').value;
-    this.setState({
-      time: buttonValue
-    })
-        console.log(buttonValue);
-  }*/
-
-  registerBooking(){
-    let bookingInformation = {
-        date: this.state.startDate,
-        time: this.state.time,
-        treatment: this.state.treatment
-    }
-
-    console.log(bookingInformation);
-
-
-    return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify(bookingInformation)
-    })
-    .then((response)=>{
-        console.log(response);
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
+  return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(bookingInformation)
+  })
+  .then((response)=>{
+    this.props.toggleBookingView();
+      console.log(response);
+  })
+  .catch((error)=>{
+      console.log(error);
+  })
 
 
 }
@@ -216,20 +164,13 @@ valueTreatmentButton(button){
                         buttonFourteen={this.state.buttonFourteen}
                         buttonFifteen={this.state.buttonFifteen}
                         buttonSixteen={this.state.buttonSixteen}
-                        
-                        /*valueButtonTen={this.valueButtonTen}
-                        valueButtonEleven={this.valueButtonEleven}
-                        valueButtonTwelve={this.valueButtonTwelve}
-                        valueButtonFourteen={this.valueButtonFourteen} 
-                        valueButtonFifteen={this.valueButtonFifteen}
-                        valueButtonSixteen={this.valueButtonSixteen}*/
 
                         valueTimeButton={this.valueTimeButton}
                         valueTreatmentButton={this.valueTreatmentButton}
 
                         registerBooking={this.registerBooking}
-          />
-          
+                        hide={this.hide}
+          />   
       </div>
     )
   }

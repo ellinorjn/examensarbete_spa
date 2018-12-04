@@ -6,6 +6,16 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
 
     $statement = $pdo->prepare("SELECT * FROM person_information WHERE `email`= '$email' AND `password` = '$password'");
     $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    print(json_encode($result, JSON_PRETTY_PRINT));
+    $reslut = [];
+    foreach($statement->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $result[] = $row;
+    }
+
+    $personInformation = (object) [
+        'information' => $result,
+    ];
+    
+
+    print(json_encode($personInformation, JSON_PRETTY_PRINT));
+
