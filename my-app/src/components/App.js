@@ -1,51 +1,37 @@
 import React, { Component } from 'react';
-import BookingCalendar from './Booking/BookingCalendar';
-import Login from'./Login/Login';
-import Register from './Register/Register';
-import BookButton from './Booking/BookButton';
 import '../App.css';
+import Booking from './Booking/Booking'
+import HomePage from './home/homePage';
+import Contact from './contact/contact';
+import Packages from './packages/packages';
+import Treatments from './Treatments/Treatments';
+import Faq from './FAQ/Faq';
+
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      showLogin: true,
-      showRegister: false,
-      showBookButton: false
-    }
-
-    this.showRegister = this.showRegister.bind(this);
-    this.showLogin = this.showLogin.bind(this);
-  }
-
-  showRegister(){
-    this.setState({
-      showRegister: true,
-      showLogin: false
-    })
-  }
-
-  showLogin(){
-    this.setState({
-      showRegister: false,
-      showLogin: true
-    })
-  }
-
  
-
   render() {
     return (
+      <div>
+      <Router>
+        <div>
+            <Route path="/" component={HomePage} exact/>
+            <Route path="/Packages" component={Packages} />
+            <Route path="/Treatments" component={Treatments} /> 
+            <Route path="/Faq" component={Faq} />
+            <Route path="/Contact" component={Contact} />
+          </div>
+      </Router>
+
       <div className="App">
-        <div id="login">
-          {this.state.showLogin && <Login showRegister={this.showRegister}
-                                          />}
-        </div>
-
-        <div id="register">
-          {this.state.showRegister && <Register showLogin={this.showLogin} />}
-        </div>
-
+       
+        <Booking />
+      </div>
       </div>
     );
   }
