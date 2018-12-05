@@ -2,26 +2,20 @@ import React, { Component } from 'react';
 import BookingCalendar from './Booking/BookingCalendar';
 import Login from'./Login/Login';
 import Register from './Register/Register';
+import BookButton from './Booking/BookButton';
 import '../App.css';
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showBookingCalendar: true,
-      showLogin: false,
-      showRegister: false
+      showLogin: true,
+      showRegister: false,
+      showBookButton: false
     }
 
-    this.toggleBookingView = this.toggleBookingView.bind(this);
     this.showRegister = this.showRegister.bind(this);
-  }
-
-  toggleBookingView(){
-    this.setState({
-      showBookingCalendar: false,
-      showLogin: true
-    })
+    this.showLogin = this.showLogin.bind(this);
   }
 
   showRegister(){
@@ -31,27 +25,34 @@ class App extends Component {
     })
   }
 
+  showLogin(){
+    this.setState({
+      showRegister: false,
+      showLogin: true
+    })
+  }
+
+ 
+
   render() {
     return (
       <div className="App">
-    
-        <div>
-          <h1>Kalender</h1>
-          {this.state.showBookingCalendar && <BookingCalendar toggleBookingView={this.toggleBookingView}/>}
-        </div>
-
         <div id="login">
-          <h1>Inloggning</h1>
-          {this.state.showLogin && <Login showRegister={this.showRegister} />}
+          {this.state.showLogin && <Login showRegister={this.showRegister}
+                                          />}
         </div>
 
-        <div id="register">  
-          <h1>Registrering</h1>
-          {this.state.showRegister && <Register />}
+        <div id="register">
+          {this.state.showRegister && <Register showLogin={this.showLogin} />}
         </div>
+
       </div>
     );
   }
 }
 
 export default App;
+
+/*<div id="bookButton">
+{this.state.showBookButton && <BookButton event={this.props.registerBooking} />}
+</div>*/

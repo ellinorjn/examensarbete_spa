@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
+import BookingSummary from '../Booking/BookingSummary';
 
 class Register extends Component{
 
@@ -23,6 +24,8 @@ class Register extends Component{
 
     preventDefaultBehaviorSubmit(e){
         this.registerUser();
+        /** When registered show login field to login */
+        this.props.showLogin();
         e.preventDefault();
     }
 
@@ -45,15 +48,16 @@ class Register extends Component{
         .catch((error)=>{
             console.log(error);
         })
-
-
     }
 
     render(){
         return(
             <div>
                 <RegisterForm   preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-                                handleChange={this.handleChange}/>
+                                handleChange={this.handleChange} />
+                <BookingSummary name={this.state.name}
+                                email={this.state.email}
+                                phone_number={this.state.phone_number} />
             </div>
         )
     }

@@ -8,14 +8,19 @@ import ButtonFifteen from '../freeTimesButtons/ButtonFifteen';
 import ButtonSixteen from '../freeTimesButtons/ButtonSixteen';
 
 import FaceTreatments from '../Treatments/Face/FaceTreatments';
-import Login from '../Login/Login';
-import Register from '../Register/Register';
+import BookingSummary from '../Booking/BookingSummary';
 //import ButtonGeneric from '../freeTimesButtons/ButtonGeneric';
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 class BookingView extends Component {
+
+
+    bookingSummaryVisible(){
+        let bookingSummary = document.getElementById('booking-summary');
+        bookingSummary.style.display = 'block';
+    }
 
     render() {
         let ten = '';
@@ -63,6 +68,9 @@ class BookingView extends Component {
                                         onChange={this.props.handleChange}
                                         event={this.props.valueTimeButton}/>
         }
+
+        
+
         
         return (
             <div id="booking">
@@ -87,13 +95,18 @@ class BookingView extends Component {
                     {sixteen}
                 </div>
 
-                <button onClick={this.props.registerBooking} >KLICK</button>
-        
+               <button onClick={this.bookingSummaryVisible}>Fortsätt</button>
+
+               <BookingSummary />
+
+               <button onClick={this.props.registerBooking}>Boka här</button>
             </div>
         );
     }
   }
 
+
+  
 
 export default BookingView;
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from './LoginForm';
 import BookingCalendar from '../Booking/BookingCalendar';
+import ButtonNewUser from './ButtonNewUser';
 
 class Login extends Component{
 
@@ -11,12 +12,21 @@ class Login extends Component{
             password: '',
             loggedIn: false,
 
+            person_id:'',
             name: '',
-            phone_number:''
+            phone_number:'',
+
+            showBookingCalendar: false,
+            showBookButton: false
+            
         }
+
         this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.personData = this.personData.bind(this);
+        
+        this.toggleCalendar = this.toggleCalendar.bind(this);
+        this.hideLogin = this.hideLogin.bind(this);
+        this.showBookButton = this.showBookButton.bind(this);
     }
    
     preventDefaultBehaviorSubmit(e){
@@ -30,12 +40,9 @@ class Login extends Component{
         });
     }
 
-   checkIfRegistered(){
-       
+    checkIfRegistered(){
     let email = this.state.email;
     let password = this.state.password;
-
-    console.log(this.state.email);
 
     /* Fetch person information based on email and password */ 
     fetch('http://localhost/spa/my-app/database-connections/login.php?email=' + email + '&password=' + password)
@@ -43,30 +50,43 @@ class Login extends Component{
     .then((response) => {  
         if(response.information.length > 0) {
             this.setPersonInformation(response)
+            this.hideLogin()
+            this.toggleCalendar()
             console.log('inloggning lyckad');
         }
-      })
-      .catch((error) => {
+        })
+        .catch((error) => {
         console.error(error);
-      })
-   }
+        })
+    }
 
     setPersonInformation(response){
         console.log(response.information);
         this.setState({
             name: response.information[0].name,
             phone_number: response.information[0].phone_number,
+            person_id: response.information[0].ID,
             loggedIn: true
         })
     }
 
-    personData(){
-        let data = {
-            name: this.state.name,
-            email: this.state.name,
-            phone_number: this.state.phone_number
-        }
-        return(data)
+    toggleCalendar(){
+        this.setState({
+          showBookingCalendar: true,
+        })
+    }
+
+    showBookButton(){
+        this.setState({
+          showBookButton: true
+        })
+    }
+
+    hideLogin(){
+            let loginForm = document.getElementById('login-form');
+            let buttonNewUser = document.getElementById('button-new-user');
+            loginForm.style.display = 'none';
+            buttonNewUser.style.display = 'none';
     }
 
     render(){
@@ -74,8 +94,11 @@ class Login extends Component{
             <div>
                 <LoginForm  preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
                             handleChange={this.handleChange}
-                            event={this.props.showRegister}/>
-    
+                            event={this.showBookButton}/>
+                
+                <ButtonNewUser event={this.props.showRegister} />
+
+                {this.state.showBookingCalendar && <BookingCalendar theId={this.state.person_id} />}
             </div>
 
             

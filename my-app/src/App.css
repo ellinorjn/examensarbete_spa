@@ -18,3 +18,8 @@
   width: 100%;
   background: lightpink;
 }
+
+
+#booking-summary{
+  display: none;
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import BookingView from './BookingView'
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
+import BookButton from './BookButton';
+import BookingSummary from './BookingSummary';
 
 class BookingCalendar extends Component {
   
@@ -116,6 +118,7 @@ valueTimeButton(button){
   this.setState({
     time: buttonValue
   })
+  //this.props.toggleBookingView();
 }
 
 /** Get treatment button value */
@@ -126,12 +129,12 @@ valueTreatmentButton(button){
   })
 }
 
-
 registerBooking(){
   let bookingInformation = {
       date: this.state.startDate,
       time: this.state.time,
-      treatment: this.state.treatment
+      treatment: this.state.treatment,
+      person_id: this.props.theId,  
   }
 
   console.log(bookingInformation);
@@ -140,16 +143,20 @@ registerBooking(){
       method: "POST",
       mode: "no-cors",
       body: JSON.stringify(bookingInformation)
+      
   })
   .then((response)=>{
-    this.props.toggleBookingView();
+    this.hideBookingOptions();  
       console.log(response);
   })
   .catch((error)=>{
       console.log(error);
   })
+}
 
-
+hideBookingOptions(){
+  let bookingView = document.getElementById('booking');
+  bookingView.style.display = 'none';
 }
 
   render() {
@@ -168,9 +175,13 @@ registerBooking(){
                         valueTimeButton={this.valueTimeButton}
                         valueTreatmentButton={this.valueTreatmentButton}
 
-                        registerBooking={this.registerBooking}
-                        hide={this.hide}
-          />   
+                       registerBooking={this.registerBooking} 
+          /> 
+          <BookingSummary date={this.state.startDate}
+                          time={this.state.time}
+                          treatment={this.state.treatment} 
+                          />  
+
       </div>
     )
   }
