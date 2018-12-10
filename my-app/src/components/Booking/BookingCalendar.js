@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import BookingView from './BookingView'
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
-import BookButton from './BookButton';
 import BookingSummary from './BookingSummary';
+
 
 class BookingCalendar extends Component {
   
@@ -25,6 +25,7 @@ class BookingCalendar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.registerBooking = this.registerBooking.bind(this);
+    this.registerBookingGuest = this.registerBookingGuest.bind(this);
 
     this.valueTimeButton = this.valueTimeButton.bind(this);
     this.valueTreatmentButton = this.valueTreatmentButton.bind(this);
@@ -129,12 +130,39 @@ valueTreatmentButton(button){
   })
 }
 
+/** Post booking information to BookTreatment.php when logged in */
 registerBooking(){
   let bookingInformation = {
       date: this.state.startDate,
       time: this.state.time,
       treatment: this.state.treatment,
       person_id: this.props.theId,  
+  }
+
+  console.log(bookingInformation);
+
+  return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(bookingInformation)
+      
+  })
+  .then((response)=>{
+    this.hideBookingOptions();  
+      console.log(response);
+  })
+  .catch((error)=>{
+      console.log(error);
+  })
+}
+
+
+/** Post booking information to BookTreatment.php as guest */
+registerBookingGuest(){
+  let bookingInformation = {
+      date: this.state.startDate,
+      time: this.state.time,
+      treatment: this.state.treatment 
   }
 
   console.log(bookingInformation);
@@ -175,7 +203,10 @@ hideBookingOptions(){
                         valueTimeButton={this.valueTimeButton}
                         valueTreatmentButton={this.valueTreatmentButton}
 
-                       registerBooking={this.registerBooking} 
+                        registerBooking={this.registerBooking}
+                        registerBookingGuest={this.registerBookingGuest}
+                        
+                        treatment={this.state.treatment}
           /> 
           <BookingSummary date={this.state.startDate}
                           time={this.state.time}

@@ -13,6 +13,7 @@ function Nav(){
                 <Link to="/Treatments">Behandlingar</Link>
                 <Link to="/Faq">FAQ</Link>
                 <Link to="/Contact">Kontakta oss</Link>
+                <Link to="/Booking">Boka</Link>
               </ul>        
             </nav>                       
           </div>  

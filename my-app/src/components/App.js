@@ -25,12 +25,12 @@ class App extends Component {
             <Route path="/Treatments" component={Treatments} /> 
             <Route path="/Faq" component={Faq} />
             <Route path="/Contact" component={Contact} />
-          </div>
+            <Route path="/Booking" component={Booking} />
+        </div>
       </Router>
 
       <div className="App">
        
-        <Booking />
       </div>
       </div>
     );

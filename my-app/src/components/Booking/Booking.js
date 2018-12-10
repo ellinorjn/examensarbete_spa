@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Login from '../Login/Login'
 import Register from '../Register/Register';
-import BookButton from './BookButton';
+import BookingCalendar from '../Booking/BookingCalendar';
+import Nav from '../nav';
+import GetDiscountButton from './GetDiscountButton';
 
 class Booking extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showLogin: true,
-      showRegister: false,
-      showBookButton: false
+      showBookingCalendar: true,
+      showGetDiscountButton: true,
+      showLogin: false,
+      showRegister: false
     }
 
     this.showRegister = this.showRegister.bind(this);
@@ -26,18 +29,30 @@ class Booking extends Component {
   showLogin(){
     this.setState({
       showRegister: false,
-      showLogin: true
+      showLogin: true,
+      showBookingCalendar: false,
+      showGetDiscountButton: false
     })
   }
-
  
 
   render() {
     return (
       <div className="Booking">
+        <div id="booking-header">
+          <Nav />
+        </div>
+
+        <div>
+          {this.state.showGetDiscountButton && <GetDiscountButton event={this.showLogin}/>}
+        </div>
+
+        <div id="booking-calendar">
+          {this.state.showBookingCalendar && <BookingCalendar />}
+        </div>
+
         <div id="login">
-          {this.state.showLogin && <Login showRegister={this.showRegister}
-                                          />}
+          {this.state.showLogin && <Login showRegister={this.showRegister}/>}
         </div>
 
         <div id="register">
@@ -50,7 +65,3 @@ class Booking extends Component {
 }
 
 export default Booking;
-
-/*<div id="bookButton">
-{this.state.showBookButton && <BookButton event={this.props.registerBooking} />}
-</div>*/

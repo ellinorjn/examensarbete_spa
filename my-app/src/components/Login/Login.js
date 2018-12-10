@@ -24,7 +24,6 @@ class Login extends Component{
         this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         
-        this.toggleCalendar = this.toggleCalendar.bind(this);
         this.hideLogin = this.hideLogin.bind(this);
         this.showBookButton = this.showBookButton.bind(this);
     }
@@ -51,8 +50,7 @@ class Login extends Component{
         if(response.information.length > 0) {
             this.setPersonInformation(response)
             this.hideLogin()
-            this.toggleCalendar()
-            console.log('inloggning lyckad');
+            alert('Du har nu 5% rabatt på hela din bokning, rabatten avdrages vid betalning på plats')
         }
         })
         .catch((error) => {
@@ -70,11 +68,6 @@ class Login extends Component{
         })
     }
 
-    toggleCalendar(){
-        this.setState({
-          showBookingCalendar: true,
-        })
-    }
 
     showBookButton(){
         this.setState({
@@ -87,6 +80,10 @@ class Login extends Component{
             let buttonNewUser = document.getElementById('button-new-user');
             loginForm.style.display = 'none';
             buttonNewUser.style.display = 'none';
+            
+            this.setState({
+                showBookingCalendar: true,
+            })
     }
 
     render(){

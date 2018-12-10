@@ -13,6 +13,12 @@
   color: white;
 }
 
+#booking-header {
+  height: 400px;
+  width: 100%;
+  background: lightblue;
+}
+
 #date-picker {
   height: 100px;
   width: 100%;
