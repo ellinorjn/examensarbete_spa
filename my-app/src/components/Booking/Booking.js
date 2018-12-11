@@ -41,9 +41,6 @@ class Booking extends Component {
       <div className="Booking">
         <div id="booking-header">
           <Nav />
-        </div>
-
-        <div>
           {this.state.showGetDiscountButton && <GetDiscountButton event={this.showLogin}/>}
         </div>
 

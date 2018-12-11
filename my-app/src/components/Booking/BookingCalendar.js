@@ -141,6 +141,10 @@ registerBooking(){
 
   console.log(bookingInformation);
 
+  if(this.state.startDate === "" || this.state.time === "" || this.state.treatment === "" ){
+   /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
+    alert('NO!!!');
+  }else{
   return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
       method: "POST",
       mode: "no-cors",
@@ -154,6 +158,7 @@ registerBooking(){
   .catch((error)=>{
       console.log(error);
   })
+}
 }
 
 
@@ -167,19 +172,24 @@ registerBookingGuest(){
 
   console.log(bookingInformation);
 
-  return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
-      method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify(bookingInformation)
-      
-  })
-  .then((response)=>{
-    this.hideBookingOptions();  
-      console.log(response);
-  })
-  .catch((error)=>{
-      console.log(error);
-  })
+  if(this.state.startDate === "" || this.state.time === "" || this.state.treatment === "" ){
+    /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
+     alert('NO!!!');
+   }else{
+   return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
+       method: "POST",
+       mode: "no-cors",
+       body: JSON.stringify(bookingInformation)
+       
+   })
+   .then((response)=>{
+     this.hideBookingOptions();  
+       console.log(response);
+   })
+   .catch((error)=>{
+       console.log(error);
+   })
+ }
 }
 
 hideBookingOptions(){
@@ -189,7 +199,7 @@ hideBookingOptions(){
 
   render() {
     return (
-      <div id="bookingView">
+      <div id="booking-view">
           <BookingView  startDate={this.state.startDate} 
                         handleChange={this.handleChange} 
                        
@@ -207,6 +217,7 @@ hideBookingOptions(){
                         registerBookingGuest={this.registerBookingGuest}
                         
                         treatment={this.state.treatment}
+                        loggedIn={this.props.loggedIn}
           /> 
           <BookingSummary date={this.state.startDate}
                           time={this.state.time}
