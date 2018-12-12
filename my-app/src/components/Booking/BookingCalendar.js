@@ -25,7 +25,7 @@ class BookingCalendar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.registerBooking = this.registerBooking.bind(this);
-    this.registerBookingGuest = this.registerBookingGuest.bind(this);
+    //this.registerBookingGuest = this.registerBookingGuest.bind(this);
 
     this.valueTimeButton = this.valueTimeButton.bind(this);
     this.valueTreatmentButton = this.valueTreatmentButton.bind(this);
@@ -162,35 +162,7 @@ registerBooking(){
 }
 
 
-/** Post booking information to BookTreatment.php as guest */
-registerBookingGuest(){
-  let bookingInformation = {
-      date: this.state.startDate,
-      time: this.state.time,
-      treatment: this.state.treatment 
-  }
 
-  console.log(bookingInformation);
-
-  if(this.state.startDate === "" || this.state.time === "" || this.state.treatment === "" ){
-    /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
-     alert('NO!!!');
-   }else{
-   return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
-       method: "POST",
-       mode: "no-cors",
-       body: JSON.stringify(bookingInformation)
-       
-   })
-   .then((response)=>{
-     this.hideBookingOptions();  
-       console.log(response);
-   })
-   .catch((error)=>{
-       console.log(error);
-   })
- }
-}
 
 hideBookingOptions(){
   let bookingView = document.getElementById('booking');
@@ -217,6 +189,9 @@ hideBookingOptions(){
                         registerBookingGuest={this.registerBookingGuest}
                         
                         treatment={this.state.treatment}
+                        date={this.state.startDate}
+                        time={this.state.time}
+                        id={this.props.theId}
                         loggedIn={this.props.loggedIn}
           /> 
           <BookingSummary date={this.state.startDate}
@@ -230,3 +205,33 @@ hideBookingOptions(){
 }
 
 export default BookingCalendar;
+
+/** Post booking information to BookTreatment.php as guest 
+registerBookingGuest(){
+  let bookingInformation = {
+      date: this.state.startDate,
+      time: this.state.time,
+      treatment: this.state.treatment 
+  }
+
+  console.log(bookingInformation);
+
+  if(this.state.startDate === "" || this.state.time === "" || this.state.treatment === "" ){
+    
+     alert('NO!!!');
+   }else{
+   return fetch('http://localhost/spa/my-app/database-connections/bookTreatment.php',{
+       method: "POST",
+       mode: "no-cors",
+       body: JSON.stringify(bookingInformation)
+       
+   })
+   .then((response)=>{
+     this.hideBookingOptions();  
+       console.log(response);
+   })
+   .catch((error)=>{
+       console.log(error);
+   })
+ }
+}*/

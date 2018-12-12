@@ -38,7 +38,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*<div id="bookButton">
-{this.state.showBookButton && <BookButton event={this.props.registerBooking} />}
-</div>*/

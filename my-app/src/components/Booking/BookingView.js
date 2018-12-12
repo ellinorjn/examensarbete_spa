@@ -13,11 +13,11 @@ import Massage from "../Treatments/Massage/Massage";
 import BodyTreatments from "../Treatments/BodyTreatments/BodyTreatments";
 import LashesAndBrows from "../Treatments/LashesAndBrows/LashesAndBrows";
 import BookingSummary from "../Booking/BookingSummary";
+import BookingGuest from "../BookingGuest/BookingGuest";
 //import ButtonGeneric from '../freeTimesButtons/ButtonGeneric';
 import "react-datepicker/dist/react-datepicker.css";
 
 import BookButton from "./BookButton";
-import BookButtonGuest from "./BookButtonGuest";
 
 class BookingView extends Component {
   constructor(props) {
@@ -213,15 +213,18 @@ class BookingView extends Component {
           {sixteen}
         </div>
 
+        <BookingGuest
+          date={this.props.date}
+          time={this.props.time}
+          treatment={this.props.treatment}
+          id={this.props.id}
+        />
+
         <button onClick={this.bookingSummaryVisible}>Fortsätt</button>
 
         <BookingSummary />
 
         <div id="book-button-div">
-          {/** Button to book as a guest shows as default */}
-          {!this.state.loggedIn && (
-            <BookButtonGuest event={this.props.registerBookingGuest} />
-          )}
           {/** Button to book as an inlogged user only shows when logged in*/}
           {this.state.loggedIn && (
             <BookButton event={this.props.registerBooking} />
