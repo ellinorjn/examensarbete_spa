@@ -66,7 +66,7 @@ class BookingGuest extends Component {
 
   render() {
     return (
-      <div>
+      <div id="guest-booking-form">
         <BookingForm
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}

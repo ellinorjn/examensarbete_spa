@@ -6,14 +6,19 @@ import {
 function Nav(){
     return (
         <div>   
-           <nav>            
+           <nav className="nav">            
               <ul>
-                <Link to="/">HOME</Link>
-                <Link to="/Packages">Paket</Link>
-                <Link to="/Treatments">Behandlingar</Link>
+                <Link to="/">HEM</Link>
+                |
+                <Link to="/Packages">PAKET</Link>
+                |
+                <Link to="/Treatments">BEHANDLINGAR</Link>
+                |
                 <Link to="/Faq">FAQ</Link>
-                <Link to="/Contact">Kontakta oss</Link>
-                <Link to="/Booking">Boka</Link>
+                |
+                <Link to="/Contact">KONTAKTA OSS</Link>
+                |
+                <Link to="/Booking">BOKA</Link>
               </ul>        
             </nav>                       
           </div>  

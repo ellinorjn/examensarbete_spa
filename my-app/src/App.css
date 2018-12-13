@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+#root {
+  background-color: #f5f5f5;
+}
+
+.clear {
+  clear: both;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -13,34 +21,158 @@
   color: white;
 }
 
-#booking-header {
-  height: 400px;
+button {
+  background-color: rgb(8, 42, 82);
+  color: white;
+  border: 2px solid white;
+  height: 30px;
+  width: 70px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* For Safari */
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+/* HOME PAGE*/
+#home-header{
+  height: 100vh;
+  background-image: url(../src/images/biel-morro-250579-unsplash_2_40.jpg);
   width: 100%;
-  background: lightblue;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.book-button-home-page{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  margin-right: -50%;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.book-button-home-page:hover{
+  background: rgba(255, 255, 255, 1);
+}
+
+#home-header > button > a{
+  color: white;
+}
+
+#home-header > button:hover a{
+  color:  rgb(8, 42, 82);
+}
+
+
+/* BOOKING PAGE*/
+#booking-calendar {
+  min-height: 100vh;
+}
+
+#booking-header {
+  height: 100vh;
+  background-image: url(../src/images/biel-morro-250579-unsplash_2_40.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #booking-view {
-  background: lightgreen;
+  background: white;
+  height: 100%;
 }
 
 #booking-summary {
   display: none;
 }
 
+#guest-booking-form{
+  text-align: center;
+}
 
+#guest-booking-form input{
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(8, 42, 82);
+}
 
-/* TREATMENT BUTTONS AND TREATMENT LIST*/
+#guest-booking-form > form > input[type="submit"]{
+  background: rgb(8, 42, 82);
+  color: white;
+}
+#guest-booking-form > form > input[type="submit"]:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* TREATMENT PAGE */
+#header-treatments {
+  height: 100vh;
+  background-image: url(../src/images/treatments-header.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.treatments-page {
+  background: #fafafa;
+  width: 90%;
+  margin: 0px auto;
+  margin-top: -100px;
+  padding-top: 25px;
+}
+
+.face-box,
+.body-box,
+.massage-box,
+.lashes-box {
+  background: white;
+  margin: 0px auto;
+  height: 250px;
+  margin-bottom: 25px;
+}
+
+.face-box-img,
+.body-box-img,
+.massage-box-img,
+.lashes-box-img {
+  border: 1px solid blue;
+  box-sizing: border-box;
+  height: 250px;
+  width: 250px;
+  float: left;
+}
+
+.face-box-img img,
+.body-box-img img,
+.massage-box-img img,
+.lashes-box-img img {
+  height: 250px;
+  width: 250px;
+}
+
+.face-box-text,
+.body-box-text,
+.massage-box-text,
+.lashes-box-text {
+  border: 1px solid red;
+  box-sizing: border-box;
+  width: 55%;
+  float: left;
+}
+
+/* TREATMENT BUTTONS AND TREATMENT LIST ON BOOKING PAGE*/
 
 .treatment-button {
-  background-color: transparent;
-  color: rgb(8, 42, 82);
-  border: 2px solid rgb(8, 42, 82);
   width: 90%;
   height: 40px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 1.2em;
-  border-radius: 3px;
   margin: 5px;
 }
 
@@ -53,6 +185,82 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+/* BOOKING VIEW */
+
+#treatments {
+  margin: 0px auto;
+  text-align: center;
+  width: 90%;
+}
+
+#treatments ul {
+  padding: 0;
+}
+
+#treatments ul li {
+  border-bottom: 2px solid rgb(8, 42, 82);
+  margin: 5px;
+  list-style: none;
+  height: 40px;
+  text-align: center;
+}
+
+#treatments ul li:hover{
+  
+}
+
+#treatments ul li p {
+  text-align: left;
+  margin: 0px;
+  width: 50%;
+  float: left;
+  font-family: "Raleway", sans-serif;
+}
+
+#treatments ul li p button {
+  float: right;
+}
+
+#button-calendar {
+  height: 40px;
+  width: 60%;
+  margin-top: 40px;
+}
+
+.flex-container-time-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+#buttonTen,
+#buttonEleven,
+#buttonTwelve,
+#buttonFourteen,
+#buttonFifteen,
+#buttonSixteen {
+  margin: 5px;
+}
+
+#guest-form-button{
+  width: 40%;
+  text-align: center;
+  margin: 0px auto;
+}
+
+
+/* TREATMENT PAGE */
+#all-body-treatments,
+#all-lashes-treatments,
+#all-massage-treatments,
+#all-face-treatments {
+  display: none;
+  background: white;
 }
 
 /* ------ TABLET ------ */
@@ -69,20 +277,111 @@
     justify-content: center;
     justify-content: space-around;
   }
+  .nav {
+    background: rgba(255, 255, 255, 0.5);
+    height: 80px;
+  }
+
+  .nav ul {
+    margin: 0px;
+    text-align: center;
+  }
+
+  .nav ul a {
+    padding: 2%;
+    font-size: 1.2em;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    color:rgb(8, 42, 82);
+    margin-top: 50px;
+  }
+
+  #buttonTen,
+  #buttonEleven,
+  #buttonTwelve,
+  #buttonFourteen,
+  #buttonFifteen,
+  #buttonSixteen {
+    width: 30%;
+  }
 }
 
 /* ------ DESKTOP ------ */
 
 @media screen and (min-width: 1000px) {
+  /* BOOKING PAGE */
+  #booking {
+    margin-top: -100px;
+  }
+  #booking-view {
+    margin: 0px auto;
+    width: 90%;
+    height: 100vh;
+  }
   .treatment-button {
-    width: 23%;
+    width: 22%;
+    margin: 15px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* For Safari */
     transition-duration: 0.4s;
   }
 
-  .treatment-button:hover {
+  #treatments {
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  #treatments-face,
+  #treatments-massage,
+  #treatments-body,
+  #treatments-lashes{
+    width: 50%;
+    margin: 0px auto;
+  }
+
+  #date-picker {
+    text-align: center;
+  }
+  #date-picker > div.react-datepicker-popper > div {
+    border: 1px solid red;
+  }
+  #date-picker
+    > div.react-datepicker-popper
+    > div
+    > div.react-datepicker__triangle {
+    border-bottom-color: #f0f0f0;
+  }
+
+  #time-buttons {
+    text-align: center;
+  }
+
+  /* TREATMENT PAGE */
+  .face-box,
+  .body-box,
+  .massage-box,
+  .lashes-box {
+    width: 70%;
+    position: relative;
+  }
+
+  #all-body-treatments,
+  #all-lashes-treatments,
+  #all-massage-treatments,
+  #all-face-treatments {
+    width: 70%;
+    margin: 0px auto;
+  }
+
+  .read-more-button {
     background-color: rgb(8, 42, 82);
     color: white;
+    width: 20%;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .read-more-button:hover {
+    text-decoration: underline;
   }
 }

@@ -3,31 +3,35 @@ import React from "react";
 function lashesAndBrows(props) {
   return (
     <div>
+      <h2>FRANSAR OCH BRYN</h2>
       <ul>
         <li>
-          Fransar
+          <p>Fransar</p>
           <button
             className={props.treatmentButtonClass}
             value="Fransar"
-            onClick={props.event}>
+            onClick={props.event}
+          >
             Välj
           </button>
         </li>
         <li>
-          Bryn
+          <p>Bryn</p>
           <button
             className={props.treatmentButtonClass}
             value="Bryn"
-            onClick={props.event}>
+            onClick={props.event}
+          >
             Välj
           </button>
         </li>
         <li>
-          Fransar och Bryn
+          <p>Fransar och Bryn</p>
           <button
             className={props.treatmentButtonClass}
             value="Fransar och Bryn"
-            onClick={props.event}>
+            onClick={props.event}
+          >
             Välj
           </button>
         </li>
