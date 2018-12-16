@@ -54,12 +54,10 @@ class Treatments extends Component {
   render() {
     return (
       <div>
-        
         <div id="header-treatments">
-        <Nav />
+          <Nav />
         </div>
         <div className="treatments-page">
-
           <div className="treatments">
             <FaceBox event={this.showFaceTreatments} />
             <FaceTreatmentInfo />

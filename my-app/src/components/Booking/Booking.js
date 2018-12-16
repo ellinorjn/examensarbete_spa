@@ -39,10 +39,11 @@ class Booking extends Component {
   render() {
     return (
       <div className="Booking">
-        <div id="booking-header">
+        
+        
           <Nav />
           {this.state.showGetDiscountButton && <GetDiscountButton event={this.showLogin}/>}
-        </div>
+        
 
         <div id="booking-calendar">
           {this.state.showBookingCalendar && <BookingCalendar />}

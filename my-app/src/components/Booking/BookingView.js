@@ -69,6 +69,14 @@ class BookingView extends Component {
   /** KORTA NER??? LOOP?  */
   showFaceTreatments(button) {
     let buttonId = button.target.id;
+
+    if (
+      buttonId ===
+      ("face-button" || "body-button" || "massage-button" || "lashes-button")
+    ) {
+      let buttonCalendar = document.getElementById("button-calendar");
+      buttonCalendar.style.display = "block";
+    }
     if (buttonId === "face-button") {
       let faceTreatments = document.getElementById("treatments-face");
       let bodyTreatments = document.getElementById("treatments-body");
@@ -79,6 +87,8 @@ class BookingView extends Component {
       bodyTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "none";
+
+      window.scrollBy(0, 500);
     }
     if (buttonId === "body-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -90,6 +100,8 @@ class BookingView extends Component {
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "none";
+
+      window.scrollBy(0, 500);
     }
     if (buttonId === "massage-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -101,6 +113,8 @@ class BookingView extends Component {
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "block";
       lashesTreatments.style.display = "none";
+
+      window.scrollBy(0, 500);
     }
     if (buttonId === "lashes-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -112,13 +126,15 @@ class BookingView extends Component {
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "block";
+
+      window.scrollBy(0, 500);
     }
   }
 
-  showBookingGuest(){
+  showBookingGuest() {
     this.setState({
       showBookingGuest: true
-    })
+    });
   }
 
   render() {
@@ -128,7 +144,6 @@ class BookingView extends Component {
     let fourteen = "";
     let fifteen = "";
     let sixteen = "";
-
 
     if (this.props.buttonTen) {
       ten = (
@@ -187,9 +202,9 @@ class BookingView extends Component {
 
     return (
       <div id="booking">
-      <div id="treatments">
-        <TreatmentButtons event={this.showFaceTreatments} />
-        
+        <div id="treatments">
+          <TreatmentButtons event={this.showFaceTreatments} />
+
           <div id="treatments-face">
             <FaceTreatments event={this.props.valueTreatmentButton} />
           </div>
@@ -235,28 +250,32 @@ class BookingView extends Component {
         </div>
 
         <div id="time-buttons">
-        <div className="flex-container-time-buttons">
-          {ten}
-          {eleven}
-          {twelve}
+          <div className="flex-container-time-buttons">
+            {ten}
+            {eleven}
+            {twelve}
           </div>
           <div className="flex-container-time-buttons">
-          {fourteen}
-          {fifteen}
-          {sixteen}
+            {fourteen}
+            {fifteen}
+            {sixteen}
           </div>
         </div>
 
-        {this.state.showBookingGuest && <BookingGuest
-          date={this.props.date}
-          time={this.props.time}
-          treatment={this.props.treatment}
-          id={this.props.id}
-        />}
+        {this.state.showBookingGuest && (
+          <BookingGuest
+            date={this.props.date}
+            time={this.props.time}
+            treatment={this.props.treatment}
+            id={this.props.id}
+          />
+        )}
 
         <button onClick={this.bookingSummaryVisible}>Fortsätt</button>
 
-        {this.props.showGuestFormButton && <GuestFromButton event={this.showBookingGuest}/> }
+        {this.props.showGuestFormButton && (
+          <GuestFromButton event={this.showBookingGuest} />
+        )}
         <BookingSummary />
 
         <div id="book-button-div">

@@ -41,17 +41,17 @@ button:hover {
 }
 
 /* HOME PAGE*/
-#home-header{
+#home-header {
   height: 100vh;
-  background-image: url(../src/images/biel-morro-250579-unsplash_2_40.jpg);
+  background: blue;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.book-button-home-page{
+.book-button-home-page {
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   margin-right: -50%;
   top: 50%;
   left: 50%;
@@ -59,27 +59,39 @@ button:hover {
   height: 100px;
   background: rgba(255, 255, 255, 0.6);
 }
-.book-button-home-page:hover{
+.book-button-home-page:hover {
   background: rgba(255, 255, 255, 1);
 }
 
-#home-header > button > a{
+#home-header > button > a {
   color: white;
 }
 
-#home-header > button:hover a{
-  color:  rgb(8, 42, 82);
+#home-header > button:hover a {
+  color: rgb(8, 42, 82);
 }
-
 
 /* BOOKING PAGE*/
 #booking-calendar {
   min-height: 100vh;
 }
 
+#button-calendar {
+  display: none;
+}
+
+#discount-button {
+  text-align: center;
+}
+
+#discount-button button {
+  width: 90%;
+  height: 50px;
+}
+
 #booking-header {
   height: 100vh;
-  background-image: url(../src/images/biel-morro-250579-unsplash_2_40.jpg);
+  background: blue;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -94,21 +106,21 @@ button:hover {
   display: none;
 }
 
-#guest-booking-form{
+#guest-booking-form {
   text-align: center;
 }
 
-#guest-booking-form input{
+#guest-booking-form input {
   background: transparent;
   border: none;
   border-bottom: 2px solid rgb(8, 42, 82);
 }
 
-#guest-booking-form > form > input[type="submit"]{
+#guest-booking-form > form > input[type="submit"] {
   background: rgb(8, 42, 82);
   color: white;
 }
-#guest-booking-form > form > input[type="submit"]:hover{
+#guest-booking-form > form > input[type="submit"]:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -189,6 +201,40 @@ button:hover {
 
 /* BOOKING VIEW */
 
+.face-button-div,
+.massage-button-div,
+.lashes-button-div,
+.body-treatment-button-div {
+  height: 300px;
+  width: 500px;
+  margin: 10px;
+}
+
+#face-button,
+#massage-button,
+#lashes-button,
+#body-button {
+  background: url(./images/face-mask.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+#massage-button {
+  background: url(./images/couple-massage.jpg);
+  background-size: contain;
+}
+
+#lashes-button {
+  background: url(./images/brows.jpg);
+  background-size: contain;
+}
+#body-button {
+  background: url(./images/wax.jpg);
+  background-size: contain;
+}
+
 #treatments {
   margin: 0px auto;
   text-align: center;
@@ -207,10 +253,6 @@ button:hover {
   text-align: center;
 }
 
-#treatments ul li:hover{
-  
-}
-
 #treatments ul li p {
   text-align: left;
   margin: 0px;
@@ -227,6 +269,7 @@ button:hover {
   height: 40px;
   width: 60%;
   margin-top: 40px;
+  margin: 0px auto;
 }
 
 .flex-container-time-buttons {
@@ -247,12 +290,11 @@ button:hover {
   margin: 5px;
 }
 
-#guest-form-button{
+#guest-form-button {
   width: 40%;
   text-align: center;
   margin: 0px auto;
 }
-
 
 /* TREATMENT PAGE */
 #all-body-treatments,
@@ -292,7 +334,7 @@ button:hover {
     font-size: 1.2em;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    color:rgb(8, 42, 82);
+    color: rgb(8, 42, 82);
     margin-top: 50px;
   }
 
@@ -311,7 +353,6 @@ button:hover {
 @media screen and (min-width: 1000px) {
   /* BOOKING PAGE */
   #booking {
-    margin-top: -100px;
   }
   #booking-view {
     margin: 0px auto;
@@ -334,9 +375,10 @@ button:hover {
   #treatments-face,
   #treatments-massage,
   #treatments-body,
-  #treatments-lashes{
+  #treatments-lashes {
     width: 50%;
     margin: 0px auto;
+    display: none;
   }
 
   #date-picker {
