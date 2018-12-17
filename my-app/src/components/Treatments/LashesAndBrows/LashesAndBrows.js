@@ -6,33 +6,45 @@ function lashesAndBrows(props) {
       <h2>FRANSAR OCH BRYN</h2>
       <ul>
         <li>
-          <p>Fransar</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Fransar"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Fransar -{" "}
+              <span className="treatment-summary">
+                gör fransar
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Bryn</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Bryn"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Bryn -{" "}
+              <span className="treatment-summary">
+                gör bryn
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Fransar och Bryn</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Fransar och Bryn"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Fransar & Bryn -{" "}
+              <span className="treatment-summary">
+                gör fransar och bryn
+              </span>
+            </p>
           </button>
         </li>
       </ul>

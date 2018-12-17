@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import BookingView from "./BookingView";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
-import BookingSummary from "./BookingSummary";
 
 class BookingCalendar extends Component {
   constructor(props) {
@@ -132,8 +131,9 @@ class BookingCalendar extends Component {
     });
   }
 
+  /** When you are booking as a guest and a time button is clicked - show book button */
   showGuestFormButton() {
-    if (this.props.time !== "") {
+    if (this.props.time !== "" && this.props.loggedIn !== true) {
       this.setState({
         showGuestFormButton: true
       });
@@ -204,11 +204,6 @@ class BookingCalendar extends Component {
           id={this.props.theId}
           loggedIn={this.props.loggedIn}
           showGuestFormButton={this.state.showGuestFormButton}
-        />
-        <BookingSummary
-          date={this.state.startDate}
-          time={this.state.time}
-          treatment={this.state.treatment}
         />
       </div>
     );

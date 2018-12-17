@@ -12,10 +12,9 @@ import FaceTreatments from "../Treatments/Face/FaceTreatments";
 import Massage from "../Treatments/Massage/Massage";
 import BodyTreatments from "../Treatments/BodyTreatments/BodyTreatments";
 import LashesAndBrows from "../Treatments/LashesAndBrows/LashesAndBrows";
-import BookingSummary from "../Booking/BookingSummary";
 import BookingGuest from "../BookingGuest/BookingGuest";
 
-import GuestFromButton from "./GuestFormButton";
+import GuestFormButton from "./GuestFormButton";
 //import ButtonGeneric from '../freeTimesButtons/ButtonGeneric';
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -36,22 +35,17 @@ class BookingView extends Component {
     this.toggleTreatmentsAndCalendar = this.toggleTreatmentsAndCalendar.bind(
       this
     );
-    this.showBookingButton = this.showBookingButton.bind(this);
+    //this.showBookingButton = this.showBookingButton.bind(this);
     this.showFaceTreatments = this.showFaceTreatments.bind(this);
     this.showBookingGuest = this.showBookingGuest.bind(this);
   }
 
-  bookingSummaryVisible() {
-    let bookingSummary = document.getElementById("booking-summary");
-    bookingSummary.style.display = "block";
-  }
-
-  showBookingButton() {
+  /*showBookingButton() {
     this.setState({
       bookButton: true,
       bookButtonGuest: true
     });
-  }
+  }*/
 
   toggleTreatmentsAndCalendar() {
     if (this.props.treatment !== "") {
@@ -70,23 +64,18 @@ class BookingView extends Component {
   showFaceTreatments(button) {
     let buttonId = button.target.id;
 
-    if (
-      buttonId ===
-      ("face-button" || "body-button" || "massage-button" || "lashes-button")
-    ) {
-      let buttonCalendar = document.getElementById("button-calendar");
-      buttonCalendar.style.display = "block";
-    }
     if (buttonId === "face-button") {
       let faceTreatments = document.getElementById("treatments-face");
       let bodyTreatments = document.getElementById("treatments-body");
       let massageTreatments = document.getElementById("treatments-massage");
       let lashesTreatments = document.getElementById("treatments-lashes");
+      let buttonCalendar = document.getElementById("button-calendar");
 
       faceTreatments.style.display = "block";
       bodyTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "none";
+      buttonCalendar.style.display = "block";
 
       window.scrollBy(0, 500);
     }
@@ -95,11 +84,13 @@ class BookingView extends Component {
       let bodyTreatments = document.getElementById("treatments-body");
       let massageTreatments = document.getElementById("treatments-massage");
       let lashesTreatments = document.getElementById("treatments-lashes");
+      let buttonCalendar = document.getElementById("button-calendar");
 
       bodyTreatments.style.display = "block";
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "none";
+      buttonCalendar.style.display = "block";
 
       window.scrollBy(0, 500);
     }
@@ -108,11 +99,13 @@ class BookingView extends Component {
       let bodyTreatments = document.getElementById("treatments-body");
       let massageTreatments = document.getElementById("treatments-massage");
       let lashesTreatments = document.getElementById("treatments-lashes");
+      let buttonCalendar = document.getElementById("button-calendar");
 
       bodyTreatments.style.display = "none";
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "block";
       lashesTreatments.style.display = "none";
+      buttonCalendar.style.display = "block";
 
       window.scrollBy(0, 500);
     }
@@ -121,11 +114,13 @@ class BookingView extends Component {
       let bodyTreatments = document.getElementById("treatments-body");
       let massageTreatments = document.getElementById("treatments-massage");
       let lashesTreatments = document.getElementById("treatments-lashes");
+      let buttonCalendar = document.getElementById("button-calendar");
 
       bodyTreatments.style.display = "none";
       faceTreatments.style.display = "none";
       massageTreatments.style.display = "none";
       lashesTreatments.style.display = "block";
+      buttonCalendar.style.display = "block";
 
       window.scrollBy(0, 500);
     }
@@ -135,6 +130,12 @@ class BookingView extends Component {
     this.setState({
       showBookingGuest: true
     });
+    let timeButtons = document.getElementById("time-buttons");
+    let calendar = document.getElementById("date-picker");
+    let personInformationButton = document.getElementById("guest-form-button");
+    timeButtons.style.display = "none";
+    calendar.style.display = "none";
+    personInformationButton.style.display = "none";
   }
 
   render() {
@@ -202,6 +203,8 @@ class BookingView extends Component {
 
     return (
       <div id="booking">
+          <h1>Boka behandling</h1>
+        
         <div id="treatments">
           <TreatmentButtons event={this.showFaceTreatments} />
 
@@ -271,12 +274,9 @@ class BookingView extends Component {
           />
         )}
 
-        <button onClick={this.bookingSummaryVisible}>Fortsätt</button>
-
         {this.props.showGuestFormButton && (
-          <GuestFromButton event={this.showBookingGuest} />
+          <GuestFormButton event={this.showBookingGuest} />
         )}
-        <BookingSummary />
 
         <div id="book-button-div">
           {/** Button to book as an inlogged user only shows when logged in*/}

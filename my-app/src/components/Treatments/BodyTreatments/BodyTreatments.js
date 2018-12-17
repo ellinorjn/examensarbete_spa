@@ -2,37 +2,49 @@ import React from "react";
 
 function bodyTreatments(props) {
   return (
-    <div>
+    <div id="body-treatments-list">
       <h2>KROPPSBEHANDLINGAR</h2>
       <ul>
         <li>
-          <p>Kroppsbehandling 1</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Kroppsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Kroppsbehandling 1 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Kroppsbehandling 2</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Kroppsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Kroppsbehandling 2 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Kroppsbehandling 3</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Kroppsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Kroppsbehandling 1 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
       </ul>

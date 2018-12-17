@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import BookingForm from "./BookingForm";
 
+import BookingConfirmation from "../Booking/BookingConfirmation";
+
 class BookingGuest extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class BookingGuest extends Component {
     );
     this.handleChange = this.handleChange.bind(this);
     this.registerBookingGuest = this.registerBookingGuest.bind(this);
+    this.showBookingConfirmation = this.showBookingConfirmation.bind(this);
   }
 
   handleChange(e) {
@@ -27,6 +30,16 @@ class BookingGuest extends Component {
     //this.props.showLogin();
     e.preventDefault();
   }
+
+  showBookingConfirmation(){
+    let showBookingConfirmation = document.getElementById('booking-confirmation');
+  showBookingConfirmation.style.display = 'block';
+}
+
+closeConfirmation(){
+  let showBookingConfirmation = document.getElementById('booking-confirmation');
+  showBookingConfirmation.style.display = 'none';
+}
 
   registerBookingGuest() {
     let bookingInformation = {
@@ -56,6 +69,7 @@ class BookingGuest extends Component {
       )
         .then(response => {
           //this.hideBookingOptions();
+          this.showBookingConfirmation();
           console.log(response);
         })
         .catch(error => {
@@ -71,6 +85,8 @@ class BookingGuest extends Component {
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}
         />
+        
+        <BookingConfirmation event={this.closeConfirmation}/>
       </div>
     );
   }

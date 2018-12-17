@@ -3,13 +3,27 @@
 }
 
 #root {
-  background-color: #f5f5f5;
+  background-color: #cbc5c1;
 }
 
 .clear {
   clear: both;
 }
 
+h1 {
+  text-align: center;
+  color: #4c586f;
+}
+
+footer {
+  background-color: #3e3e3b;
+  color: #ebeced;
+  height: 100px;
+}
+
+footer p {
+  margin: 0px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,10 +35,11 @@
   color: white;
 }
 
-button {
-  background-color: rgb(8, 42, 82);
-  color: white;
-  border: 2px solid white;
+button,
+#submit-login {
+  background-color: #4c586f;
+  color: #ebeced;
+  border: none;
   height: 30px;
   width: 70px;
   font-family: "Raleway", sans-serif;
@@ -72,12 +87,13 @@ button:hover {
 }
 
 /* BOOKING PAGE*/
-#booking-calendar {
-  min-height: 100vh;
+#booking {
+  height: 100%;
 }
 
 #button-calendar {
   display: none;
+  height: 100%;
 }
 
 #discount-button {
@@ -102,18 +118,20 @@ button:hover {
   height: 100%;
 }
 
-#booking-summary {
-  display: none;
-}
-
 #guest-booking-form {
+  width: 50%;
+  margin: 0px auto;
   text-align: center;
 }
 
 #guest-booking-form input {
+  width: 50%;
   background: transparent;
   border: none;
   border-bottom: 2px solid rgb(8, 42, 82);
+  text-align: center;
+  font-size: 1.1em;
+  margin: 20px;
 }
 
 #guest-booking-form > form > input[type="submit"] {
@@ -122,6 +140,66 @@ button:hover {
 }
 #guest-booking-form > form > input[type="submit"]:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+/* LOG IN FORM*/
+#login-and-register,
+#register-form {
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  background: white;
+}
+
+.login-form-input,
+.register-form-input {
+  width: 50%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(8, 42, 82);
+  text-align: center;
+  font-size: 1.1em;
+  margin: 20px;
+}
+
+#button-new-user {
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  color: #a2aab0;
+  font-style: italic;
+}
+
+/* CONFIRMATION POPUP*/
+
+#booking-confirmation,
+#register-confirmation {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 }
 /* TREATMENT PAGE */
@@ -178,6 +256,14 @@ button:hover {
   box-sizing: border-box;
   width: 55%;
   float: left;
+}
+
+#all-body-treatments,
+#all-lashes-treatments,
+#all-massage-treatments,
+#all-face-treatments {
+  display: none;
+  background: white;
 }
 
 /* TREATMENT BUTTONS AND TREATMENT LIST ON BOOKING PAGE*/
@@ -246,23 +332,14 @@ button:hover {
 }
 
 #treatments ul li {
-  border-bottom: 2px solid rgb(8, 42, 82);
   margin: 5px;
   list-style: none;
   height: 40px;
   text-align: center;
 }
 
-#treatments ul li p {
-  text-align: left;
-  margin: 0px;
-  width: 50%;
-  float: left;
-  font-family: "Raleway", sans-serif;
-}
-
-#treatments ul li p button {
-  float: right;
+#treatments ul li button {
+  width: 100%;
 }
 
 #button-calendar {
@@ -290,19 +367,28 @@ button:hover {
   margin: 5px;
 }
 
-#guest-form-button {
+#guest-form-button-div {
   width: 40%;
-  text-align: center;
   margin: 0px auto;
 }
 
-/* TREATMENT PAGE */
-#all-body-treatments,
-#all-lashes-treatments,
-#all-massage-treatments,
-#all-face-treatments {
-  display: none;
+#guest-form-button {
+  width: 100%;
+}
+
+/* FAQ */
+#header-faq {
+  height: 100vh;
+  background-image: url(../src/images/treatments-header.jpg);
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#faq-view {
+  width: 90%;
   background: white;
+  margin: 0px auto;
 }
 
 /* ------ TABLET ------ */
@@ -352,12 +438,10 @@ button:hover {
 
 @media screen and (min-width: 1000px) {
   /* BOOKING PAGE */
-  #booking {
-  }
   #booking-view {
     margin: 0px auto;
     width: 90%;
-    height: 100vh;
+    height: 100%;
   }
   .treatment-button {
     width: 22%;
@@ -379,6 +463,35 @@ button:hover {
     width: 50%;
     margin: 0px auto;
     display: none;
+  }
+  #body-treatments-list {
+    height: 100%;
+  }
+
+  #treatments-body ul li,
+  #treatments-facec ul li,
+  #treatments-lashes ul li,
+  #treatments-massage ul li {
+    margin: 15px;
+  }
+
+  #treatments-body button,
+  #treatments-face button,
+  #treatments-lashes button,
+  #treatments-massage button {
+    height: 40px;
+  }
+
+  #treatments-body p,
+  #treatments-face p,
+  #treatments-lashes p,
+  #treatments-massage p {
+    margin: 0px;
+  }
+
+  .treatmentButtonClass span {
+    font-size: 0.7em;
+    font-style: italic;
   }
 
   #date-picker {
@@ -416,8 +529,6 @@ button:hover {
   }
 
   .read-more-button {
-    background-color: rgb(8, 42, 82);
-    color: white;
     width: 20%;
     position: absolute;
     bottom: 10px;

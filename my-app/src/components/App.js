@@ -6,6 +6,7 @@ import Contact from './contact/contact';
 import Packages from './packages/packages';
 import Treatments from './Treatments/Treatments';
 import Faq from './FAQ/Faq';
+import Footer from './Footer';
 
 import {
   BrowserRouter as Router,
@@ -30,7 +31,7 @@ class App extends Component {
       </Router>
 
       <div className="App">
-       
+       <Footer/>
       </div>
       </div>
     );

@@ -96,6 +96,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        <div id="login-and-register">
         <LoginForm
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}
@@ -103,6 +104,7 @@ class Login extends Component {
         />
 
         <ButtonNewUser event={this.props.showRegister} />
+        </div>
 
         {this.state.showBookingCalendar && (
           <BookingCalendar theId={this.state.person_id}

@@ -6,33 +6,45 @@ function faceTreatments(props) {
       <h2>ANSIKTSBEHANDLINGAR</h2>
       <ul>
         <li>
-          <p>Ansiktsbehandling 1</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Ansiktsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Ansiktsbehandling 1 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Ansiktsbehandling 2</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Ansiktsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Ansiktsbehandling 2 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
         <li>
-          <p>Ansiktsbehandling 3</p>
           <button
-            className={props.treatmentButtonClass}
+            className="treatmentButtonClass"
             value="Ansiktsbehandling 1"
             onClick={props.event}
           >
-            Välj
+            <p>
+              Ansiktsbehandling 3 -{" "}
+              <span className="treatment-summary">
+                här är en ansiktsbehandling
+              </span>
+            </p>
           </button>
         </li>
       </ul>
