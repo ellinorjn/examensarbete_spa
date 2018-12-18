@@ -13,6 +13,29 @@ import LashesAndBrowsInfo from "./LashesAndBrows/LashesAndBrowsInfo";
 
 /* Display treatment page */
 class Treatments extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      toggleBody: true,
+      toggleLashes: true,
+      toggleMassage: true,
+      toggleFace: true
+    };
+
+    this.toggleBody = this.toggleBody.bind(this);
+    this.showBodyTreatments = this.showBodyTreatments.bind(this);
+    this.showFaceTreatments = this.showFaceTreatments.bind(this);
+    this.showLashesTreatments = this.showLashesTreatments.bind(this);
+    this.showMassageTreatments = this.showMassageTreatments.bind(this);
+  }
+
+  toggleBody() {
+    this.setState(function(prevState) {
+      return { toggleBody: !prevState.toggleBody };
+    });
+  }
+
+
   showBodyTreatments() {
     let allBodyTreatments = document.getElementById("all-body-treatments");
     if (allBodyTreatments.style.display === "block") {
@@ -20,6 +43,10 @@ class Treatments extends Component {
     } else {
       allBodyTreatments.style.display = "block";
     }
+    this.setState(function(prevState) {
+      return { toggleBody: !prevState.toggleBody };
+    });
+    //this.toggleReadMoreButton();
   }
 
   showLashesTreatments() {
@@ -29,6 +56,9 @@ class Treatments extends Component {
     } else {
       allLashesTreatments.style.display = "block";
     }
+    this.setState(function(prevState) {
+      return { toggleLashes: !prevState.toggleLashes };
+    });
   }
 
   showMassageTreatments() {
@@ -40,6 +70,9 @@ class Treatments extends Component {
     } else {
       allMassageTreatments.style.display = "block";
     }
+    this.setState(function(prevState) {
+      return { toggleMassage: !prevState.toggleMassage };
+    });
   }
 
   showFaceTreatments() {
@@ -49,6 +82,9 @@ class Treatments extends Component {
     } else {
       allFaceTreatments.style.display = "block";
     }
+    this.setState(function(prevState) {
+      return { toggleFace: !prevState.toggleFace };
+    });
   }
 
   render() {
@@ -58,14 +94,27 @@ class Treatments extends Component {
           <Nav />
         </div>
         <div className="treatments-page">
+          <h1>Våra behandlingar</h1>
           <div className="treatments">
-            <FaceBox event={this.showFaceTreatments} />
+            <FaceBox
+              event={this.showFaceTreatments}
+              toggle={this.state.toggleFace}
+            />
             <FaceTreatmentInfo />
-            <MassageBox event={this.showMassageTreatments} />
+            <MassageBox
+              event={this.showMassageTreatments}
+              toggle={this.state.toggleMassage}
+            />
             <MassageInfo />
-            <BodyTreatmentBox event={this.showBodyTreatments} />
+            <BodyTreatmentBox
+              event={this.showBodyTreatments}
+              toggle={this.state.toggleBody}
+            />
             <BodyTreatmentInfo />
-            <LashesBox event={this.showLashesTreatments} />
+            <LashesBox
+              event={this.showLashesTreatments}
+              toggle={this.state.toggleLashes}
+            />
             <LashesAndBrowsInfo />
           </div>
         </div>

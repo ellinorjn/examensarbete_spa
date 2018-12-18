@@ -10,8 +10,6 @@ function Nav(){
               <ul>
                 <Link to="/">HEM</Link>
                 |
-                <Link to="/Packages">PAKET</Link>
-                |
                 <Link to="/Treatments">BEHANDLINGAR</Link>
                 |
                 <Link to="/Faq">FAQ</Link>

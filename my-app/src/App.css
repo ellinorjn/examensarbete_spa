@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+/* remove aoutofill color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
 #root {
   background-color: #cbc5c1;
 }
@@ -10,7 +18,9 @@
   clear: both;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   text-align: center;
   color: #4c586f;
 }
@@ -36,12 +46,14 @@ footer p {
 }
 
 button,
-#submit-login {
+#submit-login,
+#register-button,
+#guest-form-button {
   background-color: #4c586f;
   color: #ebeced;
   border: none;
   height: 30px;
-  width: 70px;
+  width: 40%;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 1.2em;
@@ -58,7 +70,7 @@ button:hover {
 /* HOME PAGE*/
 #home-header {
   height: 100vh;
-  background: blue;
+  background: #cbc5c1;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,23 +84,24 @@ button:hover {
   left: 50%;
   width: 200px;
   height: 100px;
-  background: rgba(255, 255, 255, 0.6);
-}
-.book-button-home-page:hover {
-  background: rgba(255, 255, 255, 1);
 }
 
 #home-header > button > a {
-  color: white;
+  color: #ebeced;
+  text-decoration: none;
 }
 
 #home-header > button:hover a {
-  color: rgb(8, 42, 82);
+  text-decoration: underline;
 }
 
 /* BOOKING PAGE*/
-#booking {
-  height: 100%;
+
+.booking-page {
+  min-height: 100vh;
+}
+.booking {
+  min-height: 100vh;
 }
 
 #button-calendar {
@@ -118,57 +131,38 @@ button:hover {
   height: 100%;
 }
 
-#guest-booking-form {
-  width: 50%;
-  margin: 0px auto;
-  text-align: center;
-}
-
-#guest-booking-form input {
-  width: 50%;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid rgb(8, 42, 82);
-  text-align: center;
-  font-size: 1.1em;
-  margin: 20px;
-}
-
-#guest-booking-form > form > input[type="submit"] {
-  background: rgb(8, 42, 82);
-  color: white;
-}
-#guest-booking-form > form > input[type="submit"]:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-/* LOG IN FORM*/
+/* FORMS */
 #login-and-register,
-#register-form {
-  width: 50%;
+#register-form,
+#guest-booking-form {
+  width: 90%;
   margin: 0px auto;
   text-align: center;
   background: white;
+  height: 100vh;
 }
 
-.login-form-input,
-.register-form-input {
+#login-form {
+  width: 50%;
+  margin: 0px auto;
+}
+
+.form-input {
   width: 50%;
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgb(8, 42, 82);
+  border-bottom: 2px solid #4c586f;
   text-align: center;
   font-size: 1.1em;
   margin: 20px;
 }
 
 #button-new-user {
-  width: 50%;
-  height: 100%;
   background: transparent;
   color: #a2aab0;
   font-style: italic;
+  padding: 2%;
+  font-size: 1em;
 }
 
 /* CONFIRMATION POPUP*/
@@ -180,19 +174,28 @@ button:hover {
 
 .modal-content {
   background-color: #fefefe;
-  border: 1px solid #888;
-  width: 50%;
+  border: 2px solid #a2aab0;
+  width: 40%;
   height: 50%;
+  min-height: 250px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+#booking-confirmation-message {
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 10%;
 }
 
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  margin-right: 2%;
+  font-size: 1.8em;
   font-weight: bold;
 }
 
@@ -216,7 +219,7 @@ button:hover {
   width: 90%;
   margin: 0px auto;
   margin-top: -100px;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 .face-box,
@@ -225,7 +228,7 @@ button:hover {
 .lashes-box {
   background: white;
   margin: 0px auto;
-  height: 250px;
+  height: 200px;
   margin-bottom: 25px;
 }
 
@@ -233,29 +236,14 @@ button:hover {
 .body-box-img,
 .massage-box-img,
 .lashes-box-img {
-  border: 1px solid blue;
-  box-sizing: border-box;
-  height: 250px;
-  width: 250px;
-  float: left;
-}
-
-.face-box-img img,
-.body-box-img img,
-.massage-box-img img,
-.lashes-box-img img {
-  height: 250px;
-  width: 250px;
+  display: none;
 }
 
 .face-box-text,
 .body-box-text,
 .massage-box-text,
 .lashes-box-text {
-  border: 1px solid red;
-  box-sizing: border-box;
-  width: 55%;
-  float: left;
+  margin-bottom: 50px;
 }
 
 #all-body-treatments,
@@ -266,13 +254,19 @@ button:hover {
   background: white;
 }
 
-/* TREATMENT BUTTONS AND TREATMENT LIST ON BOOKING PAGE*/
-
-.treatment-button {
-  width: 90%;
-  height: 40px;
-  margin: 5px;
+.read-more-button-div {
+  width: 80%;
+  margin: 0px auto;
 }
+.read-more-button {
+  width: 100%;
+}
+
+.read-more-button:hover {
+  text-decoration: underline;
+}
+
+/* TREATMENT BUTTONS AND TREATMENT LIST ON BOOKING PAGE*/
 
 .treatment-button:focus {
   outline: none;
@@ -332,19 +326,34 @@ button:hover {
 }
 
 #treatments ul li {
-  margin: 5px;
+  margin: 20px 0px 20px;
   list-style: none;
-  height: 40px;
+  height: 100%;
   text-align: center;
+  position: relative;
+  border-bottom: 1px solid #a2aab0;
+}
+
+#treatments ul li p {
+  margin-bottom: 10px;
+}
+
+#treatments ul li h3 {
+  text-align: left;
+  margin: 0;
 }
 
 #treatments ul li button {
-  width: 100%;
+  width: 15%;
+  height: 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 #button-calendar {
   height: 40px;
-  width: 60%;
+  width: 50%;
   margin-top: 40px;
   margin: 0px auto;
 }
@@ -389,6 +398,25 @@ button:hover {
   width: 90%;
   background: white;
   margin: 0px auto;
+  margin-top: -100px;
+  padding-top: 20px;
+}
+
+.faq-questions {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.individual-question {
+  border-bottom: 1px solid #a2aab0;
+  margin: 0px auto;
+}
+
+.individual-question h2 {
+  text-align: left;
+}
+.individual-question span {
+  font-style: italic;
 }
 
 /* ------ TABLET ------ */
@@ -413,15 +441,16 @@ button:hover {
   .nav ul {
     margin: 0px;
     text-align: center;
+    padding-top: 1.5%;
   }
 
   .nav ul a {
     padding: 2%;
+    padding-top: 2%;
     font-size: 1.2em;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
-    color: rgb(8, 42, 82);
-    margin-top: 50px;
+    color: #4c586f;
   }
 
   #buttonTen,
@@ -489,7 +518,15 @@ button:hover {
     margin: 0px;
   }
 
-  .treatmentButtonClass span {
+  .treatment-summary {
+    float: left;
+  }
+
+  .treatmentButtonClass {
+    float: right;
+  }
+
+  .treatment-summary span {
     font-size: 0.7em;
     font-style: italic;
   }
@@ -507,8 +544,17 @@ button:hover {
     border-bottom-color: #f0f0f0;
   }
 
+  #date-picker > div > div > input[type="text"] {
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1em;
+  }
+
   #time-buttons {
     text-align: center;
+    width: 50%;
+    margin: 0px auto;
   }
 
   /* TREATMENT PAGE */
@@ -532,9 +578,61 @@ button:hover {
     width: 20%;
     position: absolute;
     bottom: 10px;
+    right: 10px;
   }
 
   .read-more-button:hover {
     text-decoration: underline;
+  }
+
+  .face-box,
+  .body-box,
+  .massage-box,
+  .lashes-box {
+    background: white;
+    margin: 0px auto;
+    height: 250px;
+    margin-bottom: 25px;
+  }
+
+  .face-box-img,
+  .body-box-img,
+  .massage-box-img,
+  .lashes-box-img {
+    display: block;
+    height: 250px;
+    width: 250px;
+    float: left;
+  }
+
+  .face-box-img img,
+  .body-box-img img,
+  .massage-box-img img,
+  .lashes-box-img img {
+    height: 250px;
+    width: 250px;
+  }
+
+  .face-box-text,
+  .body-box-text,
+  .massage-box-text,
+  .lashes-box-text {
+    width: 55%;
+    float: left;
+  }
+
+  #all-body-treatments,
+  #all-lashes-treatments,
+  #all-massage-treatments,
+  #all-face-treatments {
+    display: none;
+    background: white;
+  }
+
+  /* FAQ */
+
+  .individual-question {
+    width: 70%;
+    margin: 0px auto;
   }
 }

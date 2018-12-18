@@ -6,7 +6,7 @@ function loginForm(props) {
       <h1>Logga in</h1>
       <form onSubmit={props.preventDefaultBehaviorSubmit}>
         <input
-        className="login-form-input"
+        className="form-input"
           type="text"
           name="email"
           placeholder="Email"
@@ -14,7 +14,7 @@ function loginForm(props) {
         />  
         <br />
         <input
-        className="login-form-input"
+        className="form-input"
           type="password"
           name="password"
           placeholder="Lösenord"
@@ -23,7 +23,7 @@ function loginForm(props) {
         <br />
         <input
           type="submit"
-          value="Login"
+          value="Logga in"
           id="submit-login"
           onClick={props.event}
         />

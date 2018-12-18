@@ -12,7 +12,9 @@ function FaceBox(props) {
         <p>här finns det ansiktsbehandlingar, KUL!</p>
       </div>
       <div>
-      <ReadMoreButton event={props.event} />
+      <button className="read-more-button" value="body" onClick={props.event}>
+          {props.toggle ? "visa mer" : "visa mindre"}
+        </button>
       </div>
       <div className={"clear"} />
     </div>

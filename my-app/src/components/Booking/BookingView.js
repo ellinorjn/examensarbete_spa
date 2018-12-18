@@ -77,7 +77,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "none";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 500);
+      window.scrollBy(0, 600);
     }
     if (buttonId === "body-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -92,7 +92,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "none";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 500);
+      window.scrollBy(0, 600);
     }
     if (buttonId === "massage-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -107,7 +107,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "none";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 500);
+      window.scrollBy(0, 600);
     }
     if (buttonId === "lashes-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -122,7 +122,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "block";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 500);
+      window.scrollBy(0, 600);
     }
   }
 
@@ -202,7 +202,7 @@ class BookingView extends Component {
     }
 
     return (
-      <div id="booking">
+      <div className="booking">
           <h1>Boka behandling</h1>
         
         <div id="treatments">

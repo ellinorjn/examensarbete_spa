@@ -6,46 +6,55 @@ function bodyTreatments(props) {
       <h2>KROPPSBEHANDLINGAR</h2>
       <ul>
         <li>
+          <div className="treatment-summary">
+            <h3>Kroppsbehandling 1</h3>
+            <p>
+              En klassisk ansiktsbehandling med fokus på fukt{" "}
+              <span>- 50 min</span>
+            </p>
+          </div>
           <button
             className="treatmentButtonClass"
             value="Kroppsbehandling 1"
             onClick={props.event}
           >
-            <p>
-              Kroppsbehandling 1 -{" "}
-              <span className="treatment-summary">
-                här är en ansiktsbehandling
-              </span>
-            </p>
+            VÄLJ
           </button>
+          <div className="clear" />
         </li>
         <li>
+          <div className="treatment-summary">
+            <h3>Kroppsbehandling 2</h3>
+            <p>
+              En klassisk ansiktsbehandling med fokus på fukt{" "}
+              <span>- 50 min</span>
+            </p>
+          </div>
           <button
             className="treatmentButtonClass"
-            value="Kroppsbehandling 1"
+            value="Kroppsbehangling 2"
             onClick={props.event}
           >
-            <p>
-              Kroppsbehandling 2 -{" "}
-              <span className="treatment-summary">
-                här är en ansiktsbehandling
-              </span>
-            </p>
+            VÄLJ
           </button>
+          <div className="clear" />
         </li>
         <li>
+          <div className="treatment-summary">
+            <h3>Kroppsbehandling 3</h3>
+            <p>
+              En klassisk ansiktsbehandling med fokus på fukt{" "}
+              <span>- 50 min</span>
+            </p>
+          </div>
           <button
             className="treatmentButtonClass"
-            value="Kroppsbehandling 1"
+            value="Kroppsbehandling 3"
             onClick={props.event}
           >
-            <p>
-              Kroppsbehandling 1 -{" "}
-              <span className="treatment-summary">
-                här är en ansiktsbehandling
-              </span>
-            </p>
+            VÄLJ
           </button>
+          <div className="clear" />
         </li>
       </ul>
     </div>

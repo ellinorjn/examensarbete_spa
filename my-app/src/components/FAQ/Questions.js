@@ -3,65 +3,53 @@ import Nav from "../nav";
 
 function Questions() {
   return (
-    <div>
-      <div>
-        <h2>FRÅGA 1</h2>
+    <div className="faq-questions">
+      <div className="individual-question">
+        <h2>Vad har ni för åldersgräns? Får jag ta med mina barn?</h2>
         <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          <span>
+            Vi på Stockholm Spa har en strikt åldersgräns på 18 år för att
+            bibehålla det lugn vi står för. Barn under 18 år får därför stanna
+            hemma!
+          </span>
         </p>
       </div>
-      <div>
-        <h2>FRÅGA 2</h2>
+      <div className="individual-question">
+        <h2>Hur lång tid innan min behandling bör jag vara på plats?</h2>
         <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          <span>
+            Du bör vara på plats minst 10 minuter föra utsatt tid för anmäla att
+            du kommit. I loungen du sitter i före behandling serveras lugnande
+            te samt färsk frukt, du är därför mer än välkommen en halvtimma före
+            utsatt tid för lite te och frukt.
+          </span>
         </p>
       </div>
-      <div>
-        <h2>FRÅGA 3</h2>
+      <div className="individual-question">
+        <h2>Vad har jag på mig under min bokade behandling?</h2>
         <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          <span>
+            Torra badkläder eller rena underkläder under badrocken du fick när
+            du anlände till vårt spa.
+          </span>
         </p>
       </div>
-      <div>
-        <h2>FRÅGA 4</h2>
+      <div className="individual-question">
+        <h2>Får jag badkläder eller behöver jag ta med egna?</h2>
         <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          <span>
+            När du kommer till oss får du badrock och badkläder som du får
+            behålla samt tofflor att låna.
+          </span>
         </p>
       </div>
-      <div>
-        <h2>FRÅGA 5</h2>
+      <div className="individual-question">
+        <h2>Finns det parkeringsmöjligheter om jag kommer med bil?</h2>
         <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          <span>
+            10 minuters promenad från vår spaanläggning finns det en stor
+            betalfri parkering där parkeringsmöjlighet finns.
+          </span>
         </p>
       </div>
     </div>

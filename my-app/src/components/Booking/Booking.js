@@ -1,62 +1,59 @@
-import React, { Component } from 'react';
-import Login from '../Login/Login'
-import Register from '../Register/Register';
-import BookingCalendar from '../Booking/BookingCalendar';
-import Nav from '../nav';
-import GetDiscountButton from './GetDiscountButton';
+import React, { Component } from "react";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
+import BookingCalendar from "../Booking/BookingCalendar";
+import Nav from "../nav";
+import GetDiscountButton from "./GetDiscountButton";
 
 class Booking extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       showBookingCalendar: true,
       showGetDiscountButton: true,
       showLogin: false,
       showRegister: false
-    }
+    };
 
     this.showRegister = this.showRegister.bind(this);
     this.showLogin = this.showLogin.bind(this);
   }
 
-  showRegister(){
+  showRegister() {
     this.setState({
       showRegister: true,
       showLogin: false
-    })
+    });
   }
 
-  showLogin(){
+  showLogin() {
     this.setState({
       showRegister: false,
       showLogin: true,
       showBookingCalendar: false,
       showGetDiscountButton: false
-    })
+    });
   }
- 
 
   render() {
     return (
-      <div className="Booking">
-        
-        
-          <Nav />
-          {this.state.showGetDiscountButton && <GetDiscountButton event={this.showLogin}/>}
-        
+      <div className="booking-page">
+        <Nav />
+        {this.state.showGetDiscountButton && (
+          <GetDiscountButton event={this.showLogin} />
+        )}
 
         <div id="booking-calendar">
           {this.state.showBookingCalendar && <BookingCalendar />}
         </div>
 
         <div id="login">
-          {this.state.showLogin && <Login showRegister={this.showRegister}/>}
+          {this.state.showLogin && <Login showRegister={this.showRegister} />}
         </div>
 
         <div id="register">
           {this.state.showRegister && <Register showLogin={this.showLogin} />}
         </div>
-
       </div>
     );
   }
