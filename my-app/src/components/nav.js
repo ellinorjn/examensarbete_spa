@@ -3,6 +3,8 @@ import {
   Link
 } from 'react-router-dom';
 
+import BurgerMenu from './HamburgerMenu';
+
 function Nav(){
     return (
         <div>   
@@ -17,7 +19,9 @@ function Nav(){
                 <Link to="/Contact">KONTAKTA OSS</Link>
                 |
                 <Link to="/Booking">BOKA</Link>
-              </ul>        
+              </ul>    
+
+              <BurgerMenu />    
             </nav>                       
           </div>  
       )

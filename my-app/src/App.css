@@ -285,8 +285,6 @@ button:hover {
 .massage-button-div,
 .lashes-button-div,
 .body-treatment-button-div {
-  height: 300px;
-  width: 500px;
   margin: 10px;
 }
 
@@ -294,25 +292,8 @@ button:hover {
 #massage-button,
 #lashes-button,
 #body-button {
-  background: url(./images/face-mask.jpg);
   height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
-}
-
-#massage-button {
-  background: url(./images/couple-massage.jpg);
-  background-size: contain;
-}
-
-#lashes-button {
-  background: url(./images/brows.jpg);
-  background-size: contain;
-}
-#body-button {
-  background: url(./images/wax.jpg);
-  background-size: contain;
 }
 
 #treatments {
@@ -321,8 +302,21 @@ button:hover {
   width: 90%;
 }
 
+#treatments-face,
+#treatments-massage,
+#treatments-body,
+#treatments-lashes {
+  width: 100%;
+  margin: 0px auto;
+  display: none;
+}
+
 #treatments ul {
   padding: 0;
+}
+
+#body-treatments-list > ul {
+  width: 100%;
 }
 
 #treatments ul li {
@@ -336,6 +330,7 @@ button:hover {
 
 #treatments ul li p {
   margin-bottom: 10px;
+  margin-top: 0px;
 }
 
 #treatments ul li h3 {
@@ -346,9 +341,7 @@ button:hover {
 #treatments ul li button {
   width: 15%;
   height: 25px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  margin-bottom: 10px;
 }
 
 #button-calendar {
@@ -461,6 +454,63 @@ button:hover {
   #buttonSixteen {
     width: 30%;
   }
+
+  /* BOOKING VIEW*/
+  /* BOOKING VIEW */
+
+  .face-button-div,
+  .massage-button-div,
+  .lashes-button-div,
+  .body-treatment-button-div {
+    height: 300px;
+    width: 500px;
+    margin: 10px;
+  }
+
+  #face-button,
+  #massage-button,
+  #lashes-button,
+  #body-button {
+    background: url(./images/face-mask.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  #massage-button {
+    background: url(./images/couple-massage.jpg);
+    background-size: contain;
+  }
+
+  #lashes-button {
+    background: url(./images/brows.jpg);
+    background-size: contain;
+  }
+  #body-button {
+    background: url(./images/wax.jpg);
+    background-size: contain;
+  }
+
+  #treatments-face,
+  #treatments-massage,
+  #treatments-body,
+  #treatments-lashes {
+    width: 50%;
+  }
+
+  .treatment-summary {
+    float: left;
+  }
+
+  .treatmentButtonClass {
+    float: right;
+  }
+  #treatments ul li button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
 /* ------ DESKTOP ------ */
@@ -485,20 +535,12 @@ button:hover {
     text-align: center;
   }
 
-  #treatments-face,
-  #treatments-massage,
-  #treatments-body,
-  #treatments-lashes {
-    width: 50%;
-    margin: 0px auto;
-    display: none;
-  }
   #body-treatments-list {
     height: 100%;
   }
 
   #treatments-body ul li,
-  #treatments-facec ul li,
+  #treatments-face ul li,
   #treatments-lashes ul li,
   #treatments-massage ul li {
     margin: 15px;
@@ -516,14 +558,6 @@ button:hover {
   #treatments-lashes p,
   #treatments-massage p {
     margin: 0px;
-  }
-
-  .treatment-summary {
-    float: left;
-  }
-
-  .treatmentButtonClass {
-    float: right;
   }
 
   .treatment-summary span {
