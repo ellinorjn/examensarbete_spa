@@ -12,7 +12,7 @@ function loginForm(props) {
           placeholder="Email"
           onChange={props.handleChange}
         />  
-        <br />
+        <div className="line"><hr/></div>
         <input
         className="form-input"
           type="password"
@@ -20,7 +20,7 @@ function loginForm(props) {
           placeholder="Lösenord"
           onChange={props.handleChange}
         />
-        <br />
+        <div className="line"><hr/></div>
         <input
           type="submit"
           value="Logga in"

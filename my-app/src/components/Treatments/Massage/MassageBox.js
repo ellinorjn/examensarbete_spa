@@ -11,9 +11,11 @@ function MassageBox(props) {
         <h2>Massage</h2>
         <p>här finns det olika massagebehandlingar, KUL!</p>
       </div>
+      <div className="read-more-button-div">
       <button className="read-more-button" value="body" onClick={props.event}>
         {props.toggle ? "visa mer" : "visa mindre"}
       </button>
+      </div>
       <div className={"clear"} />
     </div>
   );

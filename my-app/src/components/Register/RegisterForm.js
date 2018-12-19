@@ -13,7 +13,7 @@ function registerForm(props) {
           onChange={props.handleChange}
           required
         />
-        <br />
+        <div className="line"><hr/></div>
         <input
           className="form-input"
           type="text"
@@ -22,7 +22,7 @@ function registerForm(props) {
           onChange={props.handleChange}
           required
         />
-        <br />
+        <div className="line"><hr/></div>
         <input
           className="form-input"
           type="text"
@@ -31,7 +31,7 @@ function registerForm(props) {
           onChange={props.handleChange}
           required
         />
-        <br />
+        <div className="line"><hr/></div>
         <input
           className="form-input"
           type="password"
@@ -40,7 +40,7 @@ function registerForm(props) {
           onChange={props.handleChange}
           required
         />
-        <br />
+        <div className="line"><hr/></div>
         <input id="register-button" type="submit" value="Registrera dig" onClick={props.event} />
       </form>
     </div>

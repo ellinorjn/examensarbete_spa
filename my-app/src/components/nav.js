@@ -19,10 +19,9 @@ function Nav(){
                 <Link to="/Contact">KONTAKTA OSS</Link>
                 |
                 <Link to="/Booking">BOKA</Link>
-              </ul>    
-
-              <BurgerMenu />    
-            </nav>                       
+              </ul>        
+            </nav>  
+            <BurgerMenu />                     
           </div>  
       )
   }

@@ -11,7 +11,7 @@ function BodyTreatmentBox(props) {
         <h2>Kroppsbehandlingar</h2>
         <p>här finns det kroppsbehandlingar, KUL!</p>
       </div>
-      <div>
+      <div className="read-more-button-div">
         <button className="read-more-button" value="body" onClick={props.event}>
           {props.toggle ? "visa mer" : "visa mindre"}
         </button>

@@ -17,9 +17,6 @@ class BurgerMenu extends React.Component {
         <Link to="/Faq">FAQ</Link>
         <Link to="/Contact">KONTAKTA OSS</Link>
         <Link to="/Booking">BOKA</Link>
-        <a onClick={this.showSettings} className="menu-item--small" href="">
-          Settings
-        </a>
       </Menu>
     );
   }

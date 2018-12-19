@@ -1,5 +1,4 @@
 import React from "react";
-import ReadMoreButton from "../ReadMoreButton";
 
 function LashesBox(props) {
   return (
@@ -11,7 +10,7 @@ function LashesBox(props) {
         <h2>Fransar & Bryn</h2>
         <p>här finns det olika frans- och brynbehandlingar, KUL!</p>
       </div>
-      <div>
+      <div className="read-more-button-div">
         <button className="read-more-button" value="body" onClick={props.event}>
           {props.toggle ? "visa mer" : "visa mindre"}
         </button>
