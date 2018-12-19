@@ -2,7 +2,7 @@ import React from "react";
 
 function faceTreatmentInfo() {
   return (
-    <div id="all-face-treatments" >
+    <div id="all-face-treatments">
       <h2>Ansiktsbehandling 1</h2>
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -13,6 +13,9 @@ function faceTreatmentInfo() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </p>
+      <div className="line-treatments">
+        <hr />
+      </div>
       <h2>Ansiktsbehandling 2</h2>
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -23,6 +26,9 @@ function faceTreatmentInfo() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </p>
+      <div className="line-treatments">
+        <hr />
+      </div>
       <h2>Ansiktsbehandling 3</h2>
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

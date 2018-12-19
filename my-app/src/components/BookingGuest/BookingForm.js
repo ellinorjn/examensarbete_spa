@@ -11,7 +11,7 @@ function bookingForm(props) {
         onChange={props.handleChange}
         required
       />
-      <br />
+      <div className="line"><hr/></div>
       <input
         className="form-input"
         type="text"
@@ -20,13 +20,15 @@ function bookingForm(props) {
         onChange={props.handleChange}
         required
       />
-      <br />
+      <div className="line"><hr/></div>
+      <div className="guest-form-button-div">
       <input
-        id="guest-form-button"
+        className="guest-form-button"
         type="submit"
         value="Bekräfta personuppgifter"
         onClick={props.preventDefaultBehaviorSubmit}
       />
+      </div>
     </form>
   );
 }

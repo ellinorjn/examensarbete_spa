@@ -6,6 +6,9 @@
   display: none;
 }
 
+.treatment-button button {
+  width: 100%;
+}
 /* remove aoutofill color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -29,15 +32,24 @@ h3 {
   color: #4c586f;
 }
 
-.line hr {
+.line hr,
+hr {
   width: 90%;
   height: 1px;
-  background: #4c586f;
   margin: 0px auto;
+  background: #4c586f;
   border: none;
 }
 
+.line-treatments {
+  margin: 15px;
+}
+
 /* HAMBURGER MENU */
+
+.hamburger-div {
+  height: 90px;
+}
 #slide.bm-menu-wrap {
   right: 0px;
 }
@@ -45,8 +57,8 @@ h3 {
   position: absolute;
   width: 36px;
   height: 30px;
-  right: 36px;
-  top: 36px;
+  right: 30px;
+  top: 25px;
 }
 
 .bm-burger-bars {
@@ -87,6 +99,9 @@ h3 {
   right: 0px;
 }
 
+nav {
+  height: 80px;
+}
 nav ul {
   display: none;
 }
@@ -114,7 +129,7 @@ footer p {
 button,
 #submit-login,
 #register-button,
-#guest-form-button {
+.guest-form-button {
   background-color: #4c586f;
   color: #ebeced;
   border: none;
@@ -161,6 +176,16 @@ button:hover {
   text-decoration: underline;
 }
 
+.welcome-text {
+  background: white;
+}
+
+.welcome-text p {
+  margin-bottom: 0;
+  width: 90%;
+  margin: 0px auto;
+}
+
 /* BOOKING PAGE*/
 
 .booking-page {
@@ -170,18 +195,13 @@ button:hover {
   min-height: 100vh;
 }
 
-#button-calendar {
-  display: none;
-  height: 100%;
-}
-
 #discount-button {
   text-align: center;
 }
 
 #discount-button button {
   width: 90%;
-  height: 50px;
+  height: 100%;
 }
 
 #booking-header {
@@ -211,7 +231,11 @@ button:hover {
 #login-form {
   width: 100%;
   margin: 0px auto;
-  margin-top: 50%;
+}
+
+#login-form h1 {
+  margin-top: 0;
+  padding: 50px;
 }
 
 .form-input {
@@ -319,6 +343,7 @@ button:hover {
 .massage-box-text,
 .lashes-box-text {
   margin-bottom: 50px;
+  text-align: center;
 }
 
 #all-body-treatments,
@@ -327,6 +352,27 @@ button:hover {
 #all-face-treatments {
   display: none;
   background: white;
+  margin-top: -25px;
+  padding-bottom: 20px;
+}
+
+#all-body-treatments h2,
+#all-lashes-treatments h2,
+#all-massage-treatments h2,
+#all-face-treatments h2 {
+  margin: 0px auto;
+  margin-top: 0px;
+  text-align: left;
+  width: 90%;
+}
+
+#all-body-treatments p,
+#all-lashes-treatments p,
+#all-massage-treatments p,
+#all-face-treatments p {
+  width: 90%;
+  margin: 0px auto;
+  margin-bottom: 20px;
 }
 
 .read-more-button-div {
@@ -361,6 +407,7 @@ button:hover {
 .lashes-button-div,
 .body-treatment-button-div {
   margin: 10px;
+  width: 100%;
 }
 
 #face-button,
@@ -406,6 +453,20 @@ button:hover {
 #treatments ul li p {
   margin-bottom: 10px;
   margin-top: 0px;
+  text-align: left;
+}
+
+.treatment-summary {
+  float: left;
+  width: 50%;
+  margin-left: 20px;
+}
+
+.treatmentButtonClass {
+  float: right;
+  right: 20px;
+  top: 60%;
+  position: absolute;
 }
 
 #treatments ul li h3 {
@@ -420,7 +481,8 @@ button:hover {
 }
 
 #button-calendar {
-  height: 40px;
+  display: none;
+  height: 100%;
   width: 50%;
   margin-top: 40px;
   margin: 0px auto;
@@ -450,7 +512,8 @@ button:hover {
 }
 
 #guest-form-button {
-  width: 100%;
+  width: 60%;
+  margin-top: 20px;
 }
 
 /* FAQ */
@@ -503,7 +566,6 @@ button:hover {
   }
   .nav {
     background: rgba(255, 255, 255, 0.5);
-    height: 80px;
   }
 
   .nav ul {
@@ -570,14 +632,16 @@ button:hover {
   #treatments-massage,
   #treatments-body,
   #treatments-lashes {
-    width: 50%;
+    width: 80%;
   }
 
   .treatment-summary {
-    float: left;
+    width: 80%;
+    height: 70px;
   }
 
   .treatmentButtonClass {
+    top: 20px;
     float: right;
   }
   #treatments ul li button {
@@ -632,8 +696,20 @@ button:hover {
     display: block;
   }
 
+  .hamburger-div {
+    display: none;
+  }
+
   .bm-burger-button {
     display: none;
+  }
+
+  .line hr {
+    width: 30%;
+  }
+
+  .line-treatments hr {
+    width: 80%;
   }
   /* BOOKING PAGE */
   #booking-view {
@@ -656,6 +732,12 @@ button:hover {
 
   #body-treatments-list {
     height: 100%;
+  }
+  #treatments-face,
+  #treatments-massage,
+  #treatments-body,
+  #treatments-lashes {
+    width: 50%;
   }
 
   #treatments-body ul li,
@@ -710,6 +792,17 @@ button:hover {
     margin: 0px auto;
   }
 
+  .guest-form-button-div {
+    width: 30%;
+    margin: 0px auto;
+  }
+
+  .guest-form-button,
+  #guest-person-info-button {
+    margin-top: 20px;
+    width: 100%;
+  }
+
   /* TREATMENT PAGE */
   .face-box,
   .body-box,
@@ -725,6 +818,8 @@ button:hover {
   #all-face-treatments {
     width: 70%;
     margin: 0px auto;
+    margin-bottom: 20px;
+    margin-top: -25px;
   }
 
   .read-more-button {

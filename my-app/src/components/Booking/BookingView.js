@@ -132,7 +132,7 @@ class BookingView extends Component {
     });
     let timeButtons = document.getElementById("time-buttons");
     let calendar = document.getElementById("date-picker");
-    let personInformationButton = document.getElementById("guest-form-button");
+    let personInformationButton = document.getElementById("guest-person-info-button");
     timeButtons.style.display = "none";
     calendar.style.display = "none";
     personInformationButton.style.display = "none";

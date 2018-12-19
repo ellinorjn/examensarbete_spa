@@ -13,6 +13,9 @@ function MassageInfo() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </p>
+      <div className="line-treatments">
+        <hr />
+      </div>
       <h2>Massage 2</h2>
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -23,6 +26,9 @@ function MassageInfo() {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum."
       </p>
+      <div className="line-treatments">
+        <hr />
+      </div>
       <h2>Massage 3</h2>
       <p>
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

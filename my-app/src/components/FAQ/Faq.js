@@ -15,7 +15,11 @@ class Faq extends Component {
   showAnswer(text) {
 	let question = text.target.nextElementSibling;
 	console.log(question);
-    question.style.display = "block";
+	if(question.style.display === "block"){
+		question.style.display = "none";
+	} else {
+		question.style.display = "block";
+	}
   }
 
   render() {
