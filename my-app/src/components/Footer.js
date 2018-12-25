@@ -4,8 +4,7 @@ function Footer(){
     return (
         <div>   
            <footer >            
-              <p>hej</p>
-              <p>hej då</p>       
+              <p>FOOTER INFORMATION</p>      
             </footer>                       
           </div>  
       )

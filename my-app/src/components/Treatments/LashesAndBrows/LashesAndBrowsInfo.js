@@ -3,41 +3,28 @@ import React from "react";
 function LashesAndBrowsInfo() {
   return (
     <div id="all-lashes-treatments">
-      <h2>Fransar</h2>
+      <h2>Färgning av fransar - 15 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "Färgning av dina egna fransar kommer ge ögat en piggare och mer vaken
+        look. Tillsammans med personen som färgar fransarna kommer ni överrens
+        om vilken färg som passar dig bäst!"
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Bryn</h2>
+      <h2>Noppning samt färgning av ögonbryn - 30 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "Vill du slippa måla ögonbrynen varje morgon är detta behandlingen för
+        dig! Tillsammans med hudteraputen skräddarsys en färg som passar just
+        dig, Ni kommer även tillsammans fram till vilken form på brynen du ska
+        ha. Resultatet varar 3-5 veckor beroende på hur stor färgförändring du väljer att göra"
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Fransar & Bryn</h2>
+      <h2>Fransar & Bryn - 45 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "I den här behandlingen ingår både färgning av fransar och bryn samt noppning av ögonbryn!"
       </p>
     </div>
   );

@@ -54,7 +54,9 @@ closeConfirmation(){
     if (
       this.props.startDate === "" ||
       this.props.time === "" ||
-      this.props.treatment === ""
+      this.props.treatment === "" ||
+      this.state.name === "" ||
+      this.state.email === ""
     ) {
       /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
       alert("NO!!!");

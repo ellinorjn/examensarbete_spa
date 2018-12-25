@@ -9,7 +9,7 @@ function treatmentButtons(props) {
         id="face-button"
         onClick={props.event}
       >
-        ANSIKTE
+        <div className="treatment-button-text">ANSIKTE</div>
       </button>
       </div>
       <div className="body-treatment-button-div">
@@ -18,7 +18,7 @@ function treatmentButtons(props) {
         id="body-button"
         onClick={props.event}
       >
-        KROPPSBEHANDLINGAR
+        <div className="treatment-button-text">KROPPSBEHANDLINGAR</div>
       </button>
       </div>
       <div className="massage-button-div">
@@ -27,7 +27,7 @@ function treatmentButtons(props) {
         id="massage-button"
         onClick={props.event}
       >
-        MASSAGE
+        <div className="treatment-button-text">MASSAGE</div>
       </button>
       </div>
       <div className="lashes-button-div">
@@ -36,7 +36,7 @@ function treatmentButtons(props) {
         id="lashes-button"
         onClick={props.event}
       >
-        FRANSAR & BRYN
+        <div className="treatment-button-text">FRANSAR & BRYN</div>
       </button>
       </div>
     </div>

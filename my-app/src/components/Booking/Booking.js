@@ -28,10 +28,7 @@ class Booking extends Component {
 
   showLogin() {
     this.setState({
-      showRegister: false,
-      showLogin: true,
-      showBookingCalendar: false,
-      showGetDiscountButton: false
+      showLogin: true
     });
   }
 

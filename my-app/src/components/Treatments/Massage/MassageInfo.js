@@ -3,41 +3,40 @@ import React from "react";
 function MassageInfo() {
   return (
     <div id="all-massage-treatments">
-      <h2>Massage 1</h2>
+      <h2>Klassisk massage - 50 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En klassisk helkropps massage som löser upp spänningar. Tillsammans med
+        din massör väljer du om det är något område som du vill att han eller
+        hon fokusera extra mycket på. Välj mellan avslappnande massage eller en
+        mer djupgåenge. "
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Massage 2</h2>
+      <h2>Gravidmassage - 50 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En massage som anpassas för dig som är gravid. Med hjälp av en speciell
+        gravidkudde gör vi det möjligt för dig att ligga på mage under
+        behandlingen."
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Massage 3</h2>
+      <h2>Exklusiv spa-massage - 50 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "Den här behandlingen passar dig som vill ha det lilla extra. Du får en
+        avslappnande spa-massage med djupgående, aromatisk olja. Du bäddas sedan
+        in i en värmefilt medan produkterna får verka på kroppen och får under
+        tiden en skön skalp massage."
+      </p>
+      <div className="line-treatments">
+        <hr />
+      </div>
+      <h2>Duo-massage - 60 min</h2>
+      <p>
+        "En behandling för er som vill få behandling samtidigt i samma rum,
+        perfekt för dig och din respektive! Ni får samtidigt en klassisk helkropps massage
+        för att lösa upp spända muskler. Avslutas med att ni lindas in i varma filtar och får chans att ligga att småprata eller bara njuta av lugnet."
       </p>
     </div>
   );

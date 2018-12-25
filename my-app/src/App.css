@@ -194,7 +194,9 @@ button:hover {
 .booking {
   min-height: 100vh;
 }
-
+.booking h1 {
+  padding-top: 40px;
+}
 #discount-button {
   text-align: center;
 }
@@ -222,10 +224,12 @@ button:hover {
 #register-form,
 #guest-booking-form {
   width: 100%;
+  height: 100%;
   text-align: center;
   background: white;
-  height: 100vh;
-  min-height: 100%;
+}
+
+#login-popup {
 }
 
 #login-form {
@@ -264,6 +268,9 @@ button:hover {
   width: 100%;
 }
 
+#register-button {
+  margin-top: 20px;
+}
 /* CONFIRMATION POPUP*/
 
 #booking-confirmation,
@@ -275,7 +282,7 @@ button:hover {
   background-color: #fefefe;
   border: 2px solid #a2aab0;
   width: 40%;
-  height: 50%;
+
   min-height: 250px;
   position: absolute;
   top: 50%;
@@ -362,6 +369,7 @@ button:hover {
 #all-face-treatments h2 {
   margin: 0px auto;
   margin-top: 0px;
+  padding-top: 20px;
   text-align: left;
   width: 90%;
 }
@@ -594,6 +602,10 @@ button:hover {
 
   /* BOOKING VIEW */
 
+  #discount-button button {
+    height: 50px;
+  }
+
   .face-button-div,
   .massage-button-div,
   .lashes-button-div,
@@ -601,6 +613,11 @@ button:hover {
     height: 300px;
     width: 500px;
     margin: 10px;
+  }
+
+  .treatment-button-text {
+    background-color: rgba(203, 197, 193, 0.4);
+    height: 50px;
   }
 
   #face-button,
@@ -616,16 +633,16 @@ button:hover {
 
   #massage-button {
     background: url(./images/couple-massage.jpg);
-    background-size: contain;
+    background-size: cover;
   }
 
   #lashes-button {
     background: url(./images/brows.jpg);
-    background-size: contain;
+    background-size: cover;
   }
   #body-button {
     background: url(./images/wax.jpg);
-    background-size: contain;
+    background-size: cover;
   }
 
   #treatments-face,

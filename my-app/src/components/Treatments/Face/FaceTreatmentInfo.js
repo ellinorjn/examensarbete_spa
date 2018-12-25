@@ -3,41 +3,39 @@ import React from "react";
 function faceTreatmentInfo() {
   return (
     <div id="all-face-treatments">
-      <h2>Ansiktsbehandling 1</h2>
+      <h2>Klassisk ansiktsbehandling - 50 min </h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En avslappnande, klassisk ansiktsbehandling som innehåller rengöring,
+        hudanalys, peeling samt ansiktsmassage. Behandlingen inleds med
+        rengöring av ansikte, hals samt dekolletage. Din teraput gör sedan en
+        hudanalys för att kunna skräddarsy resten av din behandling. Vidare
+        peelar vi huden med en peelingcreme för att få bort gammal hud och
+        lugnar sedan ansiktet med massage och svalkande ansiktsmask."
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Ansiktsbehandling 2</h2>
+      <h2>Djuprengörande ansiktsbehandling - 55 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En ansiktsbehandling med fokus på djuprengöring. Behandlingen inleds
+        med rengöring av ansikte, hals samt dekolletage. Din teraput gör sedan
+        en hudanalys för att kunna skräddarsy resten av din behandling. Ansiktet
+        peelas sedan med en speciell roterande borste för att komma ner på
+        djupet och fria huden från torra och förbrukade hudceller. Huden värms
+        sedan upp med hjälp av ånga för att förbereda den på för portömning.
+        Behandlingen avslutas med en anpassad dagcreme."
       </p>
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Ansiktsbehandling 3</h2>
+      <h2>Fuktbomb - 50 min</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En ansiktsbehandling med fokus på massor med fukt. Behandlingen inleds
+        med rengöring av ansikte, hals samt dekolletage. Din teraput gör sedan
+        en hudanalys för att kunna skräddarsy resten av din behandling. Du får
+        sedan en fuktgivande peeling följt av en djupgåenge ansiktsmask som
+        tillfär massor med fukt till din hy. Avslutas med mjut massage samt en
+        näringsrik och återfuktande creme för en lugnare hy."
       </p>
     </div>
   );
