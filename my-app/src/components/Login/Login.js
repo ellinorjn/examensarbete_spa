@@ -25,7 +25,6 @@ class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.hideLogin = this.hideLogin.bind(this);
-    this.showBookButton = this.showBookButton.bind(this);
   }
 
   preventDefaultBehaviorSubmit(e) {
@@ -76,20 +75,14 @@ class Login extends Component {
     });
   }
 
-  showBookButton() {
-    this.setState({
-      showBookButton: true
-    });
-  }
-
+  /** When logged in - hide login popup */
   hideLogin() {
-    let loginForm = document.getElementById("login-form");
-    let buttonNewUser = document.getElementById("button-new-user");
+    let loginForm = document.getElementById("login-popup");
     loginForm.style.display = "none";
-    buttonNewUser.style.display = "none";
 
     this.setState({
-      showBookingCalendar: true
+      showBookingCalendar: true,
+      showBookButton: true
     });
   }
 
@@ -97,22 +90,28 @@ class Login extends Component {
     return (
       <div>
         <div id="login-and-register">
-        <LoginForm
-          preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-          handleChange={this.handleChange}
-          event={this.showBookButton}
-        />
+          <div className="modal-content" id="login-popup">
+            <span onClick={this.props.closeLoginPopUp} className="close">&times;</span>
+            <LoginForm
+              preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
+              handleChange={this.handleChange}
+            />
 
-        <ButtonNewUser event={this.props.showRegister} />
+            <ButtonNewUser event={this.props.showRegister} />
+          </div>
+
+          {this.state.showBookingCalendar && (
+            <BookingCalendar
+              theId={this.state.person_id}
+              loggedIn={this.state.loggedIn}
+            />
+          )}
         </div>
-
-        {this.state.showBookingCalendar && (
-          <BookingCalendar theId={this.state.person_id}
-                            loggedIn={this.state.loggedIn} />
-        )}
       </div>
     );
   }
 }
 
 export default Login;
+
+//

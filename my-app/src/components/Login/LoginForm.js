@@ -2,10 +2,7 @@ import React from "react";
 
 function loginForm(props) {
   return (
-    <div className="modal-content" id="login-popup">
-      <span id={props.spanID} /*onClick={props.event}*/ className="close">
-        &times;
-      </span>
+    
       <div id="login-form">
         <h1>Logga in</h1>
         <form onSubmit={props.preventDefaultBehaviorSubmit}>
@@ -37,7 +34,7 @@ function loginForm(props) {
           />
         </form>
       </div>
-    </div>
+    
   );
 }
 

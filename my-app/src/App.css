@@ -675,7 +675,6 @@ button:hover {
     margin: 0px auto;
     text-align: center;
     background: white;
-    height: 100vh;
   }
 
   #login-form {

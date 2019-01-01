@@ -17,6 +17,7 @@ class Booking extends Component {
 
     this.showRegister = this.showRegister.bind(this);
     this.showLogin = this.showLogin.bind(this);
+    this.closeLoginPopUp = this.closeLoginPopUp.bind(this);
   }
 
   showRegister() {
@@ -28,7 +29,17 @@ class Booking extends Component {
 
   showLogin() {
     this.setState({
-      showLogin: true
+      showLogin: true,
+      showBookingCalendar: false
+    });
+  }
+
+  closeLoginPopUp() {
+    let closeLoginPopUp = document.getElementById("login-popup");
+    closeLoginPopUp.style.display = "none";
+    this.setState({
+      showBookingCalendar: true,
+      showLogin: false
     });
   }
 
@@ -45,7 +56,12 @@ class Booking extends Component {
         </div>
 
         <div id="login">
-          {this.state.showLogin && <Login showRegister={this.showRegister} />}
+          {this.state.showLogin && (
+            <Login
+              showRegister={this.showRegister}
+              closeLoginPopUp={this.closeLoginPopUp}
+            />
+          )}
         </div>
 
         <div id="register">
