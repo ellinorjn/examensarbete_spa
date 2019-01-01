@@ -3,37 +3,35 @@ import React from "react";
 function bodyTreatmentInfo() {
   return (
     <div id="all-body-treatments">
-      <h2>Kroppsbehandling 1</h2>
+      <h2>Helkroppsskrubb - 50 min - 800:-</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En behandling som är perfekt för dig som ska på solsemester och vill få
+        en jämnare bränna som håller längre! En djupgående helkroppsskrubb där
+        vi tar bort alla orenheter och döda hudceller. Efter skrubben anpassar
+        din teraput en kroppsinpackning för din hudtyp följt utav ett anpassat
+        serum. Behandlingen avslutas med en återfuktande lotion. "
       </p>
-      <div className="line-treatments"><hr/></div>
-      <h2>Kroppsbehandling 2</h2>
+      <div className="line-treatments">
+        <hr />
+      </div>
+        <h2>Helkroppsbehandling - 60 min - 1200:-</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "En behandling för dig som verkligen vill slappna av. Vi går igenom hela kroppen med bad, lerinpackling och massage. Under tiden du får inpackningen lägger vi en svalkande ansiktsmask och avslutar med hårbottensmassage. "</p>
+      <div className="line-treatments">
+        <hr />
+      </div>
+      <h2>Vaxning halva ben - 30 min - 400:-</h2>
+      <p>
+        "Vaxning av halva ben för lena och hårfria ben! Tänk på att undvika
+        insmörjning 24h före och efter besöket."
       </p>
-      <div className="line-treatments"><hr/></div>
-      <h2>Kroppsbehandling 3</h2>
+      <div className="line-treatments">
+        <hr />
+      </div>
+      <h2>Vaxning hela ben - 50 min - 700:-</h2>
       <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+        "Vaxning av hela benen för lena och hårfria ben! Tänk på att undvika
+        insmörjning 24h före och efter besöket."
       </p>
     </div>
   );
