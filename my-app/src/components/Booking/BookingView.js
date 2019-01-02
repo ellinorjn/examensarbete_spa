@@ -40,12 +40,7 @@ class BookingView extends Component {
     this.showBookingGuest = this.showBookingGuest.bind(this);
   }
 
-  /*showBookingButton() {
-    this.setState({
-      bookButton: true,
-      bookButtonGuest: true
-    });
-  }*/
+  
 
   toggleTreatmentsAndCalendar() {
     if (this.props.treatment !== "") {
@@ -278,15 +273,17 @@ class BookingView extends Component {
           <GuestFormButton event={this.showBookingGuest} />
         )}
 
-        <div id="book-button-div">
+        
           {/** Button to book as an inlogged user only shows when logged in*/}
-          {this.state.loggedIn && (
+          { this.props.showBookButtonWhenLoggedIn && (
             <BookButton event={this.props.registerBooking} />
           )}
-        </div>
+        
       </div>
     );
   }
 }
 
 export default BookingView;
+
+// this.state.loggedIn &&

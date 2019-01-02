@@ -16,6 +16,7 @@ class Register extends Component {
     );
     this.handleChange = this.handleChange.bind(this);
     this.registerUser = this.registerUser.bind(this);
+
     this.showRegisterConfirmation = this.showRegisterConfirmation.bind(this);
     this.closeConfirmation = this.closeConfirmation.bind(this);
   }
@@ -30,14 +31,22 @@ class Register extends Component {
     e.preventDefault();
   }
 
-  showRegisterConfirmation(){
-      let showRegisterConfirmation = document.getElementById('register-confirmation');
-    showRegisterConfirmation.style.display = 'block';
+  showRegisterConfirmation() {
+    let showRegisterConfirmation = document.getElementById(
+      "register-confirmation"
+    );
+    showRegisterConfirmation.style.display = "block";
   }
 
-  closeConfirmation(){
-    let showRegisterConfirmation = document.getElementById('register-confirmation');
-    showRegisterConfirmation.style.display = 'none';
+  /** Close the confirmation popup and the register popup */
+  closeConfirmation() {
+    let showRegisterConfirmation = document.getElementById(
+      "register-confirmation"
+    );
+    let registerPopUp = document.getElementById("register-popup");
+
+    showRegisterConfirmation.style.display = "none";
+    registerPopUp.style.display ="none";
     /** When registered and confirmation is closed - show login field to be able login */
     this.props.showLogin();
   }
@@ -64,7 +73,6 @@ class Register extends Component {
         }
       )
         .then(response => {
-          
           this.showRegisterConfirmation();
           console.log(response);
         })
@@ -77,12 +85,17 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <RegisterForm
-          preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-          event={this.registerUser}
-          handleChange={this.handleChange}
-        />
-        <RegisterConfirmation event={this.closeConfirmation}/>
+        <div className="modal-content" id="register-popup">
+          <span onClick={this.props.closeRegisterPopUp} className="close">
+            &times;
+          </span>
+          <RegisterForm
+            preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
+            event={this.registerUser}
+            handleChange={this.handleChange}
+          />
+        </div>
+        <RegisterConfirmation event={this.closeConfirmation} />
       </div>
     );
   }

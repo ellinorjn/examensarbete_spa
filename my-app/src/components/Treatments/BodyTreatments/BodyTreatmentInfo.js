@@ -14,9 +14,13 @@ function bodyTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-        <h2>Helkroppsbehandling - 60 min - 1200:-</h2>
+      <h2>Helkroppsbehandling - 60 min - 1200:-</h2>
       <p>
-        "En behandling för dig som verkligen vill slappna av. Vi går igenom hela kroppen med bad, lerinpackling och massage. Under tiden du får inpackningen lägger vi en svalkande ansiktsmask och avslutar med hårbottensmassage. "</p>
+        "En behandling för dig som verkligen vill slappna av. Vi går igenom hela
+        kroppen med bad, lerinpackling och massage. Under tiden du får
+        inpackningen lägger vi en svalkande ansiktsmask och avslutar med
+        hårbottensmassage. "
+      </p>
       <div className="line-treatments">
         <hr />
       </div>

@@ -18,6 +18,7 @@ class Booking extends Component {
     this.showRegister = this.showRegister.bind(this);
     this.showLogin = this.showLogin.bind(this);
     this.closeLoginPopUp = this.closeLoginPopUp.bind(this);
+    this.closeRegisterPopUp = this.closeRegisterPopUp.bind(this);
   }
 
   showRegister() {
@@ -43,6 +44,14 @@ class Booking extends Component {
     });
   }
 
+  closeRegisterPopUp(){
+    let registerPopUp = document.getElementById("register-popup")
+    registerPopUp.style.display = "none";
+    this.setState({
+      showBookingCalendar: true
+    });
+  }
+
   render() {
     return (
       <div className="booking-page">
@@ -65,7 +74,8 @@ class Booking extends Component {
         </div>
 
         <div id="register">
-          {this.state.showRegister && <Register showLogin={this.showLogin} />}
+          {this.state.showRegister && <Register showLogin={this.showLogin}
+          closeRegisterPopUp={this.closeRegisterPopUp} />}
         </div>
       </div>
     );

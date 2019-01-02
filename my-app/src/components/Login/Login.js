@@ -16,7 +16,6 @@ class Login extends Component {
       phone_number: "",
 
       showBookingCalendar: false,
-      showBookButton: false
     };
 
     this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(
@@ -75,14 +74,16 @@ class Login extends Component {
     });
   }
 
-  /** When logged in - hide login popup */
+  /** When logged in - hide login popup and discount button */
   hideLogin() {
     let loginForm = document.getElementById("login-popup");
+    let discountButton = document.getElementById("discount-button");
     loginForm.style.display = "none";
+    discountButton.style.display ="none";
 
     this.setState({
       showBookingCalendar: true,
-      showBookButton: true
+      
     });
   }
 

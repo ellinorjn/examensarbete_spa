@@ -2,7 +2,6 @@ import React from "react";
 
 function loginForm(props) {
   return (
-    
       <div id="login-form">
         <h1>Logga in</h1>
         <form onSubmit={props.preventDefaultBehaviorSubmit}>

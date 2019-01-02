@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BookingView from "./BookingView";
+import BookingConfirmation from "../Booking/BookingConfirmation";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 
@@ -10,6 +11,8 @@ class BookingCalendar extends Component {
       startDate: new Date(),
       time: "",
       treatment: "",
+
+      showBookButton: false,
 
       buttonTen: false,
       buttonEleven: false,
@@ -26,6 +29,11 @@ class BookingCalendar extends Component {
     this.valueTreatmentButton = this.valueTreatmentButton.bind(this);
 
     this.showGuestFormButton = this.showGuestFormButton.bind(this);
+    this.showBookButtonWhenLoggedIn = this.showBookButtonWhenLoggedIn.bind(
+      this
+    );
+
+    this.showBookingConfirmation = this.showBookingConfirmation.bind(this);
   }
 
   handleChange(date) {
@@ -119,8 +127,9 @@ class BookingCalendar extends Component {
     this.setState({
       time: buttonValue
     });
-    /** When a time-button is clicked -> show guest form button to fill in personal information */
+    /** When a time-button is clicked - show book buttons depending if you are logged in or not */
     this.showGuestFormButton();
+    this.showBookButtonWhenLoggedIn();
   }
 
   /** Get treatment button value */
@@ -131,11 +140,19 @@ class BookingCalendar extends Component {
     });
   }
 
-  /** When you are booking as a guest and a time button is clicked - show book button */
+  /** When you are booking as a guest and a time button is clicked - show the button for filling in personal information  */
   showGuestFormButton() {
     if (this.props.time !== "" && this.props.loggedIn !== true) {
       this.setState({
         showGuestFormButton: true
+      });
+    }
+  }
+  /** When you are logged in and a time button is clicked - show book button */
+  showBookButtonWhenLoggedIn() {
+    if (this.props.time !== "" && this.props.loggedIn === true) {
+      this.setState({
+        showBookButton: true
       });
     }
   }
@@ -168,6 +185,7 @@ class BookingCalendar extends Component {
         }
       )
         .then(response => {
+          this.showBookingConfirmation();
           this.hideBookingOptions();
           console.log(response);
         })
@@ -180,6 +198,20 @@ class BookingCalendar extends Component {
   hideBookingOptions() {
     let bookingView = document.getElementById("booking");
     bookingView.style.display = "none";
+  }
+
+  showBookingConfirmation() {
+    let showBookingConfirmation = document.getElementById(
+      "booking-confirmation"
+    );
+    showBookingConfirmation.style.display = "block";
+  }
+
+  closeConfirmation() {
+    let showBookingConfirmation = document.getElementById(
+      "booking-confirmation"
+    );
+    showBookingConfirmation.style.display = "none";
   }
 
   render() {
@@ -204,7 +236,9 @@ class BookingCalendar extends Component {
           id={this.props.theId}
           loggedIn={this.props.loggedIn}
           showGuestFormButton={this.state.showGuestFormButton}
+          showBookButtonWhenLoggedIn={this.state.showBookButton}
         />
+        <BookingConfirmation event={this.closeConfirmation} />
       </div>
     );
   }
