@@ -6,6 +6,7 @@ import Contact from './contact/contact';
 import Treatments from './Treatments/Treatments';
 import Faq from './FAQ/Faq';
 import Footer from './Footer';
+import LoginPage from './LoginPage/LoginPage'
 
 import {
   BrowserRouter as Router,
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/Faq" component={Faq} />
             <Route path="/Contact" component={Contact} />
             <Route path="/Booking" component={Booking} />
+            <Route path="/LoginPage" component={LoginPage} />
         </div>
       </Router>
 

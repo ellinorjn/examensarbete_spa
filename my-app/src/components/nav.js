@@ -14,11 +14,14 @@ function Nav(){
                 |
                 <Link to="/Treatments">BEHANDLINGAR</Link>
                 |
+                <Link to="/Booking">BOKA</Link>
+                |
                 <Link to="/Faq">FAQ</Link>
                 |
                 <Link to="/Contact">KONTAKTA OSS</Link>
                 |
-                <Link to="/Booking">BOKA</Link>
+                <Link to="/LoginPage">LOGGA IN</Link>
+                
               </ul>        
             </nav>  
             <BurgerMenu />                     
