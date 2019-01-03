@@ -591,10 +591,10 @@ button:hover {
 /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
 #bookings-table {
   display: none;
-  width: 90%;
+  width: 50%;
   margin: 0px auto;
   text-align: center;
-  background: #fafafa;
+  background: white;
   height: 100vh;
 }
 
@@ -604,6 +604,12 @@ button:hover {
 
 .cancel-button {
   width: 100%;
+}
+
+#personal-bookings {
+  width: 90%;
+  margin: 0px auto;
+  background: #fafafa;
 }
 
 /* ------ TABLET ------ */

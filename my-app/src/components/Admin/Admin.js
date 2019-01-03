@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import LoginForm from "../Login/LoginForm";
-import Nav from "../nav";
 
-class LoginPage extends Component {
+class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       email: "",
       password: "",
-      loggedIn: false,
-      name: ""
+      loggedIn: false
     };
 
     this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(
@@ -37,24 +35,27 @@ class LoginPage extends Component {
     let password = this.state.password;
 
     /* Fetch person information based on email and password */
-    fetch(
-      "http://localhost/spa/my-app/database-connections/loginPersonalPage.php?email=" +
-        email +
-        "&password=" +
-        password
-    )
-      .then(response => response.json())
-      .then(response => {
-        this.hideLogin();
-        /* Show information (number of bookings, time, date) based on the response when logged in */
-        this.showBookings(response);
-        if (response.information <= 0) {
-          console.log("inga bokningar");
-        }
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    if (email === "admin@stockholmspa.se" && password === "hejhej") {
+      fetch(
+        "http://localhost/spa/my-app/database-connections/admin.php?email=" +
+          email +
+          "&password=" +
+          password
+      )
+        .then(response => response.json())
+        .then(response => {
+          this.hideLogin();
+          console.log(response);
+          /* Show information (number of bookings, time, date) based on the response when logged in */
+          this.showBookings(response);
+          if (response.information <= 0) {
+            console.log("inga bokningar");
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   }
 
   hideLogin() {
@@ -71,11 +72,12 @@ class LoginPage extends Component {
     let tableBody = document.getElementById("tableBody");
     let bookingsTable = document.getElementById("bookings-table");
     bookingsTable.style.display = "block";
-    
+
     let content = ``;
 
-    response.information.forEach(function(element) {
+    response.bookings.forEach(function(element) {
       content += `<tr class="table-light">
+            <td>${element.name}</td>
             <td>${element.treatment}</td>
             <td>${element.time}</td>
             <td><button class="cancel-button" id=${
@@ -118,26 +120,28 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <Nav />
         <LoginForm
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}
         />
         <div id="personal-bookings">
-        {this.state.loggedIn && <h1>Välkommen till dina bokningar {this.state.name} </h1>}
-        <table id="bookings-table">
-          <thead>
-            <tr className="table-primary">
-              <th>Behandling</th>
-              <th>Tid</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" />
-        </table>
-      </div>
+          {this.state.loggedIn && (
+            <h1>Stockholm Spa bokningar</h1>
+          )}
+          <table id="bookings-table">
+            <thead>
+              <tr className="table-primary">
+                <th>Namn</th>
+                <th>Behandling</th>
+                <th>Tid</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" />
+          </table>
+        </div>
       </div>
     );
   }
 }
 
-export default LoginPage;
+export default Admin;

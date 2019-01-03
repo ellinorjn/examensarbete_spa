@@ -7,6 +7,7 @@ import Treatments from './Treatments/Treatments';
 import Faq from './FAQ/Faq';
 import Footer from './Footer';
 import LoginPage from './LoginPage/LoginPage'
+import Admin from './Admin/Admin';
 
 import {
   BrowserRouter as Router,
@@ -27,9 +28,9 @@ class App extends Component {
             <Route path="/Contact" component={Contact} />
             <Route path="/Booking" component={Booking} />
             <Route path="/LoginPage" component={LoginPage} />
+            <Route path="/Admin" component={Admin} />
         </div>
       </Router>
-
       <div className="App">
        <Footer/>
       </div>

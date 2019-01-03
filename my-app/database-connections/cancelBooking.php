@@ -14,4 +14,8 @@ echo var_dump($bookingInfo);
     $statement->execute();
     $delete = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    $statementTwo = $pdo->prepare("DELETE FROM booking_guest WHERE ID = '$id'");
+    $statementTwo->execute();
+    $delete = $statementTwo->fetchAll(PDO::FETCH_ASSOC);
+
     print(json_encode($delete, JSON_PRETTY_PRINT));
