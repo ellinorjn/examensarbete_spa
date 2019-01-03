@@ -4,7 +4,10 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
     $email = $_GET['email'];
     $password = $_GET['password'];
 
-    $statement = $pdo->prepare("SELECT * FROM person_information WHERE `email`= '$email' AND `password` = '$password'");
+    $statement = $pdo->prepare("SELECT * FROM person_information 
+                                INNER JOIN booking 
+                                ON person_information.ID = booking.person_id
+                                WHERE `email`= '$email' AND `password` = '$password'");
     $statement->execute();
 
     $result = [];
@@ -18,4 +21,3 @@ header("Access-Control-Allow-Origin: http://localhost:3000");
     
 
     print(json_encode($personInformation, JSON_PRETTY_PRINT));
-

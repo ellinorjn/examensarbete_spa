@@ -588,6 +588,24 @@ button:hover {
   width: 100%;
 }
 
+/* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
+#bookings-table {
+  display: none;
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+  background: #fafafa;
+  height: 100vh;
+}
+
+#table-body {
+  width: 100%;
+}
+
+.cancel-button {
+  width: 100%;
+}
+
 /* ------ TABLET ------ */
 
 @media screen and (min-width: 600px) {
