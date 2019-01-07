@@ -5,9 +5,9 @@ import Nav from "../nav";
 function Contact() {
   return (
     <div>
-      <div id="header-faq">
+      <div id="home-header">
           <Nav />
-        </div>
+      </div>
       <div id="contact-view">
 	  <div id="contact-content">
         <h1>Kontakta oss!</h1>
@@ -39,7 +39,7 @@ function Contact() {
           <div className="clear" />
         </div>
         <div id="contact-map">
-          <img src={require("../../images/map.JPG")} />
+        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.9217929779866!2d18.071843715805848!3d59.33425951766972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5b9c99f98d%3A0x9658f65c124a7180!2sM%C3%A4ster+Samuelsgatan+1%2C+111+44+Stockholm!5e0!3m2!1sen!2sse!4v1546862287084" allowfullscreen></iframe>
         </div>
         <h4>Varmt välkommen!</h4>
       </div>

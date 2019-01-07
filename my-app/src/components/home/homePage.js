@@ -17,19 +17,21 @@ function HomePage() {
         </Router>
       </div>
       <div className="welcome-text">
-        <h1>
-          Välkommen till <br />
-          Stockholm Spa!
-        </h1>
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+        <div className="container">
+          <div id="big-img"></div>
+          <div id="color-square"></div>
+          <div id="information-text">
+            <h1>
+              Välkommen till <br />
+              Stockholm Spa!
+            </h1>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat."
+          </div>
+          <div className="clear" />
+        </div>
       </div>
     </div>
   );

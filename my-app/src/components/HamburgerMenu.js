@@ -9,7 +9,7 @@ class BurgerMenu extends React.Component {
 
   render() {
     return (
-      <Menu>
+      <Menu right>
         <Link to="/">HEM</Link>
         <Link to="/Treatments">BEHANDLINGAR</Link>
         <Link to="/Booking">BOKA</Link>

@@ -79,6 +79,7 @@ class Admin extends Component {
       content += `<tr class="table-light">
             <td>${element.name}</td>
             <td>${element.treatment}</td>
+            <td>${element.date}</td>
             <td>${element.time}</td>
             <td><button class="cancel-button" id=${
               element.ID
@@ -133,6 +134,7 @@ class Admin extends Component {
               <tr className="table-primary">
                 <th>Namn</th>
                 <th>Behandling</th>
+                <th>Datum</th>
                 <th>Tid</th>
               </tr>
             </thead>

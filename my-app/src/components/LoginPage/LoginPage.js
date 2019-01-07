@@ -71,12 +71,13 @@ class LoginPage extends Component {
     let tableBody = document.getElementById("tableBody");
     let bookingsTable = document.getElementById("bookings-table");
     bookingsTable.style.display = "block";
-    
+
     let content = ``;
 
     response.information.forEach(function(element) {
       content += `<tr class="table-light">
             <td>${element.treatment}</td>
+            <td>${element.date}</td>
             <td>${element.time}</td>
             <td><button class="cancel-button" id=${
               element.ID
@@ -120,23 +121,26 @@ class LoginPage extends Component {
       <div>
         <Nav />
         <div id="personal-login">
-        <LoginForm
-          preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-          handleChange={this.handleChange}
-        />
+          <LoginForm
+            preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
+            handleChange={this.handleChange}
+          />
         </div>
         <div id="personal-bookings">
-        {this.state.loggedIn && <h1>Välkommen till dina bokningar {this.state.name} </h1>}
-        <table id="bookings-table">
-          <thead>
-            <tr className="table-primary">
-              <th>Behandling</th>
-              <th>Tid</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" />
-        </table>
-      </div>
+          {this.state.loggedIn && (
+            <h1>Välkommen till dina bokningar {this.state.name} </h1>
+          )}
+          <table id="bookings-table">
+            <thead>
+              <tr className="table-primary">
+                <th>Behandling</th>
+                <th>Datum</th>
+                <th>Tid</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody" />
+          </table>
+        </div>
       </div>
     );
   }
