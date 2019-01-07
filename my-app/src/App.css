@@ -6,9 +6,6 @@
   display: none;
 }
 
-.treatment-button button {
-  width: 100%;
-}
 /* remove aoutofill color */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -259,6 +256,7 @@ button:hover {
 
 #submit-login {
   margin: 4%;
+  border-radius: 20px;
 }
 #button-new-user {
   background: transparent;
@@ -281,15 +279,7 @@ button:hover {
 
 .modal-content {
   background-color: #fefefe;
-  border: 2px solid #a2aab0;
-  width: 40%;
-
-  min-height: 250px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
+  min-height: 100vh;
 }
 
 #booking-confirmation-message {
@@ -349,9 +339,11 @@ button:hover {
 .body-box-text,
 .massage-box-text,
 .lashes-box-text {
+  margin: 0px auto;
   margin-bottom: 50px;
   text-align: center;
   font-size: 1.2em;
+  width: 90%;
 }
 
 #all-body-treatments,
@@ -373,6 +365,10 @@ button:hover {
   padding-top: 20px;
   text-align: left;
   width: 90%;
+}
+
+.time-and-price {
+  font-style: italic;
 }
 
 #all-body-treatments p,
@@ -423,7 +419,7 @@ button:hover {
 #massage-button,
 #lashes-button,
 #body-button {
-  height: 100%;
+  height: 100px;
   width: 100%;
 }
 
@@ -525,10 +521,30 @@ button:hover {
   margin-top: 20px;
 }
 
+#date-picker {
+  text-align: center;
+}
+#date-picker > div.react-datepicker-popper > div {
+  border: 1px solid red;
+}
+#date-picker
+  > div.react-datepicker-popper
+  > div
+  > div.react-datepicker__triangle {
+  border-bottom-color: #f0f0f0;
+}
+
+#date-picker > div > div > input[type="text"] {
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1em;
+}
+
 /* FAQ */
 #header-faq {
   height: 100vh;
-  background-image: url(../src/images/treatments-header.jpg);
+  background-image: url(images/treatments-header.jpg);
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -568,7 +584,6 @@ button:hover {
 }
 
 #contact-content {
-  width: 70%;
   background: white;
   margin: 0px auto;
 }
@@ -587,21 +602,65 @@ button:hover {
 #contact-map img {
   width: 100%;
 }
+/* LOGIN TO SEE BOOKINGS */
+
+#personal-login {
+  height: 100vh;
+  margin: 0px auto;
+  background: white;
+}
+#personal-login h1 {
+  margin: 0px;
+  padding-bottom: 50px;
+}
+
+#login-form {
+  background: white;
+  margin: 0px auto;
+  text-align: center;
+}
 
 /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
+#personal-bookings h1 {
+  margin: 0px;
+}
 #bookings-table {
   display: none;
-  width: 50%;
+  width: 70%;
   margin: 0px auto;
   text-align: center;
   background: white;
   height: 100vh;
+  border: 2px solid white;
 }
 
-#table-body {
-  width: 100%;
+table {
+  border-collapse: collapse;
 }
 
+.table-primary th {
+  width: 33%;
+  text-align: left;
+}
+
+#bookings-table th {
+  font-size: 1.3em;
+  padding: 0px 20px 0px 20px;
+}
+
+#tableBody td {
+  font-size: 1.1em;
+  text-align: left;
+  padding: 0px 20px 0px 20px;
+}
+
+.table-light {
+  height: 50px;
+}
+
+#tableBody tr:nth-child(odd) {
+  background: #fafafa;
+}
 .cancel-button {
   width: 100%;
 }
@@ -627,7 +686,7 @@ button:hover {
     justify-content: space-around;
   }
   .nav {
-    background: rgba(255, 255, 255, 0.5);
+    background: #fafafa;
   }
 
   .nav ul {
@@ -752,6 +811,18 @@ button:hover {
     padding-bottom: 80px;
   }
 
+  /* POPUP LOGIN*/
+  .modal-content {
+    border: 2px solid #a2aab0;
+    width: 80%;
+    min-height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+  }
+
   /* TREATMENT PAGE */
   #header-treatments {
     height: 100vh;
@@ -768,6 +839,10 @@ button:hover {
     margin: 0px auto;
     padding: 40px;
     font-size: 2em;
+  }
+
+  #contact-content {
+    width: 70%;
   }
 
   #contact-information {
@@ -876,26 +951,6 @@ button:hover {
     font-style: italic;
   }
 
-  #date-picker {
-    text-align: center;
-  }
-  #date-picker > div.react-datepicker-popper > div {
-    border: 1px solid red;
-  }
-  #date-picker
-    > div.react-datepicker-popper
-    > div
-    > div.react-datepicker__triangle {
-    border-bottom-color: #f0f0f0;
-  }
-
-  #date-picker > div > div > input[type="text"] {
-    height: 40px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 1em;
-  }
-
   #time-buttons {
     text-align: center;
     width: 50%;
@@ -911,6 +966,16 @@ button:hover {
   #guest-person-info-button {
     margin-top: 20px;
     width: 100%;
+  }
+
+  /* POPUP LOGIN*/
+  .modal-content {
+    width: 40%;
+    margin-top: 20px;
+  }
+
+  #login-form {
+    width: 80%;
   }
 
   /* TREATMENT PAGE */
@@ -930,6 +995,8 @@ button:hover {
     margin: 0px auto;
     margin-bottom: 20px;
     margin-top: -25px;
+    display: none;
+    background: white;
   }
 
   .read-more-button {
@@ -979,18 +1046,20 @@ button:hover {
     float: left;
   }
 
-  #all-body-treatments,
-  #all-lashes-treatments,
-  #all-massage-treatments,
-  #all-face-treatments {
-    display: none;
-    background: white;
+  .time-and-price {
+    font-size: 0.8em;
   }
-
   /* FAQ */
 
   .individual-question {
     width: 70%;
     margin: 0px auto;
+  }
+
+  /* LOGIN TO SEE BOOKINGS */
+
+  #personal-login {
+    width: 90%;
+    background: #fafafa;
   }
 }

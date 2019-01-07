@@ -29,7 +29,8 @@ class BookingView extends Component {
       bookButtonGuest: false,
       showBookingGuest: false,
 
-      loggedIn: props.loggedIn
+      loggedIn: props.loggedIn,
+   
     };
 
     this.toggleTreatmentsAndCalendar = this.toggleTreatmentsAndCalendar.bind(
@@ -38,8 +39,11 @@ class BookingView extends Component {
     //this.showBookingButton = this.showBookingButton.bind(this);
     this.showFaceTreatments = this.showFaceTreatments.bind(this);
     this.showBookingGuest = this.showBookingGuest.bind(this);
+
+    
   }
 
+ 
   
 
   toggleTreatmentsAndCalendar() {

@@ -19,7 +19,8 @@ class BookingCalendar extends Component {
       buttonTwelve: false,
       buttonFourteen: false,
       buttonFifteen: false,
-      buttonSixteen: false
+      buttonSixteen: false,
+
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -36,6 +37,7 @@ class BookingCalendar extends Component {
     this.showBookingConfirmation = this.showBookingConfirmation.bind(this);
   }
 
+  
   handleChange(date) {
     this.setState({
       startDate: date
@@ -137,8 +139,9 @@ class BookingCalendar extends Component {
     let buttonValue = button.target.value;
     this.setState({
       treatment: buttonValue
-    });
+    }); 
   }
+
 
   /** When you are booking as a guest and a time button is clicked - show the button for filling in personal information  */
   showGuestFormButton() {

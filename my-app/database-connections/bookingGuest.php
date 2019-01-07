@@ -17,4 +17,8 @@ $bookingInfo = json_decode(json_encode($bookingInformation), True);
     $statement->execute();
     $booking = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    $msg = "Tack för din bokning.";
+    $msg = wordwrap($msg,70);
+    mail($bookingInfo["email"],"Food Fusion bokningsbekräftelse",$msg); 
+
     print(json_encode($booking, JSON_PRETTY_PRINT));

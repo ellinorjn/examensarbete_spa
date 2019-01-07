@@ -58,8 +58,8 @@ class LoginPage extends Component {
   }
 
   hideLogin() {
-    let loginForm = document.getElementById("login-form");
-    loginForm.style.display = "none";
+    let login = document.getElementById("personal-login");
+    login.style.display = "none";
     this.setState({
       loggedIn: true
     });
@@ -119,10 +119,12 @@ class LoginPage extends Component {
     return (
       <div>
         <Nav />
+        <div id="personal-login">
         <LoginForm
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}
         />
+        </div>
         <div id="personal-bookings">
         {this.state.loggedIn && <h1>Välkommen till dina bokningar {this.state.name} </h1>}
         <table id="bookings-table">
