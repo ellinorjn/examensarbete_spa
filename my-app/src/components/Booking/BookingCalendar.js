@@ -20,6 +20,7 @@ class BookingCalendar extends Component {
       buttonFourteen: false,
       buttonFifteen: false,
       buttonSixteen: false,
+      disabled: ""
 
     };
 
@@ -127,7 +128,8 @@ class BookingCalendar extends Component {
   valueTimeButton(button) {
     let buttonValue = button.target.value;
     this.setState({
-      time: buttonValue
+      time: buttonValue,
+      disabled: buttonValue
     });
     /** When a time-button is clicked - show book buttons depending if you are logged in or not */
     this.showGuestFormButton();
@@ -137,9 +139,12 @@ class BookingCalendar extends Component {
   /** Get treatment button value */
   valueTreatmentButton(button) {
     let buttonValue = button.target.value;
+    let id = button.target.id;
     this.setState({
-      treatment: buttonValue
+      treatment: buttonValue,
+      disabled: id
     }); 
+    console.log(buttonValue, id);
   }
 
 
@@ -240,6 +245,7 @@ class BookingCalendar extends Component {
           loggedIn={this.props.loggedIn}
           showGuestFormButton={this.state.showGuestFormButton}
           showBookButtonWhenLoggedIn={this.state.showBookButton}
+          disabled={this.state.disabled}
         />
         <BookingConfirmation event={this.closeConfirmation} />
       </div>

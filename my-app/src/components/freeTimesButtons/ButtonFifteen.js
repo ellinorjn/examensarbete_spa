@@ -7,6 +7,7 @@ function buttonFifteen(props) {
       className="timeButtons"
       value="15:00:00"
       onClick={props.event}
+      disabled={props.disabled === "15:00:00"}
     >
       Kl: 15:00
     </button>

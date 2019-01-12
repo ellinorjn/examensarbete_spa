@@ -30,6 +30,7 @@ class BookingView extends Component {
       showBookingGuest: false,
 
       loggedIn: props.loggedIn,
+      disabled: ""
    
     };
 
@@ -39,12 +40,9 @@ class BookingView extends Component {
     //this.showBookingButton = this.showBookingButton.bind(this);
     this.showFaceTreatments = this.showFaceTreatments.bind(this);
     this.showBookingGuest = this.showBookingGuest.bind(this);
-
     
   }
 
- 
-  
 
   toggleTreatmentsAndCalendar() {
     if (this.props.treatment !== "") {
@@ -151,6 +149,7 @@ class BookingView extends Component {
           buttonTen="buttonTen"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -160,6 +159,7 @@ class BookingView extends Component {
           buttonEleven="buttonEleven"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -169,6 +169,7 @@ class BookingView extends Component {
           buttonTwelve="buttonTwelve"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -178,6 +179,7 @@ class BookingView extends Component {
           buttonFourteen="buttonFourteen"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -187,6 +189,7 @@ class BookingView extends Component {
           buttonFifteen="buttonFifteen"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -196,6 +199,7 @@ class BookingView extends Component {
           buttonSixteen="buttonSixteen"
           onChange={this.props.handleChange}
           event={this.props.valueTimeButton}
+          disabled={this.props.disabled}
         />
       );
     }
@@ -208,16 +212,20 @@ class BookingView extends Component {
           <TreatmentButtons event={this.showFaceTreatments} />
 
           <div id="treatments-face">
-            <FaceTreatments event={this.props.valueTreatmentButton} />
+            <FaceTreatments event={this.props.valueTreatmentButton}
+                            disabled={this.props.disabled} />
           </div>
           <div id="treatments-massage">
-            <Massage event={this.props.valueTreatmentButton} />
+            <Massage event={this.props.valueTreatmentButton}
+            disabled={this.props.disabled} />
           </div>
           <div id="treatments-body">
-            <BodyTreatments event={this.props.valueTreatmentButton} />
+            <BodyTreatments event={this.props.valueTreatmentButton}
+            disabled={this.props.disabled} />
           </div>
           <div id="treatments-lashes">
-            <LashesAndBrows event={this.props.valueTreatmentButton} />
+            <LashesAndBrows event={this.props.valueTreatmentButton}
+            disabled={this.props.disabled} />
           </div>
 
           <button

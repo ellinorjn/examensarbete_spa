@@ -17,6 +17,8 @@ function lashesAndBrows(props) {
             className="treatmentButtonClass"
             value="Fransar"
             onClick={props.event}
+            id="lashes"
+            disabled={props.disabled === "lashes"}
           >
             VÄLJ
           </button>
@@ -34,6 +36,8 @@ function lashesAndBrows(props) {
             className="treatmentButtonClass"
             value="Bryn"
             onClick={props.event}
+            id="brows"
+            disabled={props.disabled === "brows"}
           >
             VÄLJ
           </button>
@@ -51,6 +55,8 @@ function lashesAndBrows(props) {
             className="treatmentButtonClass"
             value="Fransar och Bryn"
             onClick={props.event}
+            id="lashes-and-brows"
+            disabled={props.disabled === "lashes-and-brows"}
           >
             VÄLJ
           </button>

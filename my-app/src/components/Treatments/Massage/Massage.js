@@ -17,6 +17,8 @@ function massage(props) {
             className="treatmentButtonClass"
             value="Massage 1"
             onClick={props.event}
+            id="massage-1"
+            disabled={props.disabled === "massage-1"}
           >
             VÄLJ
           </button>
@@ -34,6 +36,8 @@ function massage(props) {
             className="treatmentButtonClass"
             value="Massage 2"
             onClick={props.event}
+            id="massage-2"
+            disabled={props.disabled === "massage-2"}
           >
             VÄLJ
           </button>
@@ -51,6 +55,8 @@ function massage(props) {
             className="treatmentButtonClass"
             value="Massage 3"
             onClick={props.event}
+            id="massage-3"
+            disabled={props.disabled === "massage-3"}
           >
             VÄLJ
           </button>

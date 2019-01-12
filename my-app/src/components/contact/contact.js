@@ -29,8 +29,12 @@ function Contact() {
           </div>
           <div id="adress">
             <h3>Kontakt</h3>
-            Telefon: 08 - 123 45 67 <br />
+            <div>
+            <img src={require('../../images/phone.png')} alt="instagram logo" />
+            Telefon: 08 - 123 45 67
+            </div>
             Mail: spa@stockholm.se
+            
             <h3>Adress:</h3>
             Stockholm Spa <br />
             Mäster Samuelsgatan 1 <br />

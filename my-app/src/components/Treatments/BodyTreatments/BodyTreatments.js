@@ -17,6 +17,8 @@ function bodyTreatments(props) {
             className="treatmentButtonClass"
             value="Kroppsbehandling 1"
             onClick={props.event}
+            id="body-1"
+            disabled={props.disabled === "body-1"}
           >
             VÄLJ
           </button>
@@ -34,6 +36,8 @@ function bodyTreatments(props) {
             className="treatmentButtonClass"
             value="Kroppsbehangling 2"
             onClick={props.event}
+            id="body-2"
+            disabled={props.disabled === "body-2"}
           >
             VÄLJ
           </button>
@@ -51,6 +55,8 @@ function bodyTreatments(props) {
             className="treatmentButtonClass"
             value="Kroppsbehandling 3"
             onClick={props.event}
+            id="body-3"
+            disabled={props.disabled === "body-3"}
           >
             VÄLJ
           </button>

@@ -17,6 +17,8 @@ function faceTreatments(props) {
             className="treatmentButtonClass"
             value="Ansiktsbehandling 1"
             onClick={props.event}
+            id="face_1"
+            disabled={props.disabled === "face_1"}
           >
             VÄLJ
           </button>
@@ -34,6 +36,8 @@ function faceTreatments(props) {
             className="treatmentButtonClass"
             value="Ansiktsbehandling 2"
             onClick={props.event}
+            id="face_2"
+            disabled={props.disabled === "face_2"}
           >
             VÄLJ
           </button>
@@ -51,6 +55,8 @@ function faceTreatments(props) {
             className="treatmentButtonClass"
             value="Ansiktsbehandling 3"
             onClick={props.event}
+            id="face_3"
+            disabled={props.disabled === "face_3"}
           >
             VÄLJ
           </button>

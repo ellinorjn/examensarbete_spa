@@ -16,6 +16,7 @@ input:-webkit-autofill:active {
 
 #root {
   background-color: #cbc5c1;
+  /* background-color: #76849e;*/
 }
 
 .clear {
@@ -119,6 +120,26 @@ footer {
 footer p {
   margin: 0px;
 }
+
+.icons {
+  margin: 0px auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#instagram,
+#facebook {
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+}
+
+#instagram img,
+#facebook img {
+  height: 100%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -150,6 +171,10 @@ button,
 
 button:hover {
   text-decoration: underline;
+}
+
+button:disabled {
+  background: #8399c2;
 }
 
 /* HOME PAGE*/
@@ -231,6 +256,7 @@ button:hover {
 #information-text h1 {
   text-align: left;
   margin: 0px;
+  padding: 0px;
 }
 
 /* BOOKING PAGE*/
