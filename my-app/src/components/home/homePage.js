@@ -22,13 +22,15 @@ function HomePage() {
           <div id="color-square"></div>
           <div id="information-text">
             <h1>
-              Välkommen till <br />
+              Välkommen till 
               Stockholm Spa!
             </h1>
+            <p>
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat."
+            </p>
           </div>
           <div className="clear" />
         </div>

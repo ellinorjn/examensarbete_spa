@@ -29,7 +29,7 @@ function Contact() {
           </div>
           <div id="adress">
             <h3>Kontakt</h3>
-            <div>
+            <div className="phone">
             <img src={require('../../images/phone.png')} alt="instagram logo" />
             Telefon: 08 - 123 45 67
             </div>

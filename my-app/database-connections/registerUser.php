@@ -7,8 +7,7 @@ $personInfo = json_decode(json_encode($personInformation), True);
 $name = $personInfo['name'];
 $email = $personInfo['email'];
 $phone_number = $personInfo['phone_number'];
-$password = $personInfo['password'];
-
+$password = password_hash($personInfo['password'], PASSWORD_DEFAULT);
 
     $statement = $pdo->prepare("INSERT INTO person_information (`name`, `email`, `phone_number`,`password`) 
                                 VALUES ('$name', '$email', '$phone_number', '$password')");

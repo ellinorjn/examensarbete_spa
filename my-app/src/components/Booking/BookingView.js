@@ -254,7 +254,10 @@ class BookingView extends Component {
                 hide: {
                   enabled: false // turn off since needs preventOverflow to be enabled
                 }
+                
               }}
+              /** Disable dates before todays date */
+              minDate={this.props.startDate}
             />
           )}
         </div>

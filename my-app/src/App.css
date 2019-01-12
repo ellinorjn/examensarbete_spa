@@ -111,10 +111,17 @@ nav ul {
   display: none;
 }
 
+.flex-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 footer {
   background-color: #3e3e3b;
   color: #ebeced;
-  height: 100px;
+  height: 300px;
 }
 
 footer p {
@@ -218,21 +225,21 @@ button:disabled {
 .container {
   display: flex;
   align-items: baseline;
-  height: 100vh;
-  flex-direction: row-reverse;
+  height: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0px auto;
 }
 
 #big-img {
-  height: 555px;
+  margin-top: 20px;
+  height: 300px;
   position: relative;
   background-image: url(../src/images/home.jpg);
   background-size: cover;
   background-position: center;
-  width: 40%;
-  left: -200px;
+  width: 90%;
   transform: scaleX(-1);
 }
 
@@ -242,21 +249,22 @@ button:disabled {
 
 #color-square {
   position: relative;
-  height: 455px;
+  height: 200px;
   background-color: #76849e;
-  width: 30%;
+  width: 60%;
+  margin-top: -50px;
+  margin-left: auto;
 }
 
 #information-text {
   position: relative;
-  right: -200px;
-  width: 30%;
+  width: 100%;
+  margin-right: auto;
+  margin-top: -200px;
 }
 
 #information-text h1 {
   text-align: left;
-  margin: 0px;
-  padding: 0px;
 }
 
 /* BOOKING PAGE*/
@@ -266,6 +274,7 @@ button:disabled {
 }
 .booking {
   min-height: 100vh;
+  margin-bottom: 40px;
 }
 
 #discount-button {
@@ -292,6 +301,17 @@ button:disabled {
 
 .book-button {
   margin: 30px;
+}
+
+.guest-form-button-div {
+  width: 80%;
+  margin: 0px auto;
+}
+
+.guest-form-button,
+#guest-person-info-button {
+  margin-top: 20px;
+  width: 100%;
 }
 
 /* FORMS */
@@ -372,6 +392,7 @@ button:disabled {
   text-decoration: none;
   cursor: pointer;
 }
+
 /* TREATMENT PAGE */
 #header-treatments {
   height: 400px;
@@ -579,6 +600,8 @@ button:disabled {
 #buttonFifteen,
 #buttonSixteen {
   margin: 5px;
+  width: 50%;
+  height: 50px;
 }
 
 #guest-form-button-div {
@@ -594,9 +617,20 @@ button:disabled {
 #date-picker {
   text-align: center;
 }
-#date-picker > div.react-datepicker-popper > div {
-  border: 1px solid red;
+
+.react-datepicker__header {
+  background: #4c586f !important;
 }
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: #fafafa !important;
+}
+
+.react-datepicker__day--selected {
+  background: #4c586f !important;
+}
+
 #date-picker
   > div.react-datepicker-popper
   > div
@@ -604,11 +638,23 @@ button:disabled {
   border-bottom-color: #f0f0f0;
 }
 
-#date-picker > div > div > input[type="text"] {
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 90%;
+}
+.react-datepicker__input-container input {
   height: 40px;
+  width: 100%;
   cursor: pointer;
   text-align: center;
   font-size: 1em;
+  border: 2px solid #4c586f;
+  border-radius: 4px;
+  color: #4c586f;
+  font-size: 1.2em;
 }
 
 /* FAQ */
@@ -667,6 +713,14 @@ button:disabled {
   margin: 0px auto;
   padding: 20px;
   font-size: 1.5em;
+}
+
+.phone {
+  height: 15px;
+}
+
+.phone img {
+  height: 100%;
 }
 
 #map {
@@ -775,6 +829,38 @@ table {
     font-weight: 700;
     color: #4c586f;
   }
+  /* HOME */
+
+  .container {
+    display: flex;
+    align-items: baseline;
+    height: 100%;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+
+  #big-img {
+    left: -100px;
+    width: 50%;
+  }
+
+  #information-text {
+    right: -100px;
+    width: 50%;
+  }
+
+  #color-square {
+    width: 40%;
+    height: 350px;
+  }
+
+  #information-text h1 {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+  }
 
   #buttonTen,
   #buttonEleven,
@@ -852,6 +938,11 @@ table {
     right: 10px;
   }
 
+  /* DATE PICKER*/
+  .react-datepicker__input-container input {
+    width: 70%;
+  }
+
   /* FORMS */
   #login-and-register,
   #register-form,
@@ -914,7 +1005,7 @@ table {
   }
 
   #contact-content {
-    width: 70%;
+    width: 80%;
   }
 
   #contact-information {
@@ -941,6 +1032,15 @@ table {
   #contact-map img {
     width: 100%;
   }
+
+  /* FOOTER */
+  footer {
+    height: 100px;
+  }
+
+  .flex-footer {
+    flex-direction: row;
+  }
 }
 
 /* ------ DESKTOP ------ */
@@ -965,6 +1065,20 @@ table {
 
   .line-treatments hr {
     width: 80%;
+  }
+
+  /* HOME */
+  #big-img {
+    left: -200px;
+    height: 555px;
+    width: 40%;
+  }
+
+  #color-square {
+  }
+
+  #information-text {
+    right: -200px;
   }
 
   /* BOOKING PAGE */
@@ -1036,13 +1150,20 @@ table {
   .guest-form-button,
   #guest-person-info-button {
     margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
+    height: 40px;
+  }
+
+  /* DATE PICKER*/
+  .react-datepicker__input-container input {
+    width: 50%;
   }
 
   /* POPUP LOGIN*/
   .modal-content {
     width: 40%;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 
   #login-form {
