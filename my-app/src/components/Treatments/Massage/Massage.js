@@ -5,17 +5,17 @@ function massage(props) {
     <div>
       <h2>MASSAGE</h2>
       <ul>
-      <li>
+        <li>
           <div className="treatment-summary">
-            <h3>Massage 1</h3>
+            <h3>Klassisk massage</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+              En klassisk helkropps massage som löser upp spänningar{" "}
+              <span>- 50 min - 900:-</span>
             </p>
           </div>
           <button
             className="treatmentButtonClass"
-            value="Massage 1"
+            value="Klassisk massage"
             onClick={props.event}
             id="massage-1"
             disabled={props.disabled === "massage-1"}
@@ -26,15 +26,15 @@ function massage(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Massage 2</h3>
+            <h3>Gravidmassage </h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+              En massage som anpassas för dig som är gravid{" "}
+              <span>- 50 min - 900:-</span>
             </p>
           </div>
           <button
             className="treatmentButtonClass"
-            value="Massage 2"
+            value="Gravidmassage"
             onClick={props.event}
             id="massage-2"
             disabled={props.disabled === "massage-2"}
@@ -45,18 +45,37 @@ function massage(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Massage 3</h3>
+            <h3>Exklusiv spa-massage </h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            Den här behandlingen passar dig som vill ha det lilla extra{" "}
+              <span>- 50 min - 1000:-</span>
             </p>
           </div>
           <button
             className="treatmentButtonClass"
-            value="Massage 3"
+            value="Exklusiv spa-massage"
             onClick={props.event}
             id="massage-3"
             disabled={props.disabled === "massage-3"}
+          >
+            VÄLJ
+          </button>
+          <div className="clear" />
+        </li>
+        <li>
+          <div className="treatment-summary">
+            <h3>Duo-massage</h3>
+            <p>
+            En behandling för er som vill få behandling samtidigt i samma rum, perfekt för dig och din respektive{" "}
+              <span>- 60 min - 1700:-</span>
+            </p>
+          </div>
+          <button
+            className="treatmentButtonClass"
+            value="Massage duo"
+            onClick={props.event}
+            id="massage-duo"
+            disabled={props.disabled === "massage-duo"}
           >
             VÄLJ
           </button>

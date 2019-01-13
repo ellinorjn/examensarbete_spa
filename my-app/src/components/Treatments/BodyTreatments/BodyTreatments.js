@@ -7,10 +7,10 @@ function bodyTreatments(props) {
       <ul>
         <li>
           <div className="treatment-summary">
-            <h3>Kroppsbehandling 1</h3>
+            <h3>Helkroppsskrubb</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            En djupgående helkroppsskrubb - perfekt för dig som ska på solsemester och vill få en jämnare bränna som håller längre {" "}
+              <span>- 50 min - 800:-</span>
             </p>
           </div>
           <button
@@ -26,10 +26,10 @@ function bodyTreatments(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Kroppsbehandling 2</h3>
+            <h3>Helkroppsbehandling</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            En behandling för dig som verkligen vill slappna av. Vi går igenom hela kroppen med bad, lerinpackling och massage{" "}
+              <span>- 60 min - 1200:-</span>
             </p>
           </div>
           <button
@@ -45,10 +45,10 @@ function bodyTreatments(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Kroppsbehandling 3</h3>
+            <h3>Vaxning halva ben</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            Vaxning av halva ben för lena och hårfria ben{" "}
+              <span>- 30 min - 400:-</span>
             </p>
           </div>
           <button
@@ -57,6 +57,25 @@ function bodyTreatments(props) {
             onClick={props.event}
             id="body-3"
             disabled={props.disabled === "body-3"}
+          >
+            VÄLJ
+          </button>
+          <div className="clear" />
+        </li>
+        <li>
+          <div className="treatment-summary">
+            <h3>Vaxning hela ben</h3>
+            <p>
+            Vaxning av hela ben för lena och hårfria ben{" "}
+              <span>- 50 min - 700:-</span>
+            </p>
+          </div>
+          <button
+            className="treatmentButtonClass"
+            value="Vaxning hela ben"
+            onClick={props.event}
+            id="body-4"
+            disabled={props.disabled === "body-4"}
           >
             VÄLJ
           </button>

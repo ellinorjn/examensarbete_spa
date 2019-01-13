@@ -118,6 +118,11 @@ nav ul {
   justify-content: center;
 }
 
+.footer-address,
+.footer-phone {
+  padding: 10px;
+}
+
 footer {
   background-color: #3e3e3b;
   color: #ebeced;
@@ -137,7 +142,7 @@ footer p {
 
 #instagram,
 #facebook {
-  height: 40px;
+  height: 35px;
   text-align: center;
   padding: 10px;
 }
@@ -145,6 +150,11 @@ footer p {
 #instagram img,
 #facebook img {
   height: 100%;
+}
+
+#instagram:hover,
+#facebook:hover {
+  cursor: pointer;
 }
 
 .App-header {
@@ -545,6 +555,7 @@ button:disabled {
   margin-bottom: 10px;
   margin-top: 0px;
   text-align: left;
+  width: 90%;
 }
 
 .treatment-summary {
@@ -847,40 +858,16 @@ table {
   }
 
   #information-text {
-    margin-top: -300px;
+    margin-top: -250px;
     width: 90%;
   }
 
   #information-text h1 {
     text-align: left;
-  }
 
-  /*.container {
-    flex-direction: row-reverse;
-  }
-
-  #big-img {
-    width: 30%;
-    margin-left: -100px;
-  }
-
-  #information-text {
-    width: 40%;
-    margin-right: -100px;
-    margin-top: 50px;
-  }
-
-  #color-square {
-    width: 30%;
-    height: 350px;
-    margin: 0px;
-  }
-
-  #information-text h1 {
-    text-align: left;
-    margin: 0px;
     padding: 0px;
-  }*/
+    margin: 0px;
+  }
 
   #buttonTen,
   #buttonEleven,
@@ -945,7 +932,7 @@ table {
 
   .treatment-summary {
     width: 80%;
-    height: 70px;
+    height: 100%;
   }
 
   .treatmentButtonClass {
@@ -998,7 +985,7 @@ table {
   .modal-content {
     border: 2px solid #a2aab0;
     width: 80%;
-    min-height: 250px;
+    min-height: 350px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1088,8 +1075,35 @@ table {
   }
 
   /* HOME */
+  /*.container {
+    flex-direction: row-reverse;
+  }
+
+  #big-img {
+    width: 30%;
+    margin-left: -100px;
+  }
+
+  #information-text {
+    width: 40%;
+    margin-right: -100px;
+    margin-top: 50px;
+  }
+
+  #color-square {
+    width: 30%;
+    height: 350px;
+    margin: 0px;
+  }
+
+  #information-text h1 {
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+  }*/
 
   .container {
+    flex-direction: row-reverse;
     width: 90%;
     max-width: 1900px;
     margin: 0px auto;
@@ -1104,6 +1118,7 @@ table {
   #information-text {
     width: 30%;
     margin-right: -200px;
+    margin-top: 0px;
   }
 
   #color-square {

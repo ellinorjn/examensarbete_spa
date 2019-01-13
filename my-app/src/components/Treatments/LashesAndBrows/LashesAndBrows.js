@@ -7,10 +7,10 @@ function lashesAndBrows(props) {
       <ul>
         <li>
           <div className="treatment-summary">
-            <h3>Fransar </h3>
+            <h3>Färgning av fransar</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            Färgning av dina egna fransar kommer ge ögat en piggare och mer vaken look{" "}
+              <span>- 15 min - 350:-</span>
             </p>
           </div>
           <button
@@ -26,10 +26,10 @@ function lashesAndBrows(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Bryn</h3>
+            <h3>Noppning samt färgning av ögonbryn</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+              Dina egna bryn noppas och färgas i samråd med din hudteraput{" "}
+              <span>- 30 min - 450:-</span>
             </p>
           </div>
           <button
@@ -47,8 +47,8 @@ function lashesAndBrows(props) {
           <div className="treatment-summary">
             <h3>Fransar & Bryn</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            I den här behandlingen ingår både färgning av fransar och bryn samt noppning av ögonbryn{" "}
+              <span>- 45 min - 700:-</span>
             </p>
           </div>
           <button

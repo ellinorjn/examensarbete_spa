@@ -5,11 +5,11 @@ function Footer() {
     <div>
       <footer>
         <div className="flex-footer">
-          <div>
+          <div className="footer-address">
             Stockholm Spa <br /> Mäster Samuelsgatan 1 <br />
             123 45 Stockholm{" "}
           </div>
-          <div>
+          <div className="footer-phone">
             08 - 123 45 67 <br />
             spa@stockholm.se
           </div>

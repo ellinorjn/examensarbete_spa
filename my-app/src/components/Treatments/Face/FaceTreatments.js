@@ -7,10 +7,10 @@ function faceTreatments(props) {
       <ul>
         <li>
           <div className="treatment-summary">
-            <h3>Ansiktsbehandling 1</h3>
+            <h3>Klassisk ansiktsbehandling</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            En klassisk ansiktsbehandling som innehåller rengöring, hudanalys, peeling samt ansiktsmassage{" "}
+              <span>- 50 min - 900:-</span>
             </p>
           </div>
           <button
@@ -26,10 +26,10 @@ function faceTreatments(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Ansiktsbehandling 2</h3>
+            <h3>Djuprengörande ansiktsbehandling</h3>
             <p>
-              En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+            En ansiktsbehandling med fokus på djuprengöring{" "}
+              <span>- 55 min - 900:-</span>
             </p>
           </div>
           <button
@@ -45,10 +45,10 @@ function faceTreatments(props) {
         </li>
         <li>
           <div className="treatment-summary">
-            <h3>Ansiktsbehandling 3</h3>
+            <h3>Fuktbomb</h3>
             <p>
               En klassisk ansiktsbehandling med fokus på fukt{" "}
-              <span>- 50 min</span>
+              <span>- 50 min - 900:-</span>
             </p>
           </div>
           <button
