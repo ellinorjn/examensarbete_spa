@@ -32,7 +32,6 @@ function HomePage() {
             aliquip ex ea commodo consequat."
             </p>
           </div>
-          <div className="clear" />
         </div>
       </div>
     </div>

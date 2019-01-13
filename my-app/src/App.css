@@ -216,12 +216,6 @@ button:disabled {
   background: white;
 }
 
-.welcome-text p {
-  margin-bottom: 0;
-  width: 90%;
-  margin: 0px auto;
-}
-
 .container {
   display: flex;
   align-items: baseline;
@@ -230,6 +224,7 @@ button:disabled {
   justify-content: center;
   align-items: center;
   margin: 0px auto;
+  padding-bottom: 40px;
 }
 
 #big-img {
@@ -830,37 +825,62 @@ table {
     color: #4c586f;
   }
   /* HOME */
-
   .container {
-    display: flex;
-    align-items: baseline;
-    height: 100%;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
+    width: 80%;
   }
 
   #big-img {
-    left: -100px;
-    width: 50%;
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
   }
 
-  #information-text {
-    right: -100px;
-    width: 50%;
+  #big-img img {
+    width: 100%;
   }
 
   #color-square {
+    height: 320px;
+    width: 320px;
+    margin-top: -50px;
+    margin-right: 10px;
+  }
+
+  #information-text {
+    margin-top: -300px;
+    width: 90%;
+  }
+
+  #information-text h1 {
+    text-align: left;
+  }
+
+  /*.container {
+    flex-direction: row-reverse;
+  }
+
+  #big-img {
+    width: 30%;
+    margin-left: -100px;
+  }
+
+  #information-text {
     width: 40%;
+    margin-right: -100px;
+    margin-top: 50px;
+  }
+
+  #color-square {
+    width: 30%;
     height: 350px;
+    margin: 0px;
   }
 
   #information-text h1 {
     text-align: left;
     margin: 0px;
     padding: 0px;
-  }
+  }*/
 
   #buttonTen,
   #buttonEleven,
@@ -1068,17 +1088,28 @@ table {
   }
 
   /* HOME */
+
+  .container {
+    width: 90%;
+    max-width: 1900px;
+    margin: 0px auto;
+    align-content: center;
+  }
+
   #big-img {
-    left: -200px;
     height: 555px;
     width: 40%;
   }
 
-  #color-square {
+  #information-text {
+    width: 30%;
+    margin-right: -200px;
   }
 
-  #information-text {
-    right: -200px;
+  #color-square {
+    width: 30%;
+    height: 450px;
+    margin: 0px;
   }
 
   /* BOOKING PAGE */
