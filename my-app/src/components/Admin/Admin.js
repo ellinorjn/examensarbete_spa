@@ -120,26 +120,28 @@ class Admin extends Component {
 
   render() {
     return (
-      <div>
-        <LoginForm
-          preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
-          handleChange={this.handleChange}
-        />
-        <div id="personal-bookings">
-          {this.state.loggedIn && (
-            <h1>Stockholm Spa bokningar</h1>
-          )}
-          <table id="bookings-table">
-            <thead>
-              <tr className="table-primary">
-                <th>Namn</th>
-                <th>Behandling</th>
-                <th>Datum</th>
-                <th>Tid</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody" />
-          </table>
+      <div className="admin-page">
+        <div className="admin-login">
+        <p className="admin-text">Välkommen Admin! <br />
+        Logga in för att se era bokningar</p>
+          <LoginForm
+            preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
+            handleChange={this.handleChange}
+          />
+          <div id="personal-bookings">
+            {this.state.loggedIn && <h1>Stockholm Spa bokningar</h1>}
+            <table id="bookings-table">
+              <thead>
+                <tr className="table-primary">
+                  <th>Namn</th>
+                  <th>Behandling</th>
+                  <th>Datum</th>
+                  <th>Tid</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody" />
+            </table>
+          </div>
         </div>
       </div>
     );

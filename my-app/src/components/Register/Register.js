@@ -31,23 +31,24 @@ class Register extends Component {
     e.preventDefault();
   }
 
+  /** Close register popup when registration confirmation is showing */
   showRegisterConfirmation() {
+    let registerPopUp =  document.getElementById("register-popup");
     let showRegisterConfirmation = document.getElementById(
       "register-confirmation"
     );
     showRegisterConfirmation.style.display = "block";
+    registerPopUp.style.display ="none";
   }
 
-  /** Close the confirmation popup and the register popup */
+  /** Close the confirmation popup */
   closeConfirmation() {
     let showRegisterConfirmation = document.getElementById(
       "register-confirmation"
     );
-    let registerPopUp = document.getElementById("register-popup");
 
     showRegisterConfirmation.style.display = "none";
-    registerPopUp.style.display ="none";
-    /** When registered and confirmation is closed - show login field to be able login */
+    /** When registration confirmation is closed - show login field to be able login */
     this.props.showLogin();
   }
 

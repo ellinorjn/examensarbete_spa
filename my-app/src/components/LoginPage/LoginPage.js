@@ -121,6 +121,7 @@ class LoginPage extends Component {
       <div>
         <Nav />
         <div id="personal-login">
+        <p>Logga in för att se dina aktuella bokningar samt för att avboka behandlingar</p>
           <LoginForm
             preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
             handleChange={this.handleChange}

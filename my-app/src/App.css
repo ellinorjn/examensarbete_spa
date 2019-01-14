@@ -15,7 +15,8 @@ input:-webkit-autofill:active {
 }
 
 #root {
-  background-color: #cbc5c1;
+  /*background-color: #cbc5c1; */
+  background-color: #f3f0eb;
   /* background-color: #76849e;*/
 }
 
@@ -270,12 +271,15 @@ button:disabled {
 
 #information-text h1 {
   text-align: left;
+  font-size: 2.2em;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 /* BOOKING PAGE*/
 
 .booking-page {
-  min-height: 100vh;
+  min-height: 1000px;
 }
 .booking {
   min-height: 100vh;
@@ -349,7 +353,8 @@ button:disabled {
   outline: none;
 }
 
-#submit-login {
+#submit-login,
+#register-button {
   margin: 4%;
   border-radius: 20px;
 }
@@ -364,6 +369,7 @@ button:disabled {
 
 #register-button {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 /* CONFIRMATION POPUP*/
 
@@ -560,7 +566,7 @@ button:disabled {
 
 .treatment-summary {
   float: left;
-  width: 50%;
+  width: 70%;
   margin-left: 20px;
 }
 
@@ -577,14 +583,14 @@ button:disabled {
 }
 
 #treatments ul li button {
-  width: 15%;
+  width: 20%;
   height: 25px;
   margin-bottom: 10px;
 }
 
 #button-calendar {
   display: none;
-  height: 100%;
+  height: 50px;
   width: 50%;
   margin-top: 40px;
   margin: 0px auto;
@@ -721,11 +727,12 @@ button:disabled {
   font-size: 1.5em;
 }
 
-.phone {
+.contact-icons p {
   height: 15px;
+  margin: 5px;
 }
 
-.phone img {
+.contact-icons p img {
   height: 100%;
 }
 
@@ -742,13 +749,18 @@ button:disabled {
   background: white;
 }
 #personal-login h1 {
-  margin: 0px;
-  padding-bottom: 50px;
+  display: none;
 }
 
 #login-form {
   background: white;
   margin: 0px auto;
+  text-align: center;
+}
+
+#login-form p {
+  font-size: 2em;
+  margin: 0px;
   text-align: center;
 }
 
@@ -803,6 +815,33 @@ table {
   background: #fafafa;
 }
 
+/* ADMIN */
+.admin-page {
+  height: 100vh;
+}
+
+.admin-page form {
+  height: 100vh;
+}
+
+.admin-login {
+  height: 100vh;
+  background: #fafafa;
+}
+
+.admin-login h1 {
+  display: none;
+}
+
+.admin-text {
+  margin: 0px;
+  padding: 20px;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #4c586f;
+}
+
 /* ------ TABLET ------ */
 
 @media screen and (min-width: 600px) {
@@ -838,6 +877,7 @@ table {
   /* HOME */
   .container {
     width: 80%;
+    padding-bottom: 100px;
   }
 
   #big-img {
@@ -951,6 +991,10 @@ table {
   }
 
   /* FORMS */
+
+  #register-popop {
+    margin-top: 100px;
+  }
   #login-and-register,
   #register-form,
   #guest-booking-form {
@@ -987,7 +1031,7 @@ table {
     width: 80%;
     min-height: 350px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -1017,7 +1061,7 @@ table {
 
   #contact-information {
     text-align: center;
-    width: 60%;
+    width: 90%;
     margin: 0px auto;
     height: 100%;
   }
@@ -1048,6 +1092,11 @@ table {
   .flex-footer {
     flex-direction: row;
   }
+
+  /* ADMIN */
+  .admin-login {
+    background: white;
+  }
 }
 
 /* ------ DESKTOP ------ */
@@ -1067,7 +1116,7 @@ table {
 
   .line hr {
     margin-bottom: 20px;
-    width: 50%;
+    width: 60%;
   }
 
   .line-treatments hr {
@@ -1153,7 +1202,7 @@ table {
   #treatments-massage,
   #treatments-body,
   #treatments-lashes {
-    width: 50%;
+    width: 60%;
   }
 
   #treatments-body ul li,
@@ -1208,7 +1257,7 @@ table {
 
   /* POPUP LOGIN*/
   .modal-content {
-    width: 40%;
+    width: 60%;
     margin-top: 40px;
   }
 
@@ -1295,10 +1344,24 @@ table {
     cursor: pointer;
   }
 
+  /* CONTACT */
+  #contact-information {
+    width: 60%;
+  }
+
   /* LOGIN TO SEE BOOKINGS */
 
   #personal-login {
     width: 90%;
     background: #fafafa;
+  }
+
+  /* ADMIN */
+
+  /* ADMIN */
+  .admin-login {
+    width: 90%;
+    background: #fafafa;
+    margin: 0px auto;
   }
 }
