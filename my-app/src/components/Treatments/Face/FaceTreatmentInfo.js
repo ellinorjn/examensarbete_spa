@@ -3,7 +3,11 @@ import React from "react";
 function faceTreatmentInfo() {
   return (
     <div id="all-face-treatments">
-      <h2>Klassisk ansiktsbehandling |<span className="time-and-price"> 50 min - 900:-</span> </h2>
+      <h2>
+        Klassisk ansiktsbehandling |
+        <span className="time-and-price"> 50 min </span> |
+        <span className="time-and-price"> 900:-</span>{" "}
+      </h2>
       <p>
         "En avslappnande, klassisk ansiktsbehandling som innehåller rengöring,
         hudanalys, peeling samt ansiktsmassage. Behandlingen inleds med
@@ -15,7 +19,13 @@ function faceTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Djuprengörande ansiktsbehandling |<span className="time-and-price"> 55 min - 990:- </span></h2>
+      <h2>
+        Djuprengörande ansiktsbehandling |
+        <span className="time-and-price">
+          {" "}
+          55 min <span /> | <span className="time-and-price" /> 990:-{" "}
+        </span>
+      </h2>
       <p>
         "En ansiktsbehandling med fokus på djuprengöring. Behandlingen inleds
         med rengöring av ansikte, hals samt dekolletage. Din teraput gör sedan
@@ -28,7 +38,10 @@ function faceTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Fuktbomb |<span className="time-and-price"> 50 min - 900:-</span></h2>
+      <h2>
+        Fuktbomb |<span className="time-and-price"> 50 min </span> |
+        <span className="time-and-price"> 900:-</span>
+      </h2>
       <p>
         "En ansiktsbehandling med fokus på massor med fukt. Behandlingen inleds
         med rengöring av ansikte, hals samt dekolletage. Din teraput gör sedan

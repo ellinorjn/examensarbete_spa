@@ -8,7 +8,7 @@ function LashesBox(props) {
       </div>
       <div className={"lashes-box-text"}>
         <h2>Fransar & Bryn</h2>
-        <p>här finns det olika frans- och brynbehandlingar, KUL!</p>
+        <p>Här kan du läsa om vilka behandlingar vi erbjuder för dina ögonfransar och ögonbryn</p>
       </div>
       <div className="read-more-button-div">
         <button className="read-more-button" value="body" onClick={props.event}>

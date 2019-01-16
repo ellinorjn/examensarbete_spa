@@ -9,7 +9,7 @@ function BodyTreatmentBox(props) {
       </div>
       <div className={"body-box-text"}>
         <h2>Kroppsbehandlingar</h2>
-        <p>här finns det kroppsbehandlingar, KUL!</p>
+        <p>Här hittar du alla våra härliga helkroppsbehandlingar, från helkroppsscrub till vaxning!</p>
       </div>
       <div className="read-more-button-div">
         <button className="read-more-button" value="body" onClick={props.event}>

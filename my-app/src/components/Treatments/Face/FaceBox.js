@@ -9,7 +9,7 @@ function FaceBox(props) {
       </div>
       <div className={"face-box-text"}>
         <h2>Ansiktsbehandlingar</h2>
-        <p>här finns det ansiktsbehandlingar, KUL!</p>
+        <p>Välgörande ansiktsbehandlingar anpassade efter just din hudtyp!</p>
       </div>
       <div className="read-more-button-div">
       <button className="read-more-button" value="body" onClick={props.event}>

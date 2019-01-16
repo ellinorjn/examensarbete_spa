@@ -3,7 +3,10 @@ import React from "react";
 function bodyTreatmentInfo() {
   return (
     <div id="all-body-treatments">
-      <h2>Helkroppsskrubb |<span className="time-and-price"> 50 min - 800:-</span></h2>
+      <h2>
+        Helkroppsskrubb |<span className="time-and-price"> 50 min </span> |
+        <span className="time-and-price"> 800:-</span>
+      </h2>
       <p>
         "En behandling som är perfekt för dig som ska på solsemester och vill få
         en jämnare bränna som håller längre! En djupgående helkroppsskrubb där
@@ -14,7 +17,10 @@ function bodyTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Helkroppsbehandling |<span className="time-and-price"> 60 min - 1200:- </span></h2>
+      <h2>
+        Helkroppsbehandling|<span className="time-and-price"> 60 min </span> |
+        <span className="time-and-price"> 1200:-</span>
+      </h2>
       <p>
         "En behandling för dig som verkligen vill slappna av. Vi går igenom hela
         kroppen med bad, lerinpackling och massage. Under tiden du får
@@ -24,7 +30,10 @@ function bodyTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Vaxning halva ben |<span className="time-and-price"> 30 min - 400:-</span></h2>
+      <h2>
+        Vaxning halva ben |<span className="time-and-price"> 50 min </span> |
+        <span className="time-and-price"> 400:-</span>
+      </h2>
       <p>
         "Vaxning av halva ben för lena och hårfria ben! Tänk på att undvika
         insmörjning 24h före och efter besöket."
@@ -32,7 +41,10 @@ function bodyTreatmentInfo() {
       <div className="line-treatments">
         <hr />
       </div>
-      <h2>Vaxning hela ben |<span className="time-and-price"> 50 min - 700:-</span></h2>
+      <h2>
+        Vaxning hela ben |<span className="time-and-price"> 50 min </span> |
+        <span className="time-and-price"> 700:-</span>
+      </h2>
       <p>
         "Vaxning av hela benen för lena och hårfria ben! Tänk på att undvika
         insmörjning 24h före och efter besöket."

@@ -9,7 +9,7 @@ function MassageBox(props) {
       </div>
       <div className={"massage-box-text"}>
         <h2>Massage</h2>
-        <p>här finns det olika massagebehandlingar, KUL!</p>
+        <p>Unna dig en avkopplande, välgörande massage. Här kan du läsa om massagerna vi erbjuder!</p>
       </div>
       <div className="read-more-button-div">
       <button className="read-more-button" value="body" onClick={props.event}>
