@@ -27,7 +27,8 @@ input:-webkit-autofill:active {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.h1 {
   text-align: center;
   color: #4c586f;
   font-family: "Playfair Display", serif;
@@ -419,6 +420,7 @@ button:disabled {
   width: 90%;
   margin: 0px auto;
   margin-top: -120px;
+  padding-bottom: 50px;
 }
 
 .face-box,
@@ -454,6 +456,7 @@ button:disabled {
 .massage-box-text h2,
 .lashes-box-text h2 {
   text-align: left;
+  text-decoration: underline;
 }
 
 .face-box-text p,
@@ -688,7 +691,7 @@ button:disabled {
 /* FAQ */
 #header-faq {
   height: 100vh;
-  background-image: url(images/treatments-header.jpg);
+  background-image: url(images/bath.jpg);
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -761,8 +764,17 @@ button:disabled {
 }
 /* LOGIN TO SEE BOOKINGS */
 
+.h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 auto;
+  width: 80%;
+  background: white;
+  padding-top: 40px;
+}
+
 #personal-login {
-  height: 100vh;
   margin: 0px auto;
   background: white;
 }
@@ -833,6 +845,13 @@ button:disabled {
 @media screen and (min-width: 600px) {
   .treatment-button {
     width: 45%;
+  }
+
+  .treatment-button span {
+    display: inline-block;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 250px;
   }
 
   .flex-container {

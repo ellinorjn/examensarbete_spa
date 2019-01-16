@@ -12,7 +12,7 @@ function LashesBox(props) {
       </div>
       <div className="read-more-button-div">
         <button className="read-more-button" value="body" onClick={props.event}>
-          {props.toggle ? "visa mer" : "visa mindre"}
+          {props.toggle ? "Visa mer" : "Visa mindre"}
         </button>
       </div>
       <div className={"clear"} />

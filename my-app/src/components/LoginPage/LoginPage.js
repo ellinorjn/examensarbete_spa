@@ -131,8 +131,8 @@ class LoginPage extends Component {
       <div>
         <Nav />
         <div id="personal-login">
-          <p>
-            Logga in för att se dina aktuella bokningar samt för att avboka
+          <p className="h1">
+            Logga in för att se dina aktuella bokningar <br /> samt för att avboka
             behandlingar
           </p>
           <LoginForm
