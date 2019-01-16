@@ -70,12 +70,19 @@ class LoginPage extends Component {
   showBookings(response) {
     let tableBody = document.getElementById("tableBody");
     let bookingsTable = document.getElementById("bookings-table");
-    bookingsTable.style.display = "block";
 
     let content = ``;
 
-    response.information.forEach(function(element) {
-      content += `<tr class="table-light">
+    if (response.information < 1) {
+      let personalBookings = document.getElementById("personal-bookings");
+      bookingsTable.style.display = "none";
+      content += `<div>inga bokade tider</div>
+`;
+      personalBookings.innerHTML = content;
+    } else {
+      bookingsTable.style.display = "block";
+      response.information.forEach(function(element) {
+        content += `<tr class="table-light">
             <td>${element.treatment}</td>
             <td>${element.date}</td>
             <td>${element.time}</td>
@@ -86,9 +93,12 @@ class LoginPage extends Component {
 			</button></td>
 			</tr>
 			`;
-    });
-    tableBody.innerHTML = content;
+      });
+      tableBody.innerHTML = content;
+    }
   }
+
+  /** Cancel booking */
 
   componentDidMount() {
     window.cancelBooking = id => {
@@ -121,7 +131,10 @@ class LoginPage extends Component {
       <div>
         <Nav />
         <div id="personal-login">
-        <p>Logga in för att se dina aktuella bokningar samt för att avboka behandlingar</p>
+          <p>
+            Logga in för att se dina aktuella bokningar samt för att avboka
+            behandlingar
+          </p>
           <LoginForm
             preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
             handleChange={this.handleChange}

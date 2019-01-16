@@ -768,51 +768,19 @@ button:disabled {
 #personal-bookings h1 {
   margin: 0px;
 }
-#bookings-table {
+
+.table-primary {
   display: none;
-  width: 70%;
-  margin: 0px auto;
-  text-align: center;
-  background: white;
-  height: 100vh;
-  border: 2px solid white;
 }
-
-table {
-  border-collapse: collapse;
-}
-
-.table-primary th {
-  width: 33%;
-  text-align: left;
-}
-
-#bookings-table th {
-  font-size: 1.3em;
-  padding: 0px 20px 0px 20px;
-}
-
-#tableBody td {
-  font-size: 1.1em;
-  text-align: left;
-  padding: 0px 20px 0px 20px;
-}
-
 .table-light {
-  height: 50px;
-}
-
-#tableBody tr:nth-child(odd) {
-  background: #fafafa;
-}
-.cancel-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
 }
 
-#personal-bookings {
-  width: 90%;
-  margin: 0px auto;
-  background: #fafafa;
+.cancel-button {
+  width: 100%;
 }
 
 /* ADMIN */
@@ -1082,6 +1050,62 @@ table {
 
   #contact-map img {
     width: 100%;
+  }
+
+  /* PERSONAL PAGE */
+
+  .table-primary {
+    display: block;
+  }
+  .table-light {
+    display: block;
+  }
+
+  #bookings-table {
+    display: none;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    background: white;
+    height: 100vh;
+    border: 2px solid white;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  .table-primary th {
+    width: 33%;
+    text-align: left;
+  }
+
+  #bookings-table th {
+    font-size: 1.3em;
+    padding: 0px 20px 0px 20px;
+  }
+
+  #tableBody td {
+    font-size: 1.1em;
+    text-align: left;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .table-light {
+    height: 50px;
+  }
+
+  #tableBody tr:nth-child(odd) {
+    background: #fafafa;
+  }
+  .cancel-button {
+    width: 100%;
+  }
+
+  #personal-bookings {
+    width: 90%;
+    margin: 0px auto;
+    background: #fafafa;
   }
 
   /* FOOTER */
