@@ -69,27 +69,26 @@ class Admin extends Component {
   /** List all bookings in a table plus a cancel button
    *  that holds the id of the booking */
   showBookings(response) {
-    let tableBody = document.getElementById("tableBody");
-    let bookingsTable = document.getElementById("bookings-table");
-    bookingsTable.style.display = "block";
+    let personalBookingInfo = document.getElementById("personal-booking-info");
+    let bookingTitles = document.getElementById("booking-titles");
 
     let content = ``;
 
     response.bookings.forEach(function(element) {
-      content += `<tr class="table-light">
-            <td>${element.name}</td>
-            <td>${element.treatment}</td>
-            <td>${element.date}</td>
-            <td>${element.time}</td>
-            <td><button class="cancel-button" id=${
+      content += ` <div>
+            <p>${element.name}</p>
+            <p>${element.treatment}</p>
+            <p>${element.date}</p>
+            <p>${element.time}</p>
+            <button class="cancel-button" id=${
               element.ID
             } onClick="cancelBooking(this.id)">
 			<i class="fas fa-trash-alt fa-2x"></i>Avboka
-			</button></td>
-			</tr>
+			</button></div>
+			
 			`;
     });
-    tableBody.innerHTML = content;
+    personalBookingInfo.innerHTML = content;
   }
 
   componentDidMount() {
@@ -130,17 +129,14 @@ class Admin extends Component {
           />
           <div id="personal-bookings">
             {this.state.loggedIn && <h1>Stockholm Spa bokningar</h1>}
-            <table id="bookings-table">
-              <thead>
-                <tr className="table-primary">
-                  <th>Namn</th>
-                  <th>Behandling</th>
-                  <th>Datum</th>
-                  <th>Tid</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody" />
-            </table>
+            <div id="booking-titles">
+            <div>Namn</div>
+            <div>Behandling</div>
+            <div>Datum</div>
+            <div>Tid</div>
+          </div>
+
+          <div id="personal-booking-info" />
           </div>
         </div>
       </div>

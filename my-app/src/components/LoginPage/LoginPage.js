@@ -17,6 +17,7 @@ class LoginPage extends Component {
       this
     );
     this.handleChange = this.handleChange.bind(this);
+    this.errorMessageLogin = this.errorMessageLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
     this.showBookings = this.showBookings.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
@@ -45,16 +46,22 @@ class LoginPage extends Component {
     )
       .then(response => response.json())
       .then(response => {
-        this.hideLogin();
-        /* Show information (number of bookings, time, date) based on the response when logged in */
-        this.showBookings(response);
-        if (response.information <= 0) {
-          console.log("inga bokningar");
+        if (response.information.length > 0) {
+          this.hideLogin();
+          this.showBookings(response);
+        } else {
+          console.log("fel lösen eller mail");
+          this.errorMessageLogin();
         }
       })
       .catch(error => {
         console.error(error);
       });
+  }
+
+  errorMessageLogin() {
+    let inlogFail = document.getElementById("inlog-fail");
+    inlogFail.style.display = "block";
   }
 
   hideLogin() {
@@ -68,33 +75,33 @@ class LoginPage extends Component {
   /** List all bookings in a table plus a cancel button
    *  that holds the id of the booking */
   showBookings(response) {
-    let tableBody = document.getElementById("tableBody");
-    let bookingsTable = document.getElementById("bookings-table");
+    let personalBookingInfo = document.getElementById("personal-booking-info");
+    let bookingTitles = document.getElementById("booking-titles");
 
     let content = ``;
 
     if (response.information < 1) {
       let personalBookings = document.getElementById("personal-bookings");
-      bookingsTable.style.display = "none";
+      bookingTitles.style.display = "none";
       content += `<div>inga bokade tider</div>
 `;
       personalBookings.innerHTML = content;
     } else {
-      bookingsTable.style.display = "block";
+      //bookingTitles.style.display = "block";
       response.information.forEach(function(element) {
-        content += `<tr class="table-light">
-            <td>${element.treatment}</td>
-            <td>${element.date}</td>
-            <td>${element.time}</td>
-            <td><button class="cancel-button" id=${
+        content += ` <div>
+            <p>${element.treatment}</p>
+            <p>${element.date}</p>
+            <p>${element.time}</p>
+            <button class="cancel-button" id=${
               element.ID
             } onClick="cancelBooking(this.id)">
 			<i class="fas fa-trash-alt fa-2x"></i>Avboka
-			</button></td>
-			</tr>
+			</button></div>
+			
 			`;
       });
-      tableBody.innerHTML = content;
+      personalBookingInfo.innerHTML = content;
     }
   }
 
@@ -132,8 +139,8 @@ class LoginPage extends Component {
         <Nav />
         <div id="personal-login">
           <p className="h1">
-            Logga in för att se dina aktuella bokningar <br /> samt för att avboka
-            behandlingar
+            Logga in för att se dina aktuella bokningar <br /> samt för att
+            avboka behandlingar
           </p>
           <LoginForm
             preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
@@ -144,16 +151,13 @@ class LoginPage extends Component {
           {this.state.loggedIn && (
             <h1>Välkommen till dina bokningar {this.state.name} </h1>
           )}
-          <table id="bookings-table">
-            <thead>
-              <tr className="table-primary">
-                <th>Behandling</th>
-                <th>Datum</th>
-                <th>Tid</th>
-              </tr>
-            </thead>
-            <tbody id="tableBody" />
-          </table>
+          <div id="booking-titles">
+            <div>Behandling</div>
+            <div>Datum</div>
+            <div>Tid</div>
+          </div>
+
+          <div id="personal-booking-info" />
         </div>
       </div>
     );

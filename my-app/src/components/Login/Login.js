@@ -22,8 +22,9 @@ class Login extends Component {
       this
     );
     this.handleChange = this.handleChange.bind(this);
-
+    this.errorMessageLogin = this.errorMessageLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
+    this.showYourDiscount = this.showYourDiscount.bind(this);
   }
 
   preventDefaultBehaviorSubmit(e) {
@@ -54,9 +55,9 @@ class Login extends Component {
         if (response.information.length > 0) {
           this.setPersonInformation(response);
           this.hideLogin();
-          alert(
-            "Du har nu 5% rabatt på hela din bokning, rabatten avdrages vid betalning på plats"
-          );
+          this.showYourDiscount();
+        }else{
+          this.errorMessageLogin(); 
         }
       })
       .catch(error => {
@@ -74,6 +75,11 @@ class Login extends Component {
     });
   }
 
+  errorMessageLogin(){
+    let inlogFail = document.getElementById("inlog-fail");
+    inlogFail.style.display = "block";
+  }
+
   /** When logged in - hide login popup and discount button */
   hideLogin() {
     let loginForm = document.getElementById("login-popup");
@@ -85,6 +91,11 @@ class Login extends Component {
       showBookingCalendar: true,
       
     });
+  }
+
+  showYourDiscount(){
+    let yourDiscount = document.getElementById('your-discount');
+    yourDiscount.style.display = "block";
   }
 
   render() {

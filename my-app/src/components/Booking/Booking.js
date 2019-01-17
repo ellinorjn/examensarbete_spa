@@ -4,6 +4,7 @@ import Register from "../Register/Register";
 import BookingCalendar from "../Booking/BookingCalendar";
 import Nav from "../nav";
 import GetDiscountButton from "./GetDiscountButton";
+import YourDiscount from "./YourDiscount";
 
 class Booking extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class Booking extends Component {
         {this.state.showGetDiscountButton && (
           <GetDiscountButton event={this.showLogin} />
         )}
+        <YourDiscount />
 
         <div id="booking-calendar">
           {this.state.showBookingCalendar && <BookingCalendar />}

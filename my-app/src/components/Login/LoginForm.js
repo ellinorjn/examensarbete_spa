@@ -5,6 +5,7 @@ function loginForm(props) {
       <div id="login-form">
         <h1>Logga in</h1>
         <form onSubmit={props.preventDefaultBehaviorSubmit}>
+        <p id="inlog-fail">Du har skrivit fel mail eller lösenord</p>
           <input
             className="form-input"
             type="text"

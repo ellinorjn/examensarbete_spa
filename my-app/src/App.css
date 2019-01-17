@@ -326,6 +326,14 @@ button:disabled {
 }
 
 /* FORMS */
+
+#inlog-fail {
+  color: red;
+  font-size: 1.1em !important;
+  padding: 10px;
+  display: none;
+}
+
 #login-and-register,
 #register-form,
 #guest-booking-form {
@@ -372,6 +380,20 @@ button:disabled {
 #register-button {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* DISCOUNT WHEN LOGGED IN */
+#your-discount {
+  background-color: #4c586f;
+  height: 50px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 4px;
+  display: none;
+}
+
+#your-discount h2 {
+  color: #ebeced;
 }
 /* CONFIRMATION POPUP*/
 
@@ -795,27 +817,26 @@ button:disabled {
 }
 
 /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
+#personal-booking {
+  background: #fafafa;
+}
+
 #personal-bookings h1 {
   margin: 0px;
 }
 
-.table-primary {
-  display: none;
-}
-.table-light {
+#booking-titles {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  display: none;
 }
 
 .cancel-button {
-  width: 100%;
+  width: 40%;
 }
 
 /* ADMIN */
 .admin-page {
-  height: 100vh;
+  min-height: 500px;
 }
 
 .admin-page form {
@@ -823,7 +844,6 @@ button:disabled {
 }
 
 .admin-login {
-  height: 100vh;
   background: #fafafa;
 }
 
@@ -850,7 +870,7 @@ button:disabled {
   .treatment-button span {
     display: inline-block;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(76, 88, 111, 0.3);
     width: 250px;
   }
 
@@ -996,7 +1016,6 @@ button:disabled {
   }
 
   /* FORMS */
-
   #register-popop {
     margin-top: 100px;
   }
@@ -1091,58 +1110,45 @@ button:disabled {
 
   /* PERSONAL PAGE */
 
-  .table-primary {
-    display: block;
-  }
-  .table-light {
-    display: block;
-  }
-
-  #bookings-table {
-    display: none;
-    width: 100%;
-    margin: 0px auto;
-    text-align: center;
-    background: white;
-    height: 100vh;
-    border: 2px solid white;
-  }
-
-  table {
-    border-collapse: collapse;
-  }
-
-  .table-primary th {
-    width: 33%;
-    text-align: left;
-  }
-
-  #bookings-table th {
-    font-size: 1.3em;
-    padding: 0px 20px 0px 20px;
-  }
-
-  #tableBody td {
-    font-size: 1.1em;
-    text-align: left;
-    padding: 0px 20px 0px 20px;
-  }
-
-  .table-light {
-    height: 50px;
-  }
-
-  #tableBody tr:nth-child(odd) {
-    background: #fafafa;
-  }
-  .cancel-button {
-    width: 100%;
-  }
-
   #personal-bookings {
     width: 90%;
     margin: 0px auto;
-    background: #fafafa;
+  }
+
+  #booking-titles {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    padding: 2px;
+  }
+
+  #booking-titles div {
+    width: 20%;
+  }
+
+  #personal-booking-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  #personal-booking-info div {
+    padding-top: 10px;
+    height: 40px;
+  }
+
+  #personal-booking-info div:nth-child(odd) {
+    background: white;
+  }
+
+  #personal-booking-info p {
+    width: 20%;
+    margin: 0px;
+    float: left;
+  }
+
+  .cancel-button {
+    width: 20%;
   }
 
   /* FOOTER */
@@ -1185,7 +1191,7 @@ button:disabled {
   }
 
   /* HOME */
-  /*.container {
+  .container {
     flex-direction: row-reverse;
   }
 
@@ -1210,7 +1216,7 @@ button:disabled {
     text-align: left;
     margin: 0px;
     padding: 0px;
-  }*/
+  }
 
   .container {
     flex-direction: row-reverse;
