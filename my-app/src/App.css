@@ -91,7 +91,7 @@ hr {
   display: inline-block;
   color: white;
   background-color: #4c586f;
-  height: 40px;
+  height: 60px;
   margin-left: 15px;
 }
 
@@ -756,7 +756,7 @@ button:disabled {
 /* FAQ */
 #header-faq {
   height: 100vh;
-  background-image: url(images/bath.jpg);
+  background-image: url(images/home.jpg);
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -876,14 +876,17 @@ button:disabled {
   display: none;
 }
 
-#personal-booking-info {
+#personal-booking-info,
+#personal-guest-booking-info {
   text-align: center;
 }
 
-#personal-booking-info div {
+#personal-booking-info div,
+#personal-guest-booking-info div {
   padding: 20px;
 }
-#personal-booking-info div:nth-child(odd) {
+#personal-booking-info div:nth-child(odd),
+#personal-guest-booking-info div:nth-child(odd) {
   background: white;
 }
 
@@ -1168,7 +1171,7 @@ button:disabled {
   /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
 
   #personal-bookings {
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
     min-height: 600px;
     background: #fafafa;
@@ -1183,9 +1186,11 @@ button:disabled {
 
   #booking-titles div {
     width: 25%;
+    padding: 5px;
   }
 
-  #personal-booking-info {
+  #personal-booking-info,
+  #personal-guest-booking-info {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -1193,20 +1198,24 @@ button:disabled {
     text-align: left !important;
   }
 
-  #personal-booking-info div {
+  #personal-booking-info div,
+  #personal-guest-booking-info div {
     padding: 0px;
     padding-top: 10px;
     height: 40px;
   }
 
-  #personal-booking-info p {
+  #personal-booking-info p,
+  #personal-guest-booking-info p {
     width: 25%;
     margin: 0px;
     float: left;
+    padding: 5px;
   }
 
   .cancel-button {
-    width: 15%;
+    width: 10%;
+    font-size: 0.9em;
   }
 
   /* FOOTER */
@@ -1514,11 +1523,18 @@ button:disabled {
   #personal-login {
     width: 90%;
     background: #fafafa;
+    min-height: 600px;
+  }
+
+  #personal-bookings {
+    width: 90%;
   }
 
   #booking-titles div,
-  #personal-booking-info p {
+  #personal-booking-info p,
+  #personal-guest-booking-info p {
     width: 20%;
+    padding-left: 20px;
   }
 
   /* ADMIN */

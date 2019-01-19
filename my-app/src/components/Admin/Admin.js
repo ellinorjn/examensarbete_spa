@@ -15,7 +15,6 @@ class Admin extends Component {
       this
     );
     this.handleChange = this.handleChange.bind(this);
-    this.errorMessageLogin = this.errorMessageLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
     this.showBookings = this.showBookings.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
@@ -45,24 +44,14 @@ class Admin extends Component {
       )
         .then(response => response.json())
         .then(response => {
-          /* If the login fails, show error message */
-          if (response.bookings.length <= 0) {
-            this.errorMessageLogin();
-          } else {
-            this.hideLogin();
-            /* Show information (number of bookings, time, date) based on the response when logged in */
-            this.showBookings(response);
-          }
+          this.hideLogin();
+          /* Show information (number of bookings, time, date) based on the response when logged in */
+          this.showBookings(response);
         })
         .catch(error => {
           alert(error);
         });
     }
-  }
-
-  errorMessageLogin() {
-    let inlogFail = document.getElementById("inlog-fail");
-    inlogFail.style.display = "block";
   }
 
   hideLogin() {
@@ -77,13 +66,17 @@ class Admin extends Component {
    *  that holds the id of the booking */
   showBookings(response) {
     let personalBookingInfo = document.getElementById("personal-booking-info");
+    let personalGuestBookingInfo = document.getElementById(
+      "personal-guest-booking-info"
+    );
     let personalBookings = document.getElementById("personal-bookings");
 
     personalBookings.style.display = "block";
-    let content = ``;
+    let contentInlogged = ``;
+    let contentGuests = ``;
 
     response.bookings.forEach(function(element) {
-      content += `<div>
+      contentInlogged += `<div>
                     <p>${element.name}</p>
                     <p>${element.treatment}</p>
                     <p>${element.date}</p>
@@ -97,7 +90,24 @@ class Admin extends Component {
                   </div>
 			          `;
     });
-    personalBookingInfo.innerHTML = content;
+    personalBookingInfo.innerHTML = contentInlogged;
+
+    response.bookings_guests.forEach(function(element) {
+      contentGuests += `<div>
+                    <p>${element.name}</p>
+                    <p>${element.treatment}</p>
+                    <p>${element.date}</p>
+                    <p>${element.time}</p>
+                      <button class="cancel-button" 
+                        id=${element.ID} 
+                        onClick="cancelBooking(this.id)">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                        Avboka
+                      </button>
+                  </div>
+			          `;
+    });
+    personalGuestBookingInfo.innerHTML = contentGuests;
   }
 
   componentDidMount() {
@@ -142,13 +152,26 @@ class Admin extends Component {
             {this.state.loggedIn && (
               <p className="h1">Stockholm Spa bokningar</p>
             )}
-            <div id="booking-titles">
-              <div>Namn</div>
-              <div>Behandling</div>
-              <div>Datum</div>
-              <div>Tid</div>
+
+             <h2>Inloggade bokningar</h2>
+            <div id="personal-booking-info">
+              <div id="booking-titles">
+                <div>Namn</div>
+                <div>Behandling</div>
+                <div>Datum</div>
+                <div>Tid</div>
+              </div>
             </div>
-            <div id="personal-booking-info" />
+
+            <h2>Gästbokningar</h2>
+            <div id="personal-guest-booking-info">
+              <div id="booking-titles">
+                <div>Namn</div>
+                <div>Behandling</div>
+                <div>Datum</div>
+                <div>Tid</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

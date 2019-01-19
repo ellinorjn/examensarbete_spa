@@ -46,11 +46,11 @@ class LoginPage extends Component {
     )
       .then(response => response.json())
       .then(response => {
+        console.log(response);
         if (response.information.length > 0) {
           this.hideLogin();
           this.showBookings(response);
         } else {
-          console.log("fel lösen eller mail");
           this.errorMessageLogin();
         }
       })

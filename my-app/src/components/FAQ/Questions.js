@@ -5,7 +5,7 @@ function Questions(props) {
   return (
     <div className="faq-questions">
       <div className="individual-question" onClick={props.showAnswer}>
-        <h2 >Vad har ni för åldersgräns? Får jag ta med mina barn?</h2>
+        <h2>Vad har ni för åldersgräns? Får jag ta med mina barn?</h2>
         <p className="answer">
           <span>
             Vi på Stockholm Spa har en strikt åldersgräns på 18 år för att
@@ -18,10 +18,10 @@ function Questions(props) {
         <h2>Hur lång tid innan min behandling bör jag vara på plats?</h2>
         <p className="answer">
           <span>
-            Du bör vara på plats minst 10 minuter föra utsatt tid för anmäla att
+            Du bör vara på plats minst 10 minuter före utsatt tid för anmäla att
             du kommit. I loungen du sitter i före behandling serveras lugnande
             te samt färsk frukt, du är därför mer än välkommen en halvtimma före
-            utsatt tid för lite te och frukt.
+            utsatt tid för lite te och frukt om du vill!
           </span>
         </p>
       </div>
@@ -49,6 +49,17 @@ function Questions(props) {
           <span>
             10 minuters promenad från vår spaanläggning finns det en stor
             betalfri parkering där parkeringsmöjlighet finns.
+          </span>
+        </p>
+      </div>
+      <div className="individual-question" onClick={props.showAnswer}>
+        <h2>Varför får jag inte ha med min mobil inne på spat?</h2>
+        <p className="answer">
+          <span>
+            Vi tror på att en mobilfri zon gör gott för kropp och själ. Vi vill
+            att våra gäster som kommer till oss ska kunna koppla av till 100%
+            utan att känna att dem måste kolla sin telefon hela tiden. Därför
+            har vi valt att ha det mobilfritt hos oss!
           </span>
         </p>
       </div>
