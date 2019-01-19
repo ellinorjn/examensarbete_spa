@@ -70,8 +70,9 @@ class Admin extends Component {
    *  that holds the id of the booking */
   showBookings(response) {
     let personalBookingInfo = document.getElementById("personal-booking-info");
-    let bookingTitles = document.getElementById("booking-titles");
+    let personalBookings = document.getElementById("personal-bookings");
 
+    personalBookings.style.display = "block";
     let content = ``;
 
     response.bookings.forEach(function(element) {

@@ -278,6 +278,48 @@ button:disabled {
   padding-top: 40px;
 }
 
+.our-steps {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  margin-top: 25px;
+  padding-bottom: 50px;
+}
+
+.spa-step {
+  background: white;
+  margin: 0px auto;
+  position: relative;
+  margin-top: 170px;
+  min-height: 300px;
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+.spa-step-img {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spa-step img {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  opacity: 0.8;
+}
+
+.spa-step-text {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
 /* BOOKING PAGE*/
 
 .booking-page {
@@ -817,8 +859,9 @@ button:disabled {
 }
 
 /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
-#personal-booking {
+#personal-bookings {
   background: #fafafa;
+  display: none;
 }
 
 #personal-bookings h1 {
@@ -828,6 +871,17 @@ button:disabled {
 #booking-titles {
   display: flex;
   display: none;
+}
+
+#personal-booking-info {
+  text-align: center;
+}
+
+#personal-booking-info div {
+  padding: 20px;
+}
+#personal-booking-info div:nth-child(odd) {
+  background: white;
 }
 
 .cancel-button {
@@ -929,9 +983,12 @@ button:disabled {
 
   #information-text h1 {
     text-align: left;
-
     padding: 0px;
     margin: 0px;
+  }
+
+  .spa-step {
+    width: 80%;
   }
 
   #buttonTen,
@@ -1113,6 +1170,8 @@ button:disabled {
   #personal-bookings {
     width: 90%;
     margin: 0px auto;
+    min-height: 600px;
+    background: #fafafa;
   }
 
   #booking-titles {
@@ -1131,14 +1190,13 @@ button:disabled {
     flex-direction: column;
     width: 100%;
     padding-bottom: 20px;
-  }
-  #personal-booking-info div {
-    padding-top: 10px;
-    height: 40px;
+    text-align: left !important;
   }
 
-  #personal-booking-info div:nth-child(odd) {
-    background: white;
+  #personal-booking-info div {
+    padding: 0px;
+    padding-top: 10px;
+    height: 40px;
   }
 
   #personal-booking-info p {
@@ -1244,6 +1302,33 @@ button:disabled {
   #color-square {
     width: 30%;
     height: 450px;
+    margin: 0px;
+  }
+
+  .our-steps {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .spa-step {
+    width: 31%;
+    min-height: 500px;
+    padding-bottom: 10px;
+  }
+
+  .spa-step img {
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+
+  .spa-step-text {
+    font-size: 1.2em;
+  }
+
+  .spa-step p {
     margin: 0px;
   }
 
@@ -1426,8 +1511,6 @@ button:disabled {
     width: 90%;
     background: #fafafa;
   }
-
-  /* ADMIN */
 
   /* ADMIN */
   .admin-login {

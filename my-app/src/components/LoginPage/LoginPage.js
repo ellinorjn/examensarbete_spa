@@ -76,18 +76,19 @@ class LoginPage extends Component {
    *  that holds the id of the booking */
   showBookings(response) {
     let personalBookingInfo = document.getElementById("personal-booking-info");
-    let bookingTitles = document.getElementById("booking-titles");
+    let personalBookings = document.getElementById("personal-bookings");
+
+   
 
     let content = ``;
 
     if (response.information < 1) {
       let personalBookings = document.getElementById("personal-bookings");
-      bookingTitles.style.display = "none";
       content += `<div>inga bokade tider</div>
 `;
       personalBookings.innerHTML = content;
     } else {
-      //bookingTitles.style.display = "block";
+      personalBookings.style.display = "block";
       response.information.forEach(function(element) {
         content += ` <div>
             <p>${element.treatment}</p>
