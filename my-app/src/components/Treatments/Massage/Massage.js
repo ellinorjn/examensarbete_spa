@@ -24,6 +24,7 @@ function massage(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Gravidmassage </h3>
@@ -43,6 +44,7 @@ function massage(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Exklusiv spa-massage </h3>
@@ -62,6 +64,7 @@ function massage(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Duo-massage</h3>
@@ -81,6 +84,7 @@ function massage(props) {
           </button>
           <div className="clear" />
         </li>
+        
       </ul>
     </div>
   );

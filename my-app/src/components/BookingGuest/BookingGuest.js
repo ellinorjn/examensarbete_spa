@@ -10,12 +10,11 @@ class BookingGuest extends Component {
       name: "",
       email: ""
     };
-    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(
-      this
-    );
+    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.registerBookingGuest = this.registerBookingGuest.bind(this);
     this.showBookingConfirmation = this.showBookingConfirmation.bind(this);
+    this.formNotCorrect = this.formNotCorrect.bind(this);
   }
 
   handleChange(e) {
@@ -26,20 +25,27 @@ class BookingGuest extends Component {
 
   preventDefaultBehaviorSubmit(e) {
     this.registerBookingGuest();
-    /** When registered show login field to login */
-    //this.props.showLogin();
     e.preventDefault();
   }
 
-  showBookingConfirmation(){
-    let showBookingConfirmation = document.getElementById('booking-confirmation');
-  showBookingConfirmation.style.display = 'block';
-}
+  formNotCorrect() {
+    let formNotCorrect = document.getElementById("form-not-correct");
+    formNotCorrect.style.display = "block";
+  }
 
-closeConfirmation(){
-  let showBookingConfirmation = document.getElementById('booking-confirmation');
-  showBookingConfirmation.style.display = 'none';
-}
+  showBookingConfirmation() {
+    let showBookingConfirmation = document.getElementById(
+      "booking-confirmation"
+    );
+    showBookingConfirmation.style.display = "block";
+  }
+
+  closeConfirmation() {
+    let showBookingConfirmation = document.getElementById(
+      "booking-confirmation"
+    );
+    showBookingConfirmation.style.display = "none";
+  }
 
   registerBookingGuest() {
     let bookingInformation = {
@@ -58,8 +64,7 @@ closeConfirmation(){
       this.state.name === "" ||
       this.state.email === ""
     ) {
-      /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
-      alert("NO!!!");
+      this.formNotCorrect();
     } else {
       return fetch(
         "http://localhost/spa/my-app/database-connections/bookingGuest.php",
@@ -70,7 +75,6 @@ closeConfirmation(){
         }
       )
         .then(response => {
-          //this.hideBookingOptions();
           this.showBookingConfirmation();
           console.log(response);
         })
@@ -87,8 +91,7 @@ closeConfirmation(){
           preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
           handleChange={this.handleChange}
         />
-        
-        <BookingConfirmation event={this.closeConfirmation}/>
+        <BookingConfirmation event={this.closeConfirmation} />
       </div>
     );
   }

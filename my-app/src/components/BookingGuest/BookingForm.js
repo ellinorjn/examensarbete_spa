@@ -3,6 +3,7 @@ import React from "react";
 function bookingForm(props) {
   return (
     <form onSubmit={props.preventDefaultBehaviorSubmit}>
+    <p id="form-not-correct">Du måste fylla i alla fält för att kunna boka</p>
       <input
         className="form-input"
         type="text"

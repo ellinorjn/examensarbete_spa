@@ -1,6 +1,6 @@
 import React from "react";
 
-/* Creates a pop up with a confirmation on your registration
+/* Creates a pop up with confirmation on your registration
 When the pop up is closed the login form is being shown */
 const RegisterConfirmation = props => {
   return (

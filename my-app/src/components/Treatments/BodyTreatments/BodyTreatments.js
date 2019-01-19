@@ -9,7 +9,8 @@ function bodyTreatments(props) {
           <div className="treatment-summary">
             <h3>Helkroppsskrubb</h3>
             <p>
-            En djupgående helkroppsskrubb - perfekt för dig som ska på solsemester och vill få en jämnare bränna som håller längre {" "}
+              En djupgående helkroppsskrubb - perfekt för dig som ska på
+              solsemester och vill få en jämnare bränna som håller längre{" "}
               <span>- 50 min - 800:-</span>
             </p>
           </div>
@@ -24,11 +25,13 @@ function bodyTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Helkroppsbehandling</h3>
             <p>
-            En behandling för dig som verkligen vill slappna av. Vi går igenom hela kroppen med bad, lerinpackling och massage{" "}
+              En behandling för dig som verkligen vill slappna av. Vi går igenom
+              hela kroppen med bad, lerinpackling och massage{" "}
               <span>- 60 min - 1200:-</span>
             </p>
           </div>
@@ -43,11 +46,12 @@ function bodyTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Vaxning halva ben</h3>
             <p>
-            Vaxning av halva ben för lena och hårfria ben{" "}
+              Vaxning av halva ben för lena och hårfria ben{" "}
               <span>- 30 min - 400:-</span>
             </p>
           </div>
@@ -62,11 +66,12 @@ function bodyTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Vaxning hela ben</h3>
             <p>
-            Vaxning av hela ben för lena och hårfria ben{" "}
+              Vaxning av hela ben för lena och hårfria ben{" "}
               <span>- 50 min - 700:-</span>
             </p>
           </div>
@@ -81,6 +86,7 @@ function bodyTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+        
       </ul>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-/* Creates a pop up with a booking confirmation 
+/* Creates a pop up with booking confirmation 
 When the pop up is closed you will return to home page */
 const BookingConfirmation = props => {
   return (

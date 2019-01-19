@@ -11,12 +11,9 @@ class Register extends Component {
       phone_number: "",
       password: ""
     };
-    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(
-      this
-    );
+    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.registerUser = this.registerUser.bind(this);
-
     this.showRegisterConfirmation = this.showRegisterConfirmation.bind(this);
     this.closeConfirmation = this.closeConfirmation.bind(this);
   }

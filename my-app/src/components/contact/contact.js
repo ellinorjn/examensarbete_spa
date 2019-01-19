@@ -32,14 +32,14 @@ function Contact() {
               <div className="contact-icons">
                 <p>
                   <img src={require("../../images/phone.png")} alt="phone" />
-                  Telefon: 08 - 123 45 67
+                  08 - 123 45 67
                 </p>
               </div>
               <div className="contact-icons">
                 <p>
                   {" "}
                   <img src={require("../../images/mail.png")} alt="mail" />
-                  Mail: spa@stockholm.se
+                  spa@stockholm.se
                 </p>
               </div>
               <h3>Adress:</h3>

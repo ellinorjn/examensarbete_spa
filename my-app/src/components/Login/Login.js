@@ -18,9 +18,7 @@ class Login extends Component {
       showBookingCalendar: false,
     };
 
-    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(
-      this
-    );
+    this.preventDefaultBehaviorSubmit = this.preventDefaultBehaviorSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.errorMessageLogin = this.errorMessageLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
@@ -43,7 +41,6 @@ class Login extends Component {
     let password = this.state.password;
 
     /* Fetch person information based on email and password */
-
     fetch(
       "http://localhost/spa/my-app/database-connections/login.php?email=" +
         email +

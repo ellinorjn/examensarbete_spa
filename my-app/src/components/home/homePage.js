@@ -36,7 +36,7 @@ function HomePage() {
           <img
             className="spa-step-img"
             src={require("../../images/phone.jpg")}
-            alt="facebook logo"
+            alt="Phone"
           />
 
           <div className="spa-step-text">
@@ -54,7 +54,7 @@ function HomePage() {
           <img
             className="spa-step-img"
             src={require("../../images/spa-step-2.jpg")}
-            alt="facebook logo"
+            alt="Shampoo and soap"
           />
           <div className="spa-step-text">
             <h2>STEG 2</h2>
@@ -73,7 +73,7 @@ function HomePage() {
           <img
             className="spa-step-img"
             src={require("../../images/spa-step-3.jpg")}
-            alt="facebook logo"
+            alt="Massage with stones"
           />
           <div className="spa-step-text">
             <h2>STEG 3</h2>

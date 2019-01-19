@@ -4,7 +4,7 @@ function LashesBox(props) {
   return (
     <div className="lashes-box">
       <div className={"lashes-box-img"}>
-        <img src={require("../../../images/brows.jpg")} alt="" />
+        <img src={require("../../../images/brows.jpg")} alt="Girl getting her brows done" />
       </div>
       <div className={"lashes-box-text"}>
         <h2>Fransar & Bryn</h2>

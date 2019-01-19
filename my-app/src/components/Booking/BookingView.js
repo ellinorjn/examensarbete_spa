@@ -15,7 +15,6 @@ import LashesAndBrows from "../Treatments/LashesAndBrows/LashesAndBrows";
 import BookingGuest from "../BookingGuest/BookingGuest";
 
 import GuestFormButton from "./GuestFormButton";
-//import ButtonGeneric from '../freeTimesButtons/ButtonGeneric';
 import "react-datepicker/dist/react-datepicker.css";
 
 import BookButton from "./BookButton";
@@ -34,15 +33,10 @@ class BookingView extends Component {
    
     };
 
-    this.toggleTreatmentsAndCalendar = this.toggleTreatmentsAndCalendar.bind(
-      this
-    );
-    //this.showBookingButton = this.showBookingButton.bind(this);
+    this.toggleTreatmentsAndCalendar = this.toggleTreatmentsAndCalendar.bind(this);
     this.showFaceTreatments = this.showFaceTreatments.bind(this);
     this.showBookingGuest = this.showBookingGuest.bind(this);
-    
   }
-
 
   toggleTreatmentsAndCalendar() {
     if (this.props.treatment !== "") {
@@ -57,7 +51,6 @@ class BookingView extends Component {
     }
   }
 
-  /** KORTA NER??? LOOP?  */
   showFaceTreatments(button) {
     let buttonId = button.target.id;
 
@@ -288,7 +281,6 @@ class BookingView extends Component {
           <GuestFormButton event={this.showBookingGuest} />
         )}
 
-        
           {/** Button to book as an inlogged user only shows when logged in*/}
           { this.props.showBookButtonWhenLoggedIn && (
             <BookButton event={this.props.registerBooking} />
@@ -300,5 +292,3 @@ class BookingView extends Component {
 }
 
 export default BookingView;
-
-// this.state.loggedIn &&

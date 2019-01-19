@@ -26,18 +26,12 @@ class BookingCalendar extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.registerBooking = this.registerBooking.bind(this);
-
     this.valueTimeButton = this.valueTimeButton.bind(this);
     this.valueTreatmentButton = this.valueTreatmentButton.bind(this);
-
     this.showGuestFormButton = this.showGuestFormButton.bind(this);
-    this.showBookButtonWhenLoggedIn = this.showBookButtonWhenLoggedIn.bind(
-      this
-    );
-
+    this.showBookButtonWhenLoggedIn = this.showBookButtonWhenLoggedIn.bind(this);
     this.showBookingConfirmation = this.showBookingConfirmation.bind(this);
   }
-
   
   handleChange(date) {
     this.setState({
@@ -47,18 +41,16 @@ class BookingCalendar extends Component {
     let bookingDate = moment(date).format("YYYY-MM-DD");
 
     /* Fetch all booking based on clicked date */
-
     fetch(
       "http://localhost/spa/my-app/database-connections/getBookingsByDate.php?date=" +
         bookingDate
     )
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.checkForAvailableTimes(response);
       })
       .catch(error => {
-        console.error(error);
+        console.log(error);
       });
   }
 
@@ -144,9 +136,7 @@ class BookingCalendar extends Component {
       treatment: buttonValue,
       disabled: id
     }); 
-    console.log(buttonValue, id);
   }
-
 
   /** When you are booking as a guest and a time button is clicked - show the button for filling in personal information  */
   showGuestFormButton() {
@@ -156,6 +146,7 @@ class BookingCalendar extends Component {
       });
     }
   }
+
   /** When you are logged in and a time button is clicked - show book button */
   showBookButtonWhenLoggedIn() {
     if (this.props.time !== "" && this.props.loggedIn === true) {
@@ -173,8 +164,6 @@ class BookingCalendar extends Component {
       treatment: this.state.treatment,
       person_id: this.props.theId
     };
-
-    console.log(bookingInformation);
 
     if (
       this.state.startDate === "" ||
@@ -195,7 +184,6 @@ class BookingCalendar extends Component {
         .then(response => {
           this.showBookingConfirmation();
           this.hideBookingOptions();
-          console.log(response);
         })
         .catch(error => {
           console.log(error);

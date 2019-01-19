@@ -24,6 +24,7 @@ function faceTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Djuprengörande ansiktsbehandling</h3>
@@ -43,6 +44,7 @@ function faceTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+
         <li>
           <div className="treatment-summary">
             <h3>Fuktbomb</h3>
@@ -62,6 +64,7 @@ function faceTreatments(props) {
           </button>
           <div className="clear" />
         </li>
+        
       </ul>
     </div>
   );

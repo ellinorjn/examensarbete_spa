@@ -13,13 +13,12 @@ class Faq extends Component {
   }
 
   showAnswer(text) {
-	let question = text.target.nextElementSibling;
-	console.log(question);
-	if(question.style.display === "block"){
-		question.style.display = "none";
-	} else {
-		question.style.display = "block";
-	}
+    let question = text.target.nextElementSibling;
+    if (question.style.display === "block") {
+      question.style.display = "none";
+    } else {
+      question.style.display = "block";
+    }
   }
 
   render() {
@@ -30,7 +29,7 @@ class Faq extends Component {
         </div>
         <div id="faq-view">
           <h1>VANLIGA FRÅGOR</h1>
-          <Questions showAnswer={this.showAnswer}/>
+          <Questions showAnswer={this.showAnswer} />
         </div>
       </div>
     );

@@ -1,11 +1,10 @@
 import React from "react";
-import ReadMoreButton from "../ReadMoreButton";
 
 function MassageBox(props) {
   return (
     <div className="massage-box">
       <div className={"massage-box-img"}>
-        <img src={require("../../../images/couple-massage.jpg")} alt="" />
+        <img src={require("../../../images/couple-massage.jpg")} alt="Two people gets massage" />
       </div>
       <div className={"massage-box-text"}>
         <h2>Massage</h2>

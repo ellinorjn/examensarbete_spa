@@ -84,8 +84,7 @@ class LoginPage extends Component {
 
     if (response.information < 1) {
       let personalBookings = document.getElementById("personal-bookings");
-      content += `<div>inga bokade tider</div>
-`;
+      content += `<div>inga bokade tider</div>`;
       personalBookings.innerHTML = content;
     } else {
       personalBookings.style.display = "block";
@@ -107,7 +106,6 @@ class LoginPage extends Component {
   }
 
   /** Cancel booking */
-
   componentDidMount() {
     window.cancelBooking = id => {
       let bookingID = {
@@ -150,7 +148,7 @@ class LoginPage extends Component {
         </div>
         <div id="personal-bookings">
           {this.state.loggedIn && (
-            <h1>Välkommen till dina bokningar {this.state.name} </h1>
+            <h1>Välkommen till dina bokningar</h1>
           )}
           <div id="booking-titles">
             <div>Behandling</div>

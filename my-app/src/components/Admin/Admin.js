@@ -15,6 +15,7 @@ class Admin extends Component {
       this
     );
     this.handleChange = this.handleChange.bind(this);
+    this.errorMessageLogin = this.errorMessageLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
     this.showBookings = this.showBookings.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
@@ -34,7 +35,7 @@ class Admin extends Component {
     let email = this.state.email;
     let password = this.state.password;
 
-    /* Fetch person information based on email and password */
+    /* Fetch all bookins */
     if (email === "admin@stockholmspa.se" && password === "hejhej") {
       fetch(
         "http://localhost/spa/my-app/database-connections/admin.php?email=" +
@@ -44,18 +45,24 @@ class Admin extends Component {
       )
         .then(response => response.json())
         .then(response => {
-          this.hideLogin();
-          console.log(response);
-          /* Show information (number of bookings, time, date) based on the response when logged in */
-          this.showBookings(response);
-          if (response.information <= 0) {
-            console.log("inga bokningar");
+          /* If the login fails, show error message */
+          if (response.bookings.length <= 0) {
+            this.errorMessageLogin();
+          } else {
+            this.hideLogin();
+            /* Show information (number of bookings, time, date) based on the response when logged in */
+            this.showBookings(response);
           }
         })
         .catch(error => {
-          console.error(error);
+          alert(error);
         });
     }
+  }
+
+  errorMessageLogin() {
+    let inlogFail = document.getElementById("inlog-fail");
+    inlogFail.style.display = "block";
   }
 
   hideLogin() {
@@ -66,7 +73,7 @@ class Admin extends Component {
     });
   }
 
-  /** List all bookings in a table plus a cancel button
+  /** List all bookings plus a cancel button
    *  that holds the id of the booking */
   showBookings(response) {
     let personalBookingInfo = document.getElementById("personal-booking-info");
@@ -76,18 +83,19 @@ class Admin extends Component {
     let content = ``;
 
     response.bookings.forEach(function(element) {
-      content += ` <div>
-            <p>${element.name}</p>
-            <p>${element.treatment}</p>
-            <p>${element.date}</p>
-            <p>${element.time}</p>
-            <button class="cancel-button" id=${
-              element.ID
-            } onClick="cancelBooking(this.id)">
-			<i class="fas fa-trash-alt fa-2x"></i>Avboka
-			</button></div>
-			
-			`;
+      content += `<div>
+                    <p>${element.name}</p>
+                    <p>${element.treatment}</p>
+                    <p>${element.date}</p>
+                    <p>${element.time}</p>
+                      <button class="cancel-button" 
+                        id=${element.ID} 
+                        onClick="cancelBooking(this.id)">
+                        <i class="fas fa-trash-alt fa-2x"></i>
+                        Avboka
+                      </button>
+                  </div>
+			          `;
     });
     personalBookingInfo.innerHTML = content;
   }
@@ -97,7 +105,6 @@ class Admin extends Component {
       let bookingID = {
         id: id
       };
-      console.log(id);
       window.confirm("Är du säker på att du vill avboka din behandling?");
 
       return fetch(
@@ -109,11 +116,10 @@ class Admin extends Component {
         }
       )
         .then(response => {
-          console.log(response);
           this.checkLogin();
         })
         .catch(error => {
-          console.error(error);
+          alert(error);
         });
     };
   }
@@ -122,22 +128,27 @@ class Admin extends Component {
     return (
       <div className="admin-page">
         <div className="admin-login">
-        <p className="admin-text">Välkommen Admin! <br />
-        Logga in för att se era bokningar</p>
+          {!this.state.loggedIn && (
+            <p className="h1">
+              Välkommen Admin! <br />
+              Logga in för att se era bokningar
+            </p>
+          )}
           <LoginForm
             preventDefaultBehaviorSubmit={this.preventDefaultBehaviorSubmit}
             handleChange={this.handleChange}
           />
           <div id="personal-bookings">
-            {this.state.loggedIn && <h1>Stockholm Spa bokningar</h1>}
+            {this.state.loggedIn && (
+              <p className="h1">Stockholm Spa bokningar</p>
+            )}
             <div id="booking-titles">
-            <div>Namn</div>
-            <div>Behandling</div>
-            <div>Datum</div>
-            <div>Tid</div>
-          </div>
-
-          <div id="personal-booking-info" />
+              <div>Namn</div>
+              <div>Behandling</div>
+              <div>Datum</div>
+              <div>Tid</div>
+            </div>
+            <div id="personal-booking-info" />
           </div>
         </div>
       </div>

@@ -369,7 +369,8 @@ button:disabled {
 
 /* FORMS */
 
-#inlog-fail {
+#inlog-fail,
+#form-not-correct {
   color: red;
   font-size: 1.1em !important;
   padding: 10px;
@@ -819,6 +820,8 @@ button:disabled {
 
 .contact-icons p img {
   height: 100%;
+  margin-right: 5px;
+  margin-bottom: -3px;
 }
 
 #map {
@@ -905,15 +908,6 @@ button:disabled {
   display: none;
 }
 
-.admin-text {
-  margin: 0px;
-  padding: 20px;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #4c586f;
-}
-
 /* ------ TABLET ------ */
 
 @media screen and (min-width: 600px) {
@@ -952,7 +946,13 @@ button:disabled {
     font-family: "Playfair Display", serif;
     font-weight: 700;
     color: #4c586f;
+    text-decoration: none;
   }
+
+  .nav ul a:hover {
+    text-decoration: underline;
+  }
+
   /* HOME */
   .container {
     width: 80%;
@@ -1165,7 +1165,7 @@ button:disabled {
     width: 100%;
   }
 
-  /* PERSONAL PAGE */
+  /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
 
   #personal-bookings {
     width: 90%;
@@ -1182,7 +1182,7 @@ button:disabled {
   }
 
   #booking-titles div {
-    width: 20%;
+    width: 25%;
   }
 
   #personal-booking-info {
@@ -1200,13 +1200,13 @@ button:disabled {
   }
 
   #personal-booking-info p {
-    width: 20%;
+    width: 25%;
     margin: 0px;
     float: left;
   }
 
   .cancel-button {
-    width: 20%;
+    width: 15%;
   }
 
   /* FOOTER */
@@ -1344,6 +1344,10 @@ button:disabled {
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* For Safari */
     transition-duration: 0.4s;
+  }
+
+  .treatment-button:hover {
+    font-size: 1.3em;
   }
 
   #treatments {
@@ -1505,11 +1509,16 @@ button:disabled {
     width: 60%;
   }
 
-  /* LOGIN TO SEE BOOKINGS */
+  /* PERSONAL PAGE WHEN LOGGED IN WITH ALL YOUR BOOKINGS*/
 
   #personal-login {
     width: 90%;
     background: #fafafa;
+  }
+
+  #booking-titles div,
+  #personal-booking-info p {
+    width: 20%;
   }
 
   /* ADMIN */
