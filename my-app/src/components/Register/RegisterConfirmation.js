@@ -12,7 +12,7 @@ const RegisterConfirmation = props => {
         <div>
           <h1>Tack för att du registrerat dig!</h1>
           <p>
-            Du kan nu logga in och få 5% rabatt på alla dina bokningar. Genom
+            Du kan nu logga in och få 5% rabatt på alla dina bokningar. <br /> Genom
             att stänga den här rutan kommer du direkt till inloggningen{" "}
           </p>
           <p>Varmt välkommen till oss på Stockholm Spa! </p>

@@ -8,8 +8,6 @@ $bookingInfo = json_decode(json_encode($bookingInformation), True);
 echo var_dump($bookingInfo);
     $id = $bookingInfo['id'];
 
-
-
     $statement = $pdo->prepare("DELETE FROM booking WHERE ID = '$id'");
     $statement->execute();
     $delete = $statement->fetchAll(PDO::FETCH_ASSOC);

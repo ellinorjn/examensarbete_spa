@@ -49,7 +49,7 @@ class Admin extends Component {
           this.showBookings(response);
         })
         .catch(error => {
-          alert(error);
+          console.log(error);
         });
     }
   }
@@ -63,7 +63,8 @@ class Admin extends Component {
   }
 
   /** List all bookings plus a cancel button
-   *  that holds the id of the booking */
+   *  that holds the id of the booking, separate bookings
+   *  from inlogged persons and bookings made by guests */
   showBookings(response) {
     let personalBookingInfo = document.getElementById("personal-booking-info");
     let personalGuestBookingInfo = document.getElementById(
@@ -115,23 +116,25 @@ class Admin extends Component {
       let bookingID = {
         id: id
       };
-      window.confirm("Är du säker på att du vill avboka din behandling?");
 
-      return fetch(
-        "http://localhost/spa/my-app/database-connections/cancelBooking.php",
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: JSON.stringify(bookingID)
-        }
-      )
-        .then(response => {
-          this.checkLogin();
-        })
-        .catch(error => {
-          alert(error);
-        });
+      if(window.confirm("Är du säker på att du vill avboka din behandling?")){
+  
+        return fetch(
+          "http://localhost/spa/my-app/database-connections/cancelBooking.php",
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(bookingID)
+          }
+        )
+          .then(response => {
+            this.checkLogin();
+          })
+          .catch(error => {
+            console.log(error);
+          });
     };
+  }
   }
 
   render() {
@@ -150,7 +153,7 @@ class Admin extends Component {
           />
           <div id="personal-bookings">
             {this.state.loggedIn && (
-              <p className="h1">Stockholm Spa bokningar</p>
+              <p className="sthlm-spa-bookings">Stockholm Spa bokningar</p>
             )}
 
              <h2>Inloggade bokningar</h2>

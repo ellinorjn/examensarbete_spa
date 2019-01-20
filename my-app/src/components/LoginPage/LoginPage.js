@@ -78,8 +78,6 @@ class LoginPage extends Component {
     let personalBookingInfo = document.getElementById("personal-booking-info");
     let personalBookings = document.getElementById("personal-bookings");
 
-   
-
     let content = ``;
 
     if (response.information < 1) {

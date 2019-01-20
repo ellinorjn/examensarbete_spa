@@ -166,13 +166,10 @@ class BookingCalendar extends Component {
     };
 
     if (
-      this.state.startDate === "" ||
-      this.state.time === "" ||
-      this.state.treatment === ""
+      this.state.startDate !== "" ||
+      this.state.time !== "" ||
+      this.state.treatment !== ""
     ) {
-      /**SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA ALLT FÖR ATT SLUTFÖRA BOKNINGEN */
-      alert("NO!!!");
-    } else {
       return fetch(
         "http://localhost/spa/my-app/database-connections/bookTreatment.php",
         {
@@ -182,6 +179,7 @@ class BookingCalendar extends Component {
         }
       )
         .then(response => {
+          console.log(response);
           this.showBookingConfirmation();
           this.hideBookingOptions();
         })

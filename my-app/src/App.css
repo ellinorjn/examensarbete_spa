@@ -15,9 +15,7 @@ input:-webkit-autofill:active {
 }
 
 #root {
-  /*background-color: #cbc5c1; */
   background-color: #f3f0eb;
-  /* background-color: #76849e;*/
 }
 
 .clear {
@@ -38,6 +36,10 @@ h1 {
   padding: 20px;
   font-size: 2.5em;
   text-transform: uppercase;
+}
+
+p {
+  font-family: "raleway";
 }
 
 .line hr,
@@ -107,6 +109,8 @@ hr {
   right: 0px;
 }
 
+/* NAV-BAR */
+
 nav {
   height: 80px;
 }
@@ -114,6 +118,7 @@ nav ul {
   display: none;
 }
 
+/* FOOTER */
 .flex-footer {
   display: flex;
   flex-direction: column;
@@ -160,16 +165,7 @@ footer p {
   cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* BUTTONS */
 
 button,
 #submit-login,
@@ -339,14 +335,6 @@ button:disabled {
   height: 100%;
 }
 
-#booking-header {
-  height: 100vh;
-  background: blue;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 #booking-view {
   background: white;
   height: 100%;
@@ -438,6 +426,7 @@ button:disabled {
 #your-discount h2 {
   color: #ebeced;
 }
+
 /* CONFIRMATION POPUP*/
 
 #booking-confirmation,
@@ -709,6 +698,7 @@ button:disabled {
   width: 60%;
   margin-top: 20px;
 }
+/* DATEPICKER */
 
 #date-picker {
   text-align: center;
@@ -829,8 +819,8 @@ button:disabled {
   width: 100%;
   border: none;
 }
-/* LOGIN TO SEE BOOKINGS */
 
+/* LOGIN TO SEE BOOKINGS */
 .h1 {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -911,6 +901,16 @@ button:disabled {
   display: none;
 }
 
+.sthlm-spa-bookings {
+  text-align: center;
+  color: #4c586f;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0;
+  padding: 40px;
+}
+
 /* ------ TABLET ------ */
 
 @media screen and (min-width: 600px) {
@@ -959,7 +959,7 @@ button:disabled {
   /* HOME */
   .container {
     width: 80%;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
   }
 
   #big-img {
@@ -1119,6 +1119,7 @@ button:disabled {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
+    text-align: center;
   }
 
   /* TREATMENT PAGE */
@@ -1283,6 +1284,10 @@ button:disabled {
     text-align: left;
     margin: 0px;
     padding: 0px;
+  }
+
+  #information-text p {
+    font-size: 1.2em;
   }
 
   .container {

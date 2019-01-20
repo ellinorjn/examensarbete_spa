@@ -46,8 +46,6 @@ class BookingView extends Component {
 
       let treatments = document.getElementById("treatments");
       treatments.style.display = "none";
-    } else {
-      /** SKAPA MEDDELANDE ATT MAN MÅSTE VÄLJA BEHANDLING FÖR ATT KUNNA GÅ VIDARE */
     }
   }
 
@@ -67,7 +65,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "none";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 600);
+      window.scrollBy(0, 800);
     }
     if (buttonId === "body-button") {
       let faceTreatments = document.getElementById("treatments-face");
@@ -82,7 +80,7 @@ class BookingView extends Component {
       lashesTreatments.style.display = "none";
       buttonCalendar.style.display = "block";
 
-      window.scrollBy(0, 600);
+      window.scrollBy(0, 800);
     }
     if (buttonId === "massage-button") {
       let faceTreatments = document.getElementById("treatments-face");

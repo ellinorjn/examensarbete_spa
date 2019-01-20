@@ -4,7 +4,7 @@ function FaceBox(props) {
   return (
     <div className="face-box">
       <div className={"face-box-img"}>
-        <img src={require("../../../images/face.jpg")} alt="Face image" />
+        <img src={require("../../../images/face.jpg")} alt="Face" />
       </div>
       <div className={"face-box-text"}>
         <h2>Ansiktsbehandlingar</h2>
